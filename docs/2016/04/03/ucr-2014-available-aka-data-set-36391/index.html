@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.20.7" />
+
+
+<title>UCR 2014 Available (aka data set 36391) - A Blog (Primarily) About Public Safety Data</title>
+<meta property="og:title" content="UCR 2014 Available (aka data set 36391) - A Blog (Primarily) About Public Safety Data">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="../../../../css/fonts.css" media="all">
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="../../../../" class="nav-logo">
+    <img src="../../../../images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="https://github.com/dnchelst">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">UCR 2014 Available (aka data set 36391)</h1>
+
+    
+    <span class="article-date">2016/04/03</span>
+    
+
+    <div class="article-content">
+      <p>It&rsquo;s common for citizens to be interested in local crime rates either
+personally or professionally. Most local law enforcement agencies report
+monthly crime statistics to city officials and/or residents as well as to a
+state agency. The state then aggregates the data and forwards it to the FBI as
+part of the
+<a href="https://www.fbi.gov/about-us/cjis/ucr/ucr">Uniform Crime Reporting</a> (UCR)
+program. The FBI annually releases a report on crime. The most recent was
+called
+<a href="https://www.fbi.gov/about-us/cjis/ucr/crime-in-the-u.s/2014/crime-in-the-u.s.-2014">Crime in the United States 2014</a>
+which was released on
+<a href="https://www.fbi.gov/news/stories/2015/september/latest-crime-stats-released/latest-crime-stats-released">September 28, 2015</a>.</p>
+
+<p>So, why talk about it now in April 2016? Well the FBI&rsquo;s site is incomplete;
+however, the FBI eventually forwards a comprehensive version of their data set
+to the
+<a href="http://www.icpsr.umich.edu/icpsrweb/NACJD/index.jsp">National Archive of Criminal Justice Data (NACJD)</a>.
+All the data for 2014 is available available as data set <a href="http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/36391">36391</a>
+provided in
+multiple formats for easy consumption. It&rsquo;s at a granular level, with over 100
+variables recorded for each month of the year, and reported individually for
+over 22,000 agencies. It was published to the site at the beginning of March
+and I only noticed it a few weeks ago.</p>
+
+<p>What makes the FBI&rsquo;s site incomplete? You can access information that shows
+crimes for an individual department. However, you can&rsquo;t see clearance
+information at that level. In other words, the number of crimes are available,
+but not how many of those were &ldquo;solved.&rdquo;
+<em>All clearance information is available in this the newly published data set.</em></p>
+
+<p>Here are a few more tidbits if you haven&rsquo;t lost interest yet:</p>
+
+<ul>
+<li>A
+<a href="http://www.npr.org/2015/03/30/395799413/how-many-crimes-do-your-police-clear-now-you-can-find-out">nice article on clearance rates</a>
+was written by Martin Kaste for NPR last year.
+It also has a
+<a href="http://apps.npr.org/dailygraphics/graphics/lookup-clearance-rates/child.html">nifty web app</a>
+embedded within it.<br /></li>
+<li>If you get a chance to compare the FBI website&rsquo;s crime statistics and the
+NACJD&rsquo;s data file, try looking for information on Glendale, Arizona.<br /></li>
+<li>California&rsquo;s Office of the Attorney General has a particularly nice website
+providing
+<a href="https://oag.ca.gov/crime">crime data</a>
+to the general public. Try out their <a href="https://oag.ca.gov/crime/cjsc/stats/crimes-clearances">tool</a> for extracting
+up to 10 years of crime and clearance data.<br /></li>
+</ul>
+
+<p>Now, I thought I&rsquo;d ask for input on a problem that I&rsquo;m having calculating
+<strong>crime rates at the county level</strong>. Reported crimes are useful to know, but
+it&rsquo;s hard to compare between jurisdictions without first converting to crime
+&ldquo;rates&rdquo;. Rates are determined by dividing a jurisdiction&rsquo;s crimes by its
+population and multiplying by 100,000.</p>
+
+<p>Crime rates are not actually reported by municipalities,
+but rather by law enforcement agencies.
+In most cities, there isn&rsquo;t much difference.
+However, <em>there is a big difference at the county level</em>.
+&ldquo;County crimes&rdquo; are just crimes reported by the county sheriff&rsquo;s office,
+ignoring all crimes handled by municipal police departments.
+To find the crime rate at the county level, you can&rsquo;t just take county crimes
+and divide by the county&rsquo;s total population.
+In fact, the FBI&rsquo;s data tool won&rsquo;t show crime rates if you select a county agency.
+Nevertheless, how can I compare crimes in two neighboring counties?</p>
+
+<ul>
+<li>Can anyone recommend an accurate way to report crime rates at a county level?</li>
+<li>What about a way to report crime rates focusing on residents that live within
+the county&rsquo;s unincorporated areas?</li>
+<li>I tend to do best when a problem is concrete. If that&rsquo;s how you work,
+<a href="https://en.wikipedia.org/wiki/List_of_counties_in_Wisconsin">pick two neighboring counties in Wisconsin</a>
+as an example.
+I welcome your ideas as I don&rsquo;t have a good answer at the moment. I intentionally focused on the big picture. I&rsquo;m aware that I&rsquo;ve glossed over lots of details. Feel free to comment on the missing details.</li>
+</ul>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="../../../../index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="../../../../images/hugo-logo.png" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+

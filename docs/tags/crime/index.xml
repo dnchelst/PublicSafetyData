@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crime on A Blog (Primarily) About Public Safety Data</title>
+    <link>/tags/crime/</link>
+    <description>Recent content in Crime on A Blog (Primarily) About Public Safety Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/crime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UCR 2014 Available (aka data set 36391)</title>
+      <link>/2016/04/03/ucr-2014-available-aka-data-set-36391/</link>
+      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/04/03/ucr-2014-available-aka-data-set-36391/</guid>
+      <description>It&amp;rsquo;s common for citizens to be interested in local crime rates either personally or professionally. Most local law enforcement agencies report monthly crime statistics to city officials and/or residents as well as to a state agency. The state then aggregates the data and forwards it to the FBI as part of the Uniform Crime Reporting (UCR) program. The FBI annually releases a report on crime. The most recent was called Crime in the United States 2014 which was released on September 28, 2015.</description>
+    </item>
+    
+  </channel>
+</rss>
