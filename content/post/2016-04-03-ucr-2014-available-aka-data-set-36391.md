@@ -78,4 +78,5 @@ the county's unincorporated areas?
 - I tend to do best when a problem is concrete. If that's how you work, 
 [pick two neighboring counties in Wisconsin](https://en.wikipedia.org/wiki/List_of_counties_in_Wisconsin) 
 as an example. 
+
 I welcome your ideas as I don't have a good answer at the moment. I intentionally focused on the big picture. I'm aware that I've glossed over lots of details. Feel free to comment on the missing details.
