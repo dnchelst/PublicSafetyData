@@ -35,7 +35,7 @@ publishDir="docs"
     weight = 3
 [params]
     description = "A website built through Hugo and blogdown."
-
+    googleAnalytics = "UA-99039986-1"
     # options for highlight.js (version, additional languages, and theme)
     highlightjsVersion = "9.11.0"
     highlightjsCDN = "//cdn.bootcss.com"
