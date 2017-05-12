@@ -1,15 +1,13 @@
 ---
 title: NFIRS 2014 Available
 author: Dov Chelst
-date: '2016-03-18'
+date: "2016-03-18"
 slug: nfirs-2014-available
 categories: []
 tags:
   - NFIRS
-  - fire
-description: ''
-draft: yes
-topics: []
+  - fire  
+  
 ---
 
 Hi everyone.
