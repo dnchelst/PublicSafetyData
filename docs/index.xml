@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Blog (Primarily) About Public Safety Data</title>
+    <title>Public Safety Data</title>
     <link>/</link>
-    <description>Recent content on A Blog (Primarily) About Public Safety Data</description>
+    <description>Recent content on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
@@ -24,10 +24,14 @@
     <item>
       <title>About</title>
       <link>/about/</link>
-      <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
+      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
+      <description>This is a blog about public safety data. The purpose is to highlight some useful online resources that shed light on public safety services.
+I&amp;rsquo;ve studied numerous public safety departments since 2008. To me, public safety includes:
+- law enforcement agencies (police, sheriff, etc.)
+- fire departments,
+- and emergency services (aka ambulances). For some, public safety doesn&amp;rsquo;t include ambulance services, but these are often combined within a fire department.</description>
     </item>
     
     <item>

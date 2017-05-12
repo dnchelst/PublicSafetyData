@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Crime on A Blog (Primarily) About Public Safety Data</title>
+    <title>Crime on Public Safety Data</title>
     <link>/tags/crime/</link>
-    <description>Recent content in Crime on A Blog (Primarily) About Public Safety Data</description>
+    <description>Recent content in Crime on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
