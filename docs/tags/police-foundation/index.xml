@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Police on Public Safety Data</title>
-    <link>/tags/police/</link>
-    <description>Recent content in Police on Public Safety Data</description>
+    <title>Police Foundation on Public Safety Data</title>
+    <link>/tags/police-foundation/</link>
+    <description>Recent content in Police Foundation on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 May 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/police/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/police-foundation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>/2017/05/15/public-safety-open-data-portal/</guid>
       <description>In late 2015, the Tucson Police Department’s Lieutenant Myron “Ron” Holubiak brought the Public Safety Open Data Portal to my attention. The White House’s Police Data Initiative had begun in May 2015 and Tucson PD had announced its participation at the end of October.
 In any case, there is now a Police Data Initiative website which lists 135 participating agencies as of today’s date. There is likely an agency that near you that you might recognize.</description>
-    </item>
-    
-    <item>
-      <title>UCR 2014 Available (aka data set 36391)</title>
-      <link>/2016/04/03/ucr-2014-available-aka-data-set-36391/</link>
-      <pubDate>Sun, 03 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/2016/04/03/ucr-2014-available-aka-data-set-36391/</guid>
-      <description>It&amp;rsquo;s common for citizens to be interested in local crime rates either personally or professionally. Most local law enforcement agencies report monthly crime statistics to city officials and/or residents as well as to a state agency. The state then aggregates the data and forwards it to the FBI as part of the Uniform Crime Reporting (UCR) program. The FBI annually releases a report on crime. The most recent was called Crime in the United States 2014 which was released on September 28, 2015.</description>
     </item>
     
   </channel>

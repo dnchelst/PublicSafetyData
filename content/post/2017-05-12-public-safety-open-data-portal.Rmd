@@ -1,0 +1,34 @@
+---
+title: Public Safety Open Data Portal
+author: Dov Chelst
+date: '2017-05-15'
+slug: public-safety-open-data-portal
+categories: []
+tags:
+  - police
+  - Police Foundation
+  - White House
+  - 
+description: ''
+draft: true
+publishdate: '2017-05-15'
+topics: []
+---
+
+In late 2015, the Tucson Police Department's Lieutenant Myron "Ron" Holubiak 
+brought the Public Safety Open Data Portal to my attention. 
+The White House's Police Data Initiative had begun in May 2015 and 
+Tucson PD had announced its participation at the end of October.
+
+In any case, there is now a 
+[Police Data Initiative](https://www.policedatainitiative.org/datasets/)
+website which lists 135 
+[participating agencies](https://www.policedatainitiative.org/participating-agencies/) 
+as of today's date. There is likely an agency that near you that you might recognize.
+
+I should warn you that just because an agency provides data, doesn't mean that 
+it will meet your expectations. Here are some examples:
+
+
+I'd like to take a quick look at some data from two agencies in the second half 
+of this post. 
