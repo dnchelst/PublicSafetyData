@@ -8,6 +8,7 @@ categories:
 tags:
   - crime
   - police
+  - UCR
 ---
 
 It's common for citizens to be interested in local crime rates either 

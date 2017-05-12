@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fire on A Blog (Primarily) About Public Safety Data</title>
+    <link>/tags/fire/</link>
+    <description>Recent content in Fire on A Blog (Primarily) About Public Safety Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Mar 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/fire/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NFIRS 2014 Available</title>
+      <link>/2016/03/18/nfirs-2014-available/</link>
+      <pubDate>Fri, 18 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/03/18/nfirs-2014-available/</guid>
+      <description>Hi everyone.
+As a data analyst specializing in public safety for CPSM, I come across National Fire Incident Reporting System (NFIRS) data pretty regularly. Usually, I examine a single fire department at a time, but it&amp;rsquo;s also collected nationally by the Federal Emergency Management Agency.
+After it&amp;rsquo;s collected, a portion of the information is provided to interested researchers for review. You request the data and it arrives via US Mail on a CD.</description>
+    </item>
+    
+  </channel>
+</rss>
