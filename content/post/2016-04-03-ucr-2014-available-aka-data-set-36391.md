@@ -3,11 +3,11 @@ title: UCR 2014 Available (aka data set 36391)
 author: Dov Chelst
 date: '2016-04-03'
 slug: ucr-2014-available-aka-data-set-36391
-categories:
-  - R
-tags:
-  - crime
-  - police
+categories: []
+tags:  
+  - crime  
+  - police  
+  - UCR  
 ---
 
 It's common for citizens to be interested in local crime rates either 
