@@ -11,7 +11,7 @@ I've studied numerous public safety departments since 2008.
 To me, public safety includes:   
 - law enforcement agencies (police, sheriff, etc.)  
 - fire departments,  
-- and emergency services (aka ambulances).
+- and emergency services (aka ambulances).  
 For some, public safety doesn't include ambulance services, but these are often
 combined within a fire department. 
 
