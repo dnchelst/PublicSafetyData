@@ -4,7 +4,7 @@ author: "Dov Chelst"
 date: '2017-05-15'
 description: ''
 draft: yes
-publishdate: '2017-05-15'
+publishdate: '2017-05-16'
 slug: public-safety-open-data-portal
 tags:
 - police
