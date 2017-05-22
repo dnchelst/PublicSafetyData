@@ -1,10 +1,10 @@
 ---
-title: "Public Safety Open Data Portal"
+title: "Public Safety Open Data Portal - Part I"
 author: "Dov Chelst"
-date: '2017-05-15'
-description: ''
+date: '2017-05-23'
+description: 'Background and Minor Critique'
 draft: yes
-publishdate: '2017-05-16'
+publishdate: '2017-05-23'
 slug: public-safety-open-data-portal
 tags:
 - police
@@ -15,10 +15,71 @@ categories: []
 topics: []
 ---
 
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/plotlyjs/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/plotlyjs/plotly-latest.min.js"></script>
+<script src="/rmarkdown-libs/plotly-binding/plotly.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+<script src="/rmarkdown-libs/typedarray/typedarray.min.js"></script>
 
 
 <p>The <a href="https://www.policedatainitiative.org/datasets/">Police Data Initiative</a> website contains data supplied by 135 <a href="https://www.policedatainitiative.org/participating-agencies/">participating agencies</a> as of today’s date. There is likely an agency near you that you might recognize.</p>
 <p>In late 2015, the Tucson Police Department’s Lieutenant Myron “Ron” Holubiak brought the Public Safety Open Data Portal to my attention. The White House’s Police Data Initiative had begun in May 2015 and Tucson PD had announced its participation at the end of October.</p>
-<p>I should warn you that just because an agency provides data, doesn’t mean that it will meet your expectations. Here are some examples:</p>
+<p>When I originally considered this topic, I hadn’t planned to include a critique, yet when compared with other data portals, it has some flaws. Below are my impressions. I have not contacted the people at the data portal for comment.</p>
+<ul>
+<li>It’s not <em>curated</em>. That means the information is as good as what an agency wishes to provide. It doesn’t look as if someone on the website reviews the data and provides feedback to an agency regarding their data’s accuracy or completeness.<br />
+</li>
+<li>It’s not (frequently) <em>updated</em>. You may see an agency providing data on the portal, but providing more recent information on a city website.</li>
+<li>It may not be <em>housed locally</em>. Generally, I would expect either a direct link to a file within the data portal. Alternatively, there might descriptions of data stored elsewhere with direct links to those data files. In multiple instances, the Police Data Initiative simply links to a city’s data site and an interested researched must search for the data there.</li>
+</ul>
+<p>Here are some examples:</p>
+<ul>
+<li><strong>Boston Police Department</strong> is listed as a participating agency, but shows no data on the site. Instead, there is a link to the <a href="https://data.cityofboston.gov/browse?tags=crime">Legacy Boston Open Data Portal</a> when you would rather go to the new site called <a href="https://data.boston.gov/">Analyze Boston</a>, where you can <a href="https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/crime.csv">download</a> <a href="https://data.boston.gov/dataset/crime-incident-reports-august-2015-to-date-source-new-system">crime incident reports from 2015 to present</a>. These are <em>incidents</em> from the department’s records management system (RMS) rather than <em>calls</em> from the department’s computer-aided dispatch (CAD) system. It includes information on the time an incident occurred but nothing about responding units or response times.<br />
+</li>
+<li><strong>Atlanta Police Department</strong> is also a participating agency. At the moment, the link is broken, but you can <a href="http://www.atlantapd.org/i-want-to/crime-data-downloads">download incident information here</a>. The same issue about “incidents versus calls”&quot; applies to Atlanta. In fact, the call times appear intentionally truncated to the minute, with over 40% of records only showing the hour.<br />
+</li>
+<li></li>
+</ul>
 <hr />
-<p>I’d like to take a quick look at some data from two agencies in the second half of this post.</p>
+<p>Below we take a look at call for Atlanta PD. First we load the information.</p>
+<pre class="r"><code># include some libraries
+library(readxl)
+library(readr) 
+library(dplyr)
+library(lubridate)
+library(DT)
+library(plotly)
+# read in Excel data - download and unzip if necessary
+incidents.file &lt;- &quot;COBRA-YTD2017.xlsx&quot;
+if(!file.exists(incidents.file)){
+  atlanta.url &lt;- &quot;http://www.atlantapd.org/Home/ShowDocument?id=1150&quot;
+  download.file(atlanta.url, destfile=&quot;atlanta.zip&quot;, method=&quot;curl&quot;)
+  unzip(zipfile=&quot;atlanta.zip&quot;)
+}
+# convert text to dates and times
+atlanta &lt;- read_excel(incidents.file) %&gt;%
+  mutate(occur_date = mdy(occur_date),
+         occur_time = hms(occur_time),
+         minute = minute(occur_time))</code></pre>
+<p>Next, we examine the recorded times for these 8,755 incidents. Focusing on the minutes shows that officers entering the information were likely to round to the nearest hour, 30 minutes, or other increments, rather than entering an accurately recorded time.</p>
+<pre class="r"><code>atlanta.minutes &lt;- atlanta %&gt;%
+  count(minute, sort=TRUE) %&gt;%
+  ungroup %&gt;%
+  dplyr::rename(count=n) %&gt;%
+  mutate(percent = count / sum(count),
+         cumulative = cumsum(percent))
+atlanta.minutes %&gt;%
+  datatable(rownames=FALSE) %&gt;%
+  formatPercentage(c(&#39;percent&#39;, &#39;cumulative&#39;), 2) %&gt;%
+  formatCurrency(&#39;count&#39;, &#39;&#39;, digits=0)</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[[0,30,45,15,20,40,50,10,25,35,5,55,1,2,6,43,21,22,44,52,7,54,58,12,11,24,39,42,47,53,26,41,9,48,17,19,59,4,28,33,46,56,8,36,57,3,13,49,31,32,37,38,51,14,18,23,29,16,34,27],[3888,1519,376,324,261,260,245,185,112,97,96,95,77,35,35,34,33,33,33,33,31,31,31,30,29,29,29,29,29,29,28,28,27,27,26,26,26,25,25,25,25,25,24,24,24,23,23,23,22,22,22,21,21,20,20,20,18,16,16,15],[0.444089091947459,0.173500856653341,0.0429468874928612,0.0370074243289549,0.0298115362649914,0.0296973158195317,0.0279840091376356,0.0211307824100514,0.0127926898914906,0.0110793832095945,0.0109651627641348,0.010850942318675,0.00879497430039977,0.00399771559109081,0.00399771559109081,0.00388349514563107,0.00376927470017133,0.00376927470017133,0.00376927470017133,0.00376927470017133,0.00354083380925186,0.00354083380925186,0.00354083380925186,0.00342661336379212,0.00331239291833238,0.00331239291833238,0.00331239291833238,0.00331239291833238,0.00331239291833238,0.00331239291833238,0.00319817247287264,0.00319817247287264,0.00308395202741291,0.00308395202741291,0.00296973158195317,0.00296973158195317,0.00296973158195317,0.00285551113649343,0.00285551113649343,0.00285551113649343,0.00285551113649343,0.00285551113649343,0.0027412906910337,0.0027412906910337,0.0027412906910337,0.00262707024557396,0.00262707024557396,0.00262707024557396,0.00251284980011422,0.00251284980011422,0.00251284980011422,0.00239862935465448,0.00239862935465448,0.00228440890919475,0.00228440890919475,0.00228440890919475,0.00205596801827527,0.0018275271273558,0.0018275271273558,0.00171330668189606],[0.444089091947459,0.6175899486008,0.660536836093661,0.697544260422616,0.727355796687607,0.757053112507139,0.785037121644774,0.806167904054826,0.818960593946316,0.830039977155911,0.841005139920046,0.851856082238721,0.860651056539121,0.864648772130211,0.868646487721302,0.872529982866933,0.876299257567104,0.880068532267276,0.883837806967447,0.887607081667618,0.89114791547687,0.894688749286122,0.898229583095374,0.901656196459166,0.904968589377499,0.908280982295831,0.911593375214163,0.914905768132496,0.918218161050828,0.921530553969161,0.924728726442033,0.927926898914906,0.931010850942319,0.934094802969732,0.937064534551685,0.940034266133638,0.943003997715591,0.945859508852084,0.948715019988578,0.951570531125071,0.954426042261565,0.957281553398058,0.960022844089092,0.962764134780126,0.965505425471159,0.968132495716733,0.970759565962307,0.973386636207881,0.975899486007995,0.97841233580811,0.980925185608224,0.983323814962878,0.985722444317533,0.988006853226728,0.990291262135922,0.992575671045117,0.994631639063392,0.996459166190748,0.998286693318104,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>minute<\/th>\n      <th>count<\/th>\n      <th>percent<\/th>\n      <th>cumulative<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nDTWidget.formatCurrency(this, row, data, 1, '', 0, 3, ',', '.', true);\nDTWidget.formatPercentage(this, row, data, 2, 2);\nDTWidget.formatPercentage(this, row, data, 3, 2);\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<pre class="r"><code>plot_ly(atlanta.minutes, x=~minute, y=~count, type=&#39;bar&#39;)</code></pre>
+<div id="24fc6cc91b9c" style="width:672px;height:480px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="24fc6cc91b9c">{"x":{"visdat":{"24fc56d11d5f":["function () ","plotlyVisDat"]},"cur_data":"24fc56d11d5f","attrs":{"24fc56d11d5f":{"x":{},"y":{},"alpha":1,"sizes":[10,100],"type":"bar"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"title":"minute"},"yaxis":{"domain":[0,1],"title":"count"},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":[{"name":"Collaborate","icon":{"width":1000,"ascent":500,"descent":-50,"path":"M487 375c7-10 9-23 5-36l-79-259c-3-12-11-23-22-31-11-8-22-12-35-12l-263 0c-15 0-29 5-43 15-13 10-23 23-28 37-5 13-5 25-1 37 0 0 0 3 1 7 1 5 1 8 1 11 0 2 0 4-1 6 0 3-1 5-1 6 1 2 2 4 3 6 1 2 2 4 4 6 2 3 4 5 5 7 5 7 9 16 13 26 4 10 7 19 9 26 0 2 0 5 0 9-1 4-1 6 0 8 0 2 2 5 4 8 3 3 5 5 5 7 4 6 8 15 12 26 4 11 7 19 7 26 1 1 0 4 0 9-1 4-1 7 0 8 1 2 3 5 6 8 4 4 6 6 6 7 4 5 8 13 13 24 4 11 7 20 7 28 1 1 0 4 0 7-1 3-1 6-1 7 0 2 1 4 3 6 1 1 3 4 5 6 2 3 3 5 5 6 1 2 3 5 4 9 2 3 3 7 5 10 1 3 2 6 4 10 2 4 4 7 6 9 2 3 4 5 7 7 3 2 7 3 11 3 3 0 8 0 13-1l0-1c7 2 12 2 14 2l218 0c14 0 25-5 32-16 8-10 10-23 6-37l-79-259c-7-22-13-37-20-43-7-7-19-10-37-10l-248 0c-5 0-9-2-11-5-2-3-2-7 0-12 4-13 18-20 41-20l264 0c5 0 10 2 16 5 5 3 8 6 10 11l85 282c2 5 2 10 2 17 7-3 13-7 17-13z m-304 0c-1-3-1-5 0-7 1-1 3-2 6-2l174 0c2 0 4 1 7 2 2 2 4 4 5 7l6 18c0 3 0 5-1 7-1 1-3 2-6 2l-173 0c-3 0-5-1-8-2-2-2-4-4-4-7z m-24-73c-1-3-1-5 0-7 2-2 3-2 6-2l174 0c2 0 5 0 7 2 3 2 4 4 5 7l6 18c1 2 0 5-1 6-1 2-3 3-5 3l-174 0c-3 0-5-1-7-3-3-1-4-4-5-6z"},"click":"function(gd) { \n        // is this being viewed in RStudio?\n        if (location.search == '?viewer_pane=1') {\n          alert('To learn about plotly for collaboration, visit:\\n https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html');\n        } else {\n          window.open('https://cpsievert.github.io/plotly_book/plot-ly-for-collaboration.html', '_blank');\n        }\n      }"}],"cloud":false},"data":[{"x":[0,30,45,15,20,40,50,10,25,35,5,55,1,2,6,43,21,22,44,52,7,54,58,12,11,24,39,42,47,53,26,41,9,48,17,19,59,4,28,33,46,56,8,36,57,3,13,49,31,32,37,38,51,14,18,23,29,16,34,27],"y":[3888,1519,376,324,261,260,245,185,112,97,96,95,77,35,35,34,33,33,33,33,31,31,31,30,29,29,29,29,29,29,28,28,27,27,26,26,26,25,25,25,25,25,24,24,24,23,23,23,22,22,22,21,21,20,20,20,18,16,16,15],"type":"bar","marker":{"fillcolor":"rgba(31,119,180,1)","color":"rgba(31,119,180,1)","line":{"color":"transparent"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1}},"base_url":"https://plot.ly"},"evals":["config.modeBarButtonsToAdd.0.click"],"jsHooks":{"render":[{"code":"function(el, x) { var ctConfig = crosstalk.var('plotlyCrosstalkOpts').set({\"on\":\"plotly_click\",\"persistent\":false,\"dynamic\":false,\"selectize\":false,\"opacityDim\":0.2,\"selected\":{\"opacity\":1}}); }","data":null}]}}</script>

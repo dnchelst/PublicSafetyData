@@ -6,10 +6,20 @@
     <description>Recent content on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 May 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 May 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Public Safety Open Data Portal - Part I</title>
+      <link>/2017/05/23/public-safety-open-data-portal/</link>
+      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/05/23/public-safety-open-data-portal/</guid>
+      <description>The Police Data Initiative website contains data supplied by 135 participating agencies as of today’s date. There is likely an agency near you that you might recognize.
+In late 2015, the Tucson Police Department’s Lieutenant Myron “Ron” Holubiak brought the Public Safety Open Data Portal to my attention. The White House’s Police Data Initiative had begun in May 2015 and Tucson PD had announced its participation at the end of October.</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -43,17 +53,6 @@ For some, public safety doesn&amp;rsquo;t include ambulance services, but these 
       <description>Hi everyone.
 As a data analyst specializing in public safety for CPSM, I come across National Fire Incident Reporting System (NFIRS) data pretty regularly. Usually, I examine a single fire department at a time, but it&amp;rsquo;s also collected nationally by the Federal Emergency Management Agency.
 After it&amp;rsquo;s collected, a portion of the information is provided to interested researchers for review. You request the data and it arrives via US Mail on a CD.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
   </channel>
