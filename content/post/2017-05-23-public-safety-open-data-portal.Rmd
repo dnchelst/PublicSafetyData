@@ -1,0 +1,160 @@
+---
+title: "Public Safety Open Data Portal - Part I"
+author: "Dov Chelst"
+date: '2017-05-23'
+description: 'Background and Minor Critique'
+draft: yes
+publishdate: '2017-05-23'
+slug: public-safety-open-data-portal
+tags:
+- police
+- Police Foundation
+- White House
+- ~
+categories: []
+topics: []
+---
+
+
+The [Police Data Initiative](https://www.policedatainitiative.org/datasets/)
+website contains data supplied by 135 
+[participating agencies](https://www.policedatainitiative.org/participating-agencies/) 
+as of today's date. There is likely an agency near you that you might recognize.
+
+In late 2015, the Tucson Police Department's Lieutenant Myron "Ron" Holubiak 
+brought the Public Safety Open Data Portal to my attention. 
+The White House's Police Data Initiative had begun in May 2015 and 
+Tucson PD had announced its participation at the end of October.
+
+When I originally considered this topic, I hadn't planned to include a critique, 
+yet when compared with other data portals, it has some flaws. 
+Below are my impressions. 
+I have not contacted the people at the data portal for comment.  
+
+- It's not _curated_. That means the information is as good as what an agency 
+wishes to provide. It doesn't look as if someone on the website reviews the data 
+and provides feedback to an agency regarding their data's accuracy or 
+completeness.  
+- It's not (frequently) _updated_.
+You may see an agency providing data on the portal, but 
+providing more recent information on a city website. 
+- It may not be _housed locally_. Generally, I would expect either a direct 
+link to a file within the data portal. Alternatively, there might be descriptions 
+of data stored elsewhere with direct links to those data files. 
+In multiple instances, the Police Data Initiative simply links to a city's data
+site and an interested researcher must hunt for the data there.
+
+Here are some examples:
+
+- **Boston Police Department** is listed as a participating agency, 
+but shows no data on the site. 
+Instead, there is a link to the 
+[Legacy Boston Open Data Portal](https://data.cityofboston.gov/browse?tags=crime)
+when you would rather go to the new site called 
+[Analyze Boston](https://data.boston.gov/), where you can 
+[download](https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/crime.csv) 
+[crime incident reports from 2015 to present](https://data.boston.gov/dataset/crime-incident-reports-august-2015-to-date-source-new-system). 
+These are _incidents_ from the department's records management system (RMS)
+rather than _calls_ from the department's computer-aided dispatch (CAD) system.
+It includes information on the time an incident occurred but nothing about 
+responding units or response times.  
+- **Atlanta Police Department** is also a participating agency. At the moment, 
+the link is broken, but you can 
+[download incident information here](http://www.atlantapd.org/i-want-to/crime-data-downloads). 
+The same issue about "incidents versus calls"" applies to Atlanta. 
+In fact, the call times appear intentionally truncated to the minute, 
+with over 40% of records only showing the hour.  
+- Within New Jersey, **Newark Police Department** references a link to a city
+website that contains no police data, while the 
+**Camden County Police Department**, which was an early participant in the 
+initiative has no working link at all.
+
+
+-----
+
+## Atlanta 
+
+Below we take a look at incidents for Atlanta PD. First we load the information and limit to the first 4 months of 2017.
+
+```{r load_atlanta, echo=TRUE, message=FALSE}
+# include some libraries
+library(readxl)
+library(readr) 
+library(dplyr)
+library(magrittr)
+library(lubridate)
+library(DT)
+library(plotly)
+# read in Excel data - download and unzip if necessary
+incidents.file <- "COBRA-YTD2017.xlsx"
+if(!file.exists(incidents.file)){
+  atlanta.url <- "http://www.atlantapd.org/Home/ShowDocument?id=1150"
+  download.file(atlanta.url, destfile="atlanta.zip", method="curl")
+  unzip(zipfile="atlanta.zip")
+}
+# convert text to dates and times and limit to 1/1/2017 through 4/30/2017
+date.limits <- ymd("2017-01-01", "2017-04-30")
+atlanta <- read_excel(incidents.file) %>%
+  mutate(occur_date = mdy(occur_date),
+         occur_time = hms(occur_time),
+         minute = minute(occur_time)) %>%
+  filter(between(occur_date, date.limits[1], date.limits[2]))
+
+day.summary  <- atlanta %>% 
+  count(occur_date) %$%
+  summary(n)  
+```
+
+Next, we examine the recorded times for these 
+`r formatC(nrow(atlanta), big.mark=",")` incidents. 
+There were an average of `r round(day.summary[["Mean"]], 1)` incidents per day.
+Focusing on the minutes shows that officers entering the information were
+likely to round to the nearest hour, 30 minutes, or other increments, rather 
+than entering an accurately recorded time.
+
+
+```{r analyze_atlanta, echo=TRUE, message=FALSE}
+atlanta.minutes <- atlanta %>%
+  count(minute, sort=TRUE) %>%
+  ungroup %>%
+  dplyr::rename(count=n) %>%
+  mutate(percent = count / sum(count),
+         cumulative = cumsum(percent))
+atlanta.minutes %>%
+  datatable(rownames=FALSE) %>%
+  formatPercentage(c('percent', 'cumulative'), 2) %>%
+  formatCurrency('count', '', digits=0)
+
+plot_ly(atlanta.minutes, x=~minute, y=~count, type='bar')
+
+```
+
+## Boston
+
+```{r load_boston, echo=TRUE, message=FALSE}
+# include some libraries
+# read in Excel data - download and unzip if necessary
+boston.file <- "boston-crime.csv"
+
+if(!file.exists(boston.file)){
+  boston.url <- "https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/crime.csv"
+  download.file(boston.url, destfile=boston.file, method="curl")
+}
+# convert text to dates and times and limit to 1/1/2017 through 4/30/2017
+date.limits2 <- paste0("2017-", c("01-01", "04-30"), "0") %>% ymd_h
+boston <- read_csv(boston.file) %>%
+  filter(between(OCCURRED_ON_DATE, date.limits[1], date.limits[2]))
+
+day.summary  <- boston %>% 
+  count(occur_date) %$%
+  summary(n)  
+```
+
+
+
+```{r clean_up, echo=TRUE}
+
+
+```
+
+Part II: New Orleans LA & Los Angeles CA
