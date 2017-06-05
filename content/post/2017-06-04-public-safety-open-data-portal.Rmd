@@ -184,5 +184,9 @@ boston %>%
 
 ```
 
-
+```{r clean_up, echo=FALSE, message=FALSE}
+file.remove("atlanta.zip")
+file.remove("boston-crime.csv")
+file.remove("COBRA-YTD2017.xlsx")
+```
 ## Part II: 911 Calls New Orleans LA & Los Angeles CA (later this month)
