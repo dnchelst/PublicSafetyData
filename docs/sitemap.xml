@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/06/04/public-safety-open-data-portal/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
     <lastmod>2016-05-11T00:00:00+00:00</lastmod>
   </url>
@@ -14,6 +19,12 @@
   <url>
     <loc>/2016/03/18/nfirs-2014-available/</loc>
     <lastmod>2016-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -41,31 +52,43 @@
   
   <url>
     <loc>/tags/police/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/police-foundation/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2016-05-11T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/ucr/</loc>
     <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/white-house/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

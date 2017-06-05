@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Public Safety Open Data Portal - Part I</title>
+      <link>/2017/06/04/public-safety-open-data-portal/</link>
+      <pubDate>Sun, 04 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/06/04/public-safety-open-data-portal/</guid>
+      <description>Introduction &amp;amp; Critique Atlanta Boston Part II: 911 Calls New Orleans LA &amp;amp; Los Angeles CA (later this month)   Introduction &amp;amp; Critique The Police Data Initiative website contains data supplied by 135 participating agencies as of today’s date. There is likely an agency near you that you might recognize.
+In late 2015, the Tucson Police Department’s Lieutenant Myron “Ron” Holubiak brought the Public Safety Open Data Portal to my attention.</description>
+    </item>
     
     <item>
       <title>UCR 2014 Available (aka data set 36391)</title>
