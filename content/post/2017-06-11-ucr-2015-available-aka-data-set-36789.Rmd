@@ -1,0 +1,36 @@
+---
+title: UCR 2015 Available (aka data set 36789)
+author: Dov Chelst
+date: '2017-06-11'
+slug: ucr-2015-available-aka-data-set-36789
+categories:
+  - police
+  - crime
+  - UCR
+tags: []
+description: ''
+draft: yes
+topics: []
+---
+
+The FBI released their 
+[annual report](https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015) 
+on Crime in the U.S. for 2015 
+[last September](https://www.fbi.gov/news/pressrel/press-releases/fbi-releases-2015-crime-statistics).
+It took a little longer than last year for an improved 
+[data set (36789)](http://www.icpsr.umich.edu/icpsrweb/NACJD/studies/36789?searchSource=revise&q=36789) 
+with to appear on the 
+[NACJD website](http://www.icpsr.umich.edu/icpsrweb/NACJD/index.jsp). 
+
+As I mentioned in a previous post, the main advantage of this data set is that 
+it includes counts of _offenses cleared_ for each reporting agency along with
+_offenses reported_. If you would like to have a conversation, 
+there are reasons why this information may be inaccurate for most agencies in
+Washington state. 
+You might like this 
+[article](http://www.news5cleveland.com/longform/cleveland-police-struggle-to-solve-murder-cases) 
+by 
+[Sarah Buduson](http://www.news5cleveland.com/about-us/staff/investigator-sarah-buduson-biography) at 
+[News 5](http://www.news5cleveland.com/) 
+on murder clearance rates in Cleveland with embedded video interviews. It also
+includes comparisons with other cities of similar size such as New Orleans.
