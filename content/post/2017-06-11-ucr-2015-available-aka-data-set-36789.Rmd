@@ -1,18 +1,20 @@
 ---
-title: UCR 2015 Available (aka data set 36789)
-author: Dov Chelst
+title: "UCR 2015 Available (aka data set 36789)"
+author: "Dov Chelst"
 date: '2017-06-11'
-slug: ucr-2015-available-aka-data-set-36789
-categories:
-  - police
-  - crime
-  - UCR
-tags: []
 description: ''
 draft: yes
+slug: ucr-2015-available-aka-data-set-36789
+tags: []
+categories:
+- police
+- crime
+- UCR
 topics: []
 ---
 
+
+## Basic Information
 The FBI released their 
 [annual report](https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015) 
 on Crime in the U.S. for 2015 
@@ -26,7 +28,7 @@ As I mentioned in a previous post, the main advantage of this data set is that
 it includes counts of _offenses cleared_ for each reporting agency along with
 _offenses reported_. If you would like to have a conversation, 
 there are reasons why this information may be inaccurate for most agencies in
-Washington state. 
+[Washington state](http://www.waspc.org/statistics-reports). 
 You might like this 
 [article](http://www.news5cleveland.com/longform/cleveland-police-struggle-to-solve-murder-cases) 
 by 
@@ -34,4 +36,93 @@ by
 [News 5](http://www.news5cleveland.com/) 
 on murder clearance rates in Cleveland with embedded video interviews. It also
 includes comparisons with other cities of similar size such as New Orleans.
+
+## Seven Cities
+
+```{r load_libraries_data, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(stringr)
+library(magrittr)
+library(DT)
+data.dir <- "../../data"
+load(file.path(data.dir, "UCR2015-BlogPost.RData"))
+
+ucr.small %<>%
+  select(-ori.code, -year, -months.reported, -agency.state.name, 
+         -mailing.address.line.2) %>%
+  dplyr::rename(city=agency.name, state=numeric.state.code) %>%
+  mutate_at(vars(-matches("city|state")), as.numeric) %>%
+  mutate(state=gsub(".*?\\s+(.*)", "\\1", state), 
+         population = population.1 + population.2 + population.3) %>%
+  select(-matches("[.]\\d$")) %>%  
+  mutate_at(vars(city, state), str_to_title) 
+
+crime.order <- c("murder.manslaughter", "rape", "robbery", 
+                 "aggravated.assault", "burglary", "larceny", "vehicle.theft")
+
+```
+
+Along with describing the available data, I thought I'd use it a little bit.
+Let's take a look at the UCR information associated with the four agencies
+that I either discussed recently or plan to examine in the near future: 
+Atlanta, Boston, Los Angeles, and New Orleans. 
+In addition, if a basic consumer might not care about clearances, I'll include
+three reasonably sized agencies whose data is not available on the FBI's 
+website, but can be found in the new release: Ithaca (NY), Longmont (CA), 
+and Schenectady (NY). 
+
+
+### Crime Rates
+Below are crime rates measured as crimes per 100,000.
+
+```{r crime_rates, echo=FALSE, message=FALSE}
+ucr.rates <- ucr.small %>%
+  select(-matches("cleared")) %>%
+    gather(crime, rate, rape:murder.manslaughter) %>%
+  mutate(rate= round(10^5 * rate / population), 
+         crime=factor(crime, levels=crime.order, ordered=TRUE)) %>%
+  spread(crime, rate) %>%
+  mutate(violent.crime=murder.manslaughter + rape + robbery +  aggravated.assault,
+         property.crime = burglary + larceny + vehicle.theft) %>%
+  select(city, state, population,
+         violent.crime, murder.manslaughter:aggravated.assault,
+         property.crime, burglary:vehicle.theft) %>%
+  arrange(city)
+
+names(ucr.rates) <- names(ucr.rates) %>% 
+  gsub("[.]", " ", .) %>% 
+  str_to_title
+
+ucr.rates %>%
+  datatable(rownames=FALSE, options=list(paging=FALSE)) %>%
+  formatCurrency(-c(1:2), '', digits=0)
+
+```
+
+### Crimes and Clearances
+Belw are counts of offenses and clearances by city and type of crime. 
+Clearance percentages are calculated as the fraction of clearances relative to 
+offenses.
+The table allows you to limit observations to a single city or a single crime. 
+You may note that New Orleans has the lowest murder clearance rate of the group.
+Boston has the lowest robbery clearance rate of the group.
+
+```{r crime_and_clearances, echo=FALSE, message=FALSE}
+ucr.crimes <- ucr.small %>%
+  gather(crime, count, rape:murder.manslaughter.cleared) %>%
+  mutate(type=ifelse(grepl("clear", crime), "clearances", "offenses"),
+         crime = gsub("[.]cleared", "", crime),
+         crime = factor(crime, levels=crime.order, ordered=TRUE)) %>% 
+  spread(type, count) %>%
+  mutate(percentage = clearances / offenses) %>%
+  select(city, state, population, crime, offenses, clearances, percentage) %>%
+  arrange(city, state, crime) %>%
+  mutate(crime = gsub("[.]", " ", crime),
+         crime = str_to_title(crime))
+
+ucr.crimes %>%
+  set_names(str_to_title(names(ucr.crimes))) %>%
+  datatable(rownames=FALSE, filter='top') %>%
+  formatCurrency(c("Population", "Offenses", "Clearances"), '', digits=0) %>%
+  formatPercentage('Percentage', digits=1)
 
