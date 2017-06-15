@@ -1,7 +1,7 @@
 ---
 title: "UCR 2015 Available (aka data set 36789)"
 author: "Dov Chelst"
-date: '2017-06-11'
+date: '2017-06-16'
 description: ''
 draft: yes
 slug: ucr-2015-available-aka-data-set-36789
@@ -44,6 +44,7 @@ library(tidyverse)
 library(stringr)
 library(magrittr)
 library(DT)
+library(plotly)
 data.dir <- "../../data"
 load(file.path(data.dir, "UCR2015-BlogPost.RData"))
 
@@ -59,6 +60,9 @@ ucr.small %<>%
 
 crime.order <- c("murder.manslaughter", "rape", "robbery", 
                  "aggravated.assault", "burglary", "larceny", "vehicle.theft")
+crime.order2 <- crime.order %>%
+  gsub("[.]", " ", .) %>%
+  str_to_title
 
 ```
 
@@ -103,9 +107,12 @@ ucr.rates %>%
 Belw are counts of offenses and clearances by city and type of crime. 
 Clearance percentages are calculated as the fraction of clearances relative to 
 offenses.
-The table allows you to limit observations to a single city or a single crime. 
-You may note that New Orleans has the lowest murder clearance rate of the group.
-Boston has the lowest robbery clearance rate of the group.
+The table allows you to limit observations to a single city or a single crime.
+The graph shows clearances percentages by crime, grouped by city.
+
+- You may note that New Orleans has the lowest murder clearance rate of the group.
+- Boston has the lowest robbery clearance rate of the group.
+- Ithaca had no murders in 2015.
 
 ```{r crime_and_clearances, echo=FALSE, message=FALSE}
 ucr.crimes <- ucr.small %>%
@@ -125,4 +132,25 @@ ucr.crimes %>%
   datatable(rownames=FALSE, filter='top') %>%
   formatCurrency(c("Population", "Offenses", "Clearances"), '', digits=0) %>%
   formatPercentage('Percentage', digits=1)
+```
 
+
+
+```{r clearance_rate_graphic, echo=FALSE, message=FALSE, warning=FALSE}
+ucr.clearances.rates <- ucr.crimes %>%
+
+  select(city, state, crime, percentage) %>%
+  mutate(crime = factor(crime, levels=crime.order2, ordered=TRUE),
+         city = paste0(city, ", ", state))
+
+clearance.plot <- ggplot(ucr.clearances.rates, 
+                         aes(x=crime, y = 100 * percentage, fill=crime)) +
+  geom_bar(stat="identity") +
+  ggtitle("") +
+  labs(x="Crime", y="Percent") + 
+  theme(axis.text.x = element_blank()) + 
+  facet_wrap(~ city, ncol = NULL, nrow=NULL) +
+  labs(fill = "Crime")
+
+clearance.plot #  %>% ggplotly # fix when you can control the labels
+```
