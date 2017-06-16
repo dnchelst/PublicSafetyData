@@ -6,10 +6,20 @@
     <description>Recent content in Ucr on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/ucr/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>UCR 2015 Available (aka data set 36789)</title>
+      <link>/2017/06/16/ucr-2015-available-aka-data-set-36789/</link>
+      <pubDate>Fri, 16 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/2017/06/16/ucr-2015-available-aka-data-set-36789/</guid>
+      <description>Basic Information The FBI released their annual report on Crime in the U.S. for 2015 last September. It took a little longer than last year for an improved data set (36789) with to appear on the NACJD website.
+As I mentioned in a previous post, the main advantage of this data set is that it includes counts of offenses cleared for each reporting agency along with offenses reported.</description>
+    </item>
     
     <item>
       <title>UCR 2014 Available (aka data set 36391)</title>

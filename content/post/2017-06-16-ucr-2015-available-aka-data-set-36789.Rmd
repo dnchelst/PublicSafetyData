@@ -3,13 +3,13 @@ title: "UCR 2015 Available (aka data set 36789)"
 author: "Dov Chelst"
 date: '2017-06-16'
 description: ''
-draft: yes
+draft: no
 slug: ucr-2015-available-aka-data-set-36789
-tags: []
-categories:
+tags: 
 - police
 - crime
 - UCR
+categories: []
 topics: []
 ---
 

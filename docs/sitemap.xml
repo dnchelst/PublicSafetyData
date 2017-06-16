@@ -39,12 +39,6 @@
   
   <url>
     <loc>/tags/crime/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/crime/</loc>
     <lastmod>2017-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -63,12 +57,6 @@
   
   <url>
     <loc>/tags/police/</loc>
-    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/police/</loc>
     <lastmod>2017-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -99,12 +87,6 @@
   
   <url>
     <loc>/tags/ucr/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ucr/</loc>
     <lastmod>2017-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
