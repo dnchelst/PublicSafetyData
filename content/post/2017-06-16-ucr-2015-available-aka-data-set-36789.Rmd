@@ -46,7 +46,7 @@ library(magrittr)
 library(DT)
 library(plotly)
 data.dir <- "data"
-data.file <- "UCR2015-BlogPost.rda"
+data.file <- "UCR2015-BlogPost.RData"
 if(!dir.exists(data.dir)){
   data.dir <- paste0("../../", data.dir)
 }

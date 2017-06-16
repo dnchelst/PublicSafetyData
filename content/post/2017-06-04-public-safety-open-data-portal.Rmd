@@ -90,19 +90,28 @@ library(lubridate)
 library(DT)
 library(plotly)
 # read in Excel data - download and unzip if necessary
-incidents.file <- "COBRA-YTD2017.xlsx"
-if(!file.exists(incidents.file)){
+atlanta.file <- "Atlanta-2017-FirstFourMonths.RData"
+date.limits <- paste("2017", c(1, 5), 1, 0) %>% ymd_h
+if(file.exists(atlanta.file)){
+  load(atlanta.file)
+} else{
   atlanta.url <- "http://www.atlantapd.org/Home/ShowDocument?id=1212"
   download.file(atlanta.url, destfile="atlanta.zip", method="curl")
   unzip(zipfile="atlanta.zip")
+  atlanta <- read_excel("COBRA-YTD2017.xlsx") %>%
+    # convert text to dates and times and limit to 1/1/2017 through 4/30/2017
+    mutate(occur_date = paste(occur_date, occur_time),
+           poss_date = paste(poss_date, poss_time),
+           rpt_date = mdy(rpt_date)) %>%
+    mutate_at(vars(occur_date, poss_date), mdy_hms) %>%
+    mutate(minute = minute(occur_date)) %>%
+    mutate_at(vars(x, y, MaxOfnum_victims, beat), as.numeric) %>% 
+    select(-matches("time")) %>%
+    filter(between(occur_date, date.limits[1], date.limits[2]))
+  save(atlanta, file="Atlanta-2017-FirstFourMonths.RData")
+  file.remove("atlanta.zip")
+  file.remove("COBRA-YTD2017.xlsx")
 }
-# convert text to dates and times and limit to 1/1/2017 through 4/30/2017
-date.limits <- ymd("2017-01-01", "2017-04-30")
-atlanta <- read_excel(incidents.file) %>%
-  mutate(occur_date = mdy(occur_date),
-         occur_time = hms(occur_time),
-         minute = minute(occur_time)) %>%
-  filter(between(occur_date, date.limits[1], date.limits[2]))
 
 day.summary  <- atlanta %>% 
   count(occur_date) %$%
@@ -143,17 +152,19 @@ plot_ly(atlanta.minutes, x=~minute, y=~count, type='bar')
 # include some libraries
 # read in Excel data - download and unzip if necessary
 boston.file <- "boston-crime.csv"
-
-if(!file.exists(boston.file)){
-  boston.url <- "https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/crime.csv"
+boston.file <- "Boston-2017-FirstFourMonths.RData"
+if(file.exists(boston.file)){
+  load(boston.file)
+} else {
+    boston.url <- "https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/crime.csv"
   download.file(boston.url, destfile=boston.file, method="curl")
+  boston <- read_csv(boston.file) %>% 
+    filter(between(OCCURRED_ON_DATE, date.limits[1], date.limits[2])) %>%
+    mutate(OFFENSE_CODE2=substr(OFFENSE_CODE, 1, 3)) %>%
+    select(-YEAR, -MONTH, -DAY_OF_WEEK, HOUR)
+  save(boston, file=boston.file)
+ file.remove("boston-crime.csv")
 }
-# convert text to dates and times and limit to 1/1/2017 through 4/30/2017
-date.limits2 <- paste0("2017-", c("01-01", "05-01"), " 0") %>% ymd_h
-boston <- read_csv(boston.file) %>% 
-  filter(between(OCCURRED_ON_DATE, date.limits2[1], date.limits2[2])) %>%
-  mutate(OFFENSE_CODE2=substr(OFFENSE_CODE, 1, 3))
-
 day.summary2  <- boston %>% 
   count(date=date(OCCURRED_ON_DATE)) %$%
   summary(n)  
@@ -179,15 +190,9 @@ boston %>%
   count(OFFENSE_CODE, OFFENSE_CODE_GROUP) %>%
   ungroup %>%
   dplyr::rename(Count=n, Code=OFFENSE_CODE, Description=OFFENSE_CODE_GROUP) %>%
-  datatable(rownames=FALSE) %>%
+  datatable(options(rownames=FALSE, options=list(paging=FALSE))) %>%
   formatCurrency('Count', '', digits=0)
 
-```
-
-```{r clean_up, echo=FALSE, message=FALSE}
-file.remove("atlanta.zip")
-#file.remove("boston-crime.csv")
-file.remove("COBRA-YTD2017.xlsx")
 ```
 
 ## Part II: 911 Calls New Orleans LA & Los Angeles CA (later this month)
