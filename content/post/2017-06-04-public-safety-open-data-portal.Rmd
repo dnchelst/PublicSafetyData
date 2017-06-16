@@ -1,11 +1,13 @@
 ---
-title: Public Safety Open Data Portal - Part I
-author: Dov Chelst
-date: "2017-06-04"
-description: Background and Minor Critique
+title: "Public Safety Open Data Portal - Part I"
+author: "Dov Chelst"
+date: '2017-06-04'
 output:
   blogdown::html_page:
-    toc: true
+    toc: yes
+
+
+description: Background and Minor Critique
 slug: public-safety-open-data-portal
 tags:
 - police
@@ -95,7 +97,11 @@ date.limits <- paste("2017", c(1, 5), 1, 0) %>% ymd_h
 if(file.exists(atlanta.file)){
   load(atlanta.file)
 } else{
-  atlanta.url <- "http://www.atlantapd.org/Home/ShowDocument?id=1212"
+  atlanta.page <- read_lines("http://www.atlantapd.org/i-want-to/crime-data-downloads")
+  atlanta.link <- atlanta.page %>% grep("COBRA.*2017", ., value=TRUE)
+  document.id <- gsub(".*id=(\\d+)\">COBRA-YTD2017.*", "\\1", atlanta.link)
+  atlanta.url <- paste0("http://www.atlantapd.org/Home/ShowDocument?id=", 
+                      document.id)
   download.file(atlanta.url, destfile="atlanta.zip", method="curl")
   unzip(zipfile="atlanta.zip")
   atlanta <- read_excel("COBRA-YTD2017.xlsx") %>%
@@ -151,14 +157,12 @@ plot_ly(atlanta.minutes, x=~minute, y=~count, type='bar')
 ```{r load_boston, echo=FALSE, message=FALSE}
 # include some libraries
 # read in Excel data - download and unzip if necessary
-boston.file <- "boston-crime.csv"
 boston.file <- "Boston-2017-FirstFourMonths.RData"
 if(file.exists(boston.file)){
   load(boston.file)
 } else {
     boston.url <- "https://data.boston.gov/dataset/6220d948-eae2-4e4b-8723-2dc8e67722a3/resource/12cb3883-56f5-47de-afa5-3b1cf61b257b/download/crime.csv"
-  download.file(boston.url, destfile=boston.file, method="curl")
-  boston <- read_csv(boston.file) %>% 
+  boston <- read_csv(boston.url) %>% 
     filter(between(OCCURRED_ON_DATE, date.limits[1], date.limits[2])) %>%
     mutate(OFFENSE_CODE2=substr(OFFENSE_CODE, 1, 3)) %>%
     select(-YEAR, -MONTH, -DAY_OF_WEEK, HOUR)
