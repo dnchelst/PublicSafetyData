@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2017/06/16/ucr-2015-available-aka-data-set-36789/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2017/06/04/public-safety-open-data-portal/</loc>
     <lastmod>2017-06-04T00:00:00+00:00</lastmod>
   </url>
@@ -39,6 +44,12 @@
   </url>
   
   <url>
+    <loc>/categories/crime/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/fire/</loc>
     <lastmod>2016-03-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -57,6 +68,12 @@
   </url>
   
   <url>
+    <loc>/categories/police/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/police-foundation/</loc>
     <lastmod>2017-06-04T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -64,13 +81,13 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,6 +100,12 @@
   <url>
     <loc>/tags/ucr/</loc>
     <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/ucr/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

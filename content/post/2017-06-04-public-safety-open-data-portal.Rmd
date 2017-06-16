@@ -92,7 +92,7 @@ library(plotly)
 # read in Excel data - download and unzip if necessary
 incidents.file <- "COBRA-YTD2017.xlsx"
 if(!file.exists(incidents.file)){
-  atlanta.url <- "http://www.atlantapd.org/Home/ShowDocument?id=1182"
+  atlanta.url <- "http://www.atlantapd.org/Home/ShowDocument?id=1212"
   download.file(atlanta.url, destfile="atlanta.zip", method="curl")
   unzip(zipfile="atlanta.zip")
 }
@@ -186,7 +186,7 @@ boston %>%
 
 ```{r clean_up, echo=FALSE, message=FALSE}
 file.remove("atlanta.zip")
-file.remove("boston-crime.csv")
+#file.remove("boston-crime.csv")
 file.remove("COBRA-YTD2017.xlsx")
 ```
 

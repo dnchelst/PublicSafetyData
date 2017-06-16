@@ -45,8 +45,12 @@ library(stringr)
 library(magrittr)
 library(DT)
 library(plotly)
-data.dir <- "../../data"
-load(file.path(data.dir, "UCR2015-BlogPost.RData"))
+data.dir <- "data"
+data.file <- "UCR2015-BlogPost.rda"
+if(!dir.exists(data.dir)){
+  data.dir <- paste0("../../", data.dir)
+}
+load(data.file)
 
 ucr.small %<>%
   select(-ori.code, -year, -months.reported, -agency.state.name, 

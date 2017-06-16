@@ -10,5 +10,32 @@
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Crime</title>
+      <link>/categories/crime/</link>
+      <pubDate>Fri, 16 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/crime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Police</title>
+      <link>/categories/police/</link>
+      <pubDate>Fri, 16 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/police/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ucr</title>
+      <link>/categories/ucr/</link>
+      <pubDate>Fri, 16 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/ucr/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
