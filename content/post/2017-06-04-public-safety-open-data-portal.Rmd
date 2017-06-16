@@ -190,7 +190,7 @@ boston %>%
   count(OFFENSE_CODE, OFFENSE_CODE_GROUP) %>%
   ungroup %>%
   dplyr::rename(Count=n, Code=OFFENSE_CODE, Description=OFFENSE_CODE_GROUP) %>%
-  datatable(options(rownames=FALSE, options=list(paging=FALSE))) %>%
+  datatable(options=list(rownames=FALSE, paging=FALSE)) %>%
   formatCurrency('Count', '', digits=0)
 
 ```

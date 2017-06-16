@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head id="Head1"><meta charset="UTF-8" /><link href="/DefaultContent/Default/bootstrap.min.css" rel="stylesheet"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" /><title>
+	
+    Atlanta Police Department : 
+
+</title>
+    <script type="text/javascript">
+        //script for making "view full site" button work on mobile devices 
+        function getCookie(c_name) {
+            var i, x, y, ARRcookies = document.cookie.split(";");
+            for (i = 0; i < ARRcookies.length; i++) {
+                x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                x = x.replace(/^\s+|\s+$/g, "");
+                if (x == c_name) {
+                    return unescape(y);
+                }
+            }
+        }
+
+        function setCookie(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+            c_value = (window.location.protocol == 'https:') ? c_value + "; secure" : c_value;
+            document.cookie = c_name + "=" + c_value;
+        }
+
+        var isResponsive = getCookie('ISRESPONSIVE');
+        if (isResponsive != "no" && isResponsive != "yes") {
+            setCookie('ISRESPONSIVE', 'yes', 7);
+            document.write('<meta name="viewport" content="width=device-width" />');
+            isResponsive = 'yes';
+        } else {
+            if (isResponsive == "no") {
+                document.write('<meta name="viewport" content="width=980" />');
+            }
+            else {
+                document.write('<meta name="viewport" content="width=device-width" />');
+            }
+        }
+    </script>
+
+    <link href="/DefaultContent/Default/StyleBundleDesignTheme.cssbnd?v=bxqa0bxFyv4vf1dZcFMepqqKrOlLRQQLmUTaFtQA72U1" rel="stylesheet"/>
+<link href="/Project/Contents/Main/StyleBundleDesignTheme.cssbnd?v=RHgamiaoCwz7sGMaNMlV4CIwVeGiDiGCE_q-Pepkd0M1" rel="stylesheet"/>
+<link href="/Areas/Admin/Content/StyleBundleFrontendExtra.cssbnd?v=-cG6bfciEzyG0pVpDdXAbInOUnqKuoiK61z7_e6NMxo1" rel="stylesheet"/>
+<link href="/DefaultContent/Default/Print.cssbnd?v=LagRFhur4RMxiqMN2QR0jEYqBcqJfKB2ZqfNph75L3A1" rel="stylesheet" media="print" />
+<link href="/Project/Contents/Main/Print.cssbnd?v=LGyVHqg1LMwk6WgjH6ba7MJ7OZA_M0zAYWiL1qrVgrM1" rel="stylesheet" media="print" />
+<script src="/Scripts/ScriptBundleFAllInOne.jsbnd?v=fAoacE9dUR6jkexyhFR2iYBay0uT5IJpHSI1OX9NU8Q1"></script>
+
+    <script>
+        function handleExternalURL() {
+            $("a[target='_blank'][href*='____isexternal']").each(function (index, item) {                
+                var href = $(item).attr("href");
+                href = href.replace("&____isexternal=true", "");
+                href = href.replace("?____isexternal=true", "");
+                $(item).attr("href", href);
+                if ($(item).closest(".no_external_url_indication,.footer_copyright").length <= 0) {
+                    $(item).removeClass("external_link_url").addClass("external_link_url");
+                }
+            });
+
+            $("a[target='_blank']:not([href*='____isexternal'])").each(function (index, item) {
+                var linkUrl = $(item).attr("href");
+                if ($.isUrl(linkUrl) && $(item).closest(".no_external_url_indication,.footer_copyright").length<=0) {
+                    $(item).removeClass("external_link_url").addClass("external_link_url");
+                }
+            });
+        }
+
+        ; (function ($) {
+            $.ajaxSetup({
+                complete: function (XMLHttpRequest, textStatus) {                    
+                    handleExternalURL();
+                }
+            });
+        })(jQuery);
+    </script>
+    <script>window.visionOptions = {virtualApplicationPath:'/',logOnPath:'Admin/LogOn',logOffPath:'Admin/LogOff',enableSessionTimeout:false,sessionTimeoutInMinutes:30,timeToAlertBeforeSessionTimeoutInMinutes:5,extendSessionTimeoutPath:'Admin/Account/ExtendSessionTimeout',mainFolderPath:'/Project/Contents/Main/',centerLocation:'Atlanta, GA', siteID:1, navigationID:1, isHomePage:true, emergencyNoticeChanged:false, loggedIn:false, showTopTips:true, currentDesignFolderPath:'/Project/Contents/Main/', useDesignThemFontSizeCss:false , clientResponsiveTableEnabled:true, imageUrl:'/Home/ShowImage?id=', engagementAdminEndPoint:'/Admin/Engagement/' };;window.visionApps={"cms_core":{"DateFormat":"MM/dd/yyyy","TimeFormat":"h:mm tt"}};</script>
+    
+    <script type="text/javascript">
+        //script for view full site button, placed here to keep firefox for mobile devices happy
+        $(function () {
+            var viewFullElement = document.getElementById("view-full");
+            if (viewFullElement) {
+                if (isResponsive == "yes") {
+                    viewFullElement.className = 'mobile_only fullsite';
+                }
+                else {
+                    viewFullElement.innerHTML = 'View Mobile Optimized';
+                    viewFullElement.className = '';
+                }
+            }
+        });
+    </script>
+    
+<script>
+    $(function () {
+        handleExternalURL();
+    });
+</script>
+
+
+    <!--[if lt IE 9]>
+        <script src="/Scripts/ScriptBundleOthers.jsbnd?v=ZmLK_igjpTIMfgASAKqaKONULYPGN4ZuJvbaiQM257I1"></script>
+
+	<![endif]-->
+
+    
+    
+   
+    
+    <link id="active_font" rel="stylesheet" type="text/css" href="/Project/Contents/Main/x-small.css">
+    
+    <link rel="Shortcut Icon" href="/favicon.ico" />
+
+     
+    
+
+<!-- Google Universal Analytics -->
+<script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-40872182-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('set', 'dimension1', ', ID:');
+    ga('set', 'dimension2', '2017');
+    ga('send', 'pageview');
+</script>
+<!-- End Google Universal Analytics -->
+
+      
+    </head>
+
+<body class="front_end_body site_standardsitetemplate">
+    <link href="/DefaultContent/Default/StyleBundleAngularLib.cssbnd?v=sED2Qjf38ysQJYZW_ZvZj-7IGXKm4NOJhdA51oOtG5A1" rel="stylesheet"/>
+
+<script src="/Scripts/ScriptBundleAngularLib.jsbnd?v=s35EaDCf0u_63MER7ZBTbf4KiI-sF_NAHPkIzYY2h9o1"></script>
+
+<script>
+    (function(window,angular){        
+        
+        $("body").attr("ng-app", "vi.cms");
+        
+        window.viCurrentModule = angular.module("vi.cms", []);
+    })(window,angular)
+</script>
+
+    
+    <!--stopindex-->
+    <noscript>
+        <div class="noscript_alert"><span>Please enable JavaScript in your browser for a better user experience.</span></div>
+    </noscript>
+    <!--startindex-->
+    <div class="vi-temp-message-container" style="display:none;"></div>
+    
+
+     
+    
+
+<div class="sitewrapper site_template mainSpan_wrapper">
+    <div class="mainSpan" id="mainSpan_wrapper_Screen">
+        <!--stopindex-->
+        <div id="skipnav">
+            <a href="#pagebody">
+                <img alt="Skip to page body" src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+            <a title="Home" href="/home">
+                <img alt="Home" src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+            <a title="About APD" href="/about-apd">
+                <img alt="About APD" src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+            <a title="Services" href="/services">
+                <img alt="Services" src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+            <a title="Community" href="/community">
+                <img alt="Community" src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+            <a title="Business" href="/business">
+                <img alt="Business" src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+            <a title="Careers" href="/careers">
+                <img alt="Careers" src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+            <a title="I Want To..." href="/i-want-to-">
+                <img alt="I Want To..." src="/DefaultContent/Default/_gfx/spacer.gif" /></a>
+            
+        </div>
+        <!--startindex-->
+
+        <header id="siteheader" class="">
+            <!--stopindex-->
+			<h1 class="wcag_only">Atlanta Police Department</h1>
+            <a id="home_link" href="/home">Home</a>
+            
+            <a class="menu_trigger mobile_only" href="javascript:void(0);">Menu</a>
+            
+            <!--startindex-->
+            
+<div id="headercolumn" class="site_template_column  header_column   "  >
+
+                <!--stopindex-->
+                
+<div id="top_nav">
+
+		<a href="/about-apd/find-my-zone" target="_self">Find My Zone</a>		
+		<a href="/about-apd/advanced-components/faq-list" target="_self">FAQ</a>		
+		<a href="/about-apd/contact-us" target="_self">Contact Us</a>		
+    <a href="http://translate.google.com/translate?js=y&prev=_t&hl=en&ie=UTF-8&layout=1&eotf=1&sl=en&tl=es&u=http%3a%2f%2fwww.atlantapd.org%2fHome%2fShowDocument%3fid%3d1182">Translate</a>
+	
+</div>
+                <!--startindex-->
+            
+    
+                <!--stopindex-->
+                <div id="searchbox" class="clearfix">
+	<label style="display: none;" for="search_text">Search</label>
+	<input type="text" title="Search..."  id="search_text" placeholder="Search..."/>		
+	<a href="javascript:void(0);">Go</a>
+</div>
+	<script>
+		    $(document).ready(function () {
+       			 $("#search_text").focusin(function () {
+			            $(this).parent('#searchbox').addClass('active');
+			        });		
+
+			        $("#search_text").focusout(function () {			
+					var searchContainer =   $(this).parent('#searchbox');
+					setTimeout(function () {      	
+         					searchContainer.removeClass('active');         
+					}, 800);	
+			        });		
+
+			});
+	    $(function () {
+	        $("#searchbox input").keydown(function (e) {
+	            if (e.keyCode == 13) {
+	                $("#searchbox a").click();
+	            }
+	        });
+	        $("#searchbox a").click(function () {
+	            var keyWord = $("#searchbox input#search_text").val();
+	            if (keyWord.length <= 0) { return false; }
+	            keyWord  = keyWord.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+	            keyWord = encodeURIComponent(keyWord.replace("<"," ").replace(">"," ") );
+	            var link = '/about-apd/advanced-components/search';
+	            if (link.indexOf("?") >= 0 )
+	                link = link + "&q=" + keyWord;
+	            else
+	                link = link + "?q=" + keyWord;
+	            window.location.href = link;
+	        });
+	    });
+	</script>
+                <!--startindex-->
+            
+    
+</div>
+
+        </header>
+
+        
+
+<div class="onecolumnlayout clearfix" id="sitebody">
+    
+<div id="ColumnUserControl1" class="column   top_col clearfix  "  >
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="false" vi-widgetinstancedata="35"WidgetStart!!-->
+
+                <!--stopindex-->
+                <div class=" main_menu_widget"><link href="/DefaultContent/Default/StyleBundleMegaMenuDropDown.cssbnd?v=CD_eN-fYJU8KKPigt6x-Ey-z8_WTsoZ7bqx2pLTZtXU1" rel="stylesheet"/>
+<link href="/Project/Contents/Main/StyleBundleMegaMenuDropDown.cssbnd?v=CKGhW98iHaB_rZ8PVQ1cxAzduK_vQwrb8a4KCddvyec1" rel="stylesheet"/>
+<nav class="regularmegamenu mainnav" id="menuContainer_35_0_0"><ul class="dropdownmenu clearfix"><li class="megamenu_first" id="dropdownrootitem1"><a class="dropdownrootitem1" href="/home" title="Home" data-navid="1" >Home</a></li><li class="megamenu_first" id="dropdownrootitem2"><a class="dropdownrootitem2" href="/about-apd" title="About APD" data-navid="2" >About APD</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/mission-statement" title="Mission, Vision, Core Values " data-navid="69" >Mission, Vision, Core Values </a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/accreditation" title="Accreditation" data-navid="68" >Accreditation</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/annual-report" title="Annual Report" data-navid="110" >Annual Report</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/apd-history" title="History of the APD" data-navid="66" >APD History</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/city-of-atlanta" title="City of Atlanta" data-navid="70" target="_blank">City of Atlanta</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/command-staff" title="Command Staff" data-navid="67" >Office of the Chief </a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/command-staff/erika-shields-188" title="Chief Erika Shields " data-navid="188" >Chief Erika Shields </a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/rodney-bryant" title="Assistant Chief Rodney Bryant" data-navid="139" >Assistant Chief Rodney Bryant</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/ben-mcgee" title="Major Ben McGee" data-navid="240" >Major Ben McGee</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/celeste-murphy" title="Major Celeste Murphy" data-navid="242" >Major Celeste Murphy</a></li></ul></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/community-services-division" title="Community Services Division" data-navid="261" target="_self">Community Services Division</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/command-staff/timothy-quiller" title="Deputy Chief Timothy Quiller" data-navid="132" >Deputy Chief Timothy Quiller</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/marisha-sheperd" title="Major Marisha Shepherd" data-navid="163" >Major Marisha Shepherd</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/lane-a-hagin" title="Major Lane A Hagin" data-navid="151" >Major Lane A Hagin</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/van-h-hobbs" title="Major Van H Hobbs" data-navid="137" >Major Van H Hobbs</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/elder-dancy" title="Major Elder Dancy" data-navid="165" >Major Elder Dancy</a></li></ul></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/criminal-investigations-division-259" title="Criminal Investigations Division" data-navid="259" target="_self">Criminal Investigations Division</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/command-staff/darryl-tolleson" title="Deputy Chief Darryl Tolleson" data-navid="145" >Deputy Chief Darryl Tolleson</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/adam-lee-iii" title="Major Adam Lee III" data-navid="128" >Major Adam Lee III</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/michael-o-connor" title="Major Michael O&#39;Connor" data-navid="245" >Major Michael O&#39;Connor</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/delois-watson-brown" title="Manager Delois Watson-Brown" data-navid="146" >Manager Delois Watson-Brown</a></li></ul></li></ul></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/command-staff/field-operations-division" title="Field Operations Division" data-navid="257" target="_self">Field Operations Division</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/command-staff/jeffrey-l-glazier" title="Deputy Chief Jeffrey L Glazier" data-navid="138" >Deputy Chief Jeffrey L Glazier</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/todd-coyt" title="Major Todd Coyt" data-navid="136" >Major Todd Coyt - Zone 1</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/james-shaw" title="Major James shaw" data-navid="162" >Major James Shaw - Zone 2</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/jonathan-durant" title="Major Jonathan Durant" data-navid="130" >Major J. Durant - Zone 3</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/terrell-griffin" title="Major Terrell Griffin" data-navid="243" >Major Terrell Griffin - Zone 4</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/scott-kreher" title="Major Scott Kreher" data-navid="141" >Major Scott Kreher - Zone 5</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/timothy-d-peek" title="Major Timothy D. Peek" data-navid="142" >Major Timothy Peek - Zone 6</a></li></ul></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/strategy-and-special-projects-division" title="Strategy and Special Projects Division" data-navid="258" target="_self">Strategy and Special Projects Division</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/command-staff/reginald-mitchell" title="Strategy and Special Projects Division Commander" data-navid="149" >Deputy Chief Reginald Mitchell</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/john-quigley" title="Major John Quigley" data-navid="134" >Major John Quigley</a></li></ul></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/support-services-division" title="Support Services Division" data-navid="260" target="_self">Support Services Division</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/command-staff/stacie-gibbs" title="Deputy Chief Stacie Gibbs" data-navid="164" >Deputy Chief Stacie Gibbs</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/sharonne-steed" title="Major Sharonne Steed" data-navid="241" >Major Sharonne Steed</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/vincent-moore" title="Major Vincent Moore" data-navid="140" >Major Vincent Moore</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/darin-schierbaum" title="Major Darin Schierbaum" data-navid="135" >Major Darin Schierbaum</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/command-staff/angela-barrett" title="Director Angela Barrett" data-navid="143" >Director Angela Barrett</a></li></ul></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/contact-us" title="Contact Us" data-navid="186" >Contact Us</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/divisions" title="Divisions" data-navid="105" >Divisions</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/office-of-the-chief" title="Office of the Chief" data-navid="73" >Office of the Chief</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/divisions/assistant-chief-bryant" title="Assistant Police Chief" data-navid="318" target="_self">Assistant Chief Rodney Bryant</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/chief-of-staff" title="Chief of Staff" data-navid="74" >Chief of Staff</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/services/strategy-and-special-projects/public-afffairs-unit" title="Public Affairs Unit" data-navid="159" target="_self">Public Affairs Unit</a></li></ul></li><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/divisions/community-services-division" title="Community Services Division" data-navid="108" >Community Services Division</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/services/community-services/airport" title="Airport" data-navid="154" >Airport</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/services/community-services/special-operations-section" title="Special Operations Section" data-navid="155" >Special Operations Section</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/services/community-services/office-of-code-enforcement" title="Code Enforcement Section" data-navid="157" >Code Enforcement Section</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/services/community-services/community-policing-programs" title="Community Policing Programs" data-navid="156" >Community Policing Programs</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/services/community-services/community-liaison-unit" title="Community Liaison Unit" data-navid="158" target="_self">Community Liaison Unit</a></li></ul></li><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/criminal-investigations-division" title="Criminal Investigations Division" data-navid="76" >Criminal Investigations Division</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/divisions/criminal-investigations-division/major-crimes-section" title="Major Crimes Section" data-navid="244" >Major Crimes Section</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/divisions/criminal-investigations-division/special-enforcement-section" title="Special Enforcement Section" data-navid="246" >Special Enforcement Section</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/about-apd/divisions/criminal-investigations-division/taxicabs-and-vehicles-for-hire" title="Taxicabs and Vehicles for Hire" data-navid="106" >Taxicabs and Vehicles for Hire</a></li></ul></li><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/field-operations" title="Field Operations" data-navid="75" >Field Operations</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/divisions/strategy-and-special-projects-division" title="Strategy and Special Projects Division" data-navid="109" >Strategy and Special Projects Division</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/about-apd/divisions/support-services-division" title="Support Services Division" data-navid="107" >Support Services Division</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/services/support-services/corporate-services" title="Corporate Services" data-navid="147" >Corporate Services</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/services/support-services/information-services" title="Information Services" data-navid="150" >Information Services</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/services/support-services/communications" title="Communications" data-navid="152" >Communications</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/services/support-services/training-academy" title="Training Academy" data-navid="153" >Training Academy</a></li></ul></li></ul></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/events" title="Events" data-navid="72" >Events</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/news" title="News" data-navid="71" >News</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/phone-directory" title="Phone Directory" data-navid="111" >Phone Directory</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/standard-operating-procedures" title="Standard Operating Procedures (SOPs)" data-navid="192" >Standard Operating Procedures</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/zone-maps" title="Zone Maps" data-navid="104" >Zone Maps</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/site-map" title="Site Map" data-navid="190" >Site Map</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/find-my-zone" title="Find My Zone" data-navid="302" >Find My Zone</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem3"><a class="dropdownrootitem3" href="/services" title="Services" data-navid="3" >Services</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/services/central-records-unit" title="Central Records Unit" data-navid="176" >Central Records Unit</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/services/community-services" title="Community Services" data-navid="78" target="_self">Community Services</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/services/community-affairs-liaison" title="Community Affairs Liaison" data-navid="80" >Community Affairs Liaison</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/services/criminal-background-checks-and-fingerprinting" title="Criminal Background Checks, Record Restrictions and Fingerprinting" data-navid="178" >Criminal Background Checks and Fingerprinting</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/services/office-of-professional-standards" title="Office Of Professional Standards" data-navid="247" >Office Of Professional Standards</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/services/open-records-unit" title="Open Records Unit" data-navid="177" >Open Records Unit</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/services/public-affairs" title="Public Affairs" data-navid="113" >Public Affairs</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem4"><a class="dropdownrootitem4" href="/community" title="Community" data-navid="4" >Community</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/apd-zones" title="APD Zones" data-navid="114" >APD Zones</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/community/apd-zones/airport" title="Airport" data-navid="117" >Airport</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/apd-zones/zone-1" title="Zone 1" data-navid="168" >Zone 1</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/apd-zones/zone-2" title="Zone 2" data-navid="169" >Zone 2</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/apd-zones/zone-3" title="Zone 3" data-navid="170" >Zone 3</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/apd-zones/zone-4" title="Zone 4" data-navid="171" >Zone 4</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/apd-zones/zone-5" title="Zone 5" data-navid="172" >Zone 5</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/apd-zones/zone-6" title="Zone 6" data-navid="173" >Zone 6</a></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/atlanta-police-foundation" title="Atlanta Police Foundation" data-navid="124" target="_blank">Atlanta Police Foundation</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/citizen-police-academy" title="Citizen&#39;s Police Academy" data-navid="115" >Citizen&#39;s Police Academy</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/community-affairs-liaison" title="Community Affairs Liaison" data-navid="189" target="_self">Community Affairs Liaison</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/community-policing-programs" title="Community Policing Programs" data-navid="118" >Community Policing Programs</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/community/community-policing-programs/police-athletic-league-pal" title="Police Athletic League (PAL)" data-navid="119" >Police Athletic League (PAL)</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to/youth-programs" title="Youth Programs" data-navid="89" >Youth Programs</a></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/community/community-policing-programs/youth-programs" title="Crime Statistics" data-navid="120" >Crime Statistics</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to/crime-data-downloads" title="Crime Data Downloads" data-navid="97" >Crime Data Downloads</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to/uniform-crime-reports" title="Uniform Crime Reports" data-navid="94" >Uniform Crime Reports</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to/ops-reports" title="OPS Reports" data-navid="100" >OPS Reports</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/crime-statistics/open-data-portal" title="Open Data Portal" data-navid="121" target="_self">Open Data Portal</a></li></ul></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/crime-stoppers" title="Crime Stoppers" data-navid="122" >Crime Stoppers</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to/most-wanted" title="Most Wanted" data-navid="90" >Most Wanted</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/rodney-vaughn" title="Rodney Vaughn" data-navid="322" >Rodney Vaughn</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/rufus-hurst" title="Rufus Hurst" data-navid="321" >Rufus Hurst</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/willie-reese" title="Willie Reese" data-navid="320" >Willie Reese</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/austin-kim" title="Austin Kim" data-navid="319" >Austin Kim</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/matthew-larkins" title="Matthew Larkins" data-navid="313" >Matthew Larkins</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/alfred-jones" title="Alfred Jones" data-navid="310" >Alfred Jones</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/dwight-lewis" title="Dwight Lewis" data-navid="309" >Dwight Lewis</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/donald-lee-williams" title="Donald Lee Williams" data-navid="308" >Donald Lee Williams</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/most-wanted/charletta-payton" title="Charletta Payton" data-navid="268" >Charletta Payton</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/dontavious-gamble" title="Dontavious Gamble" data-navid="317" >Dontavious Gamble</a></li></ul></li><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to/cold-homicide-cases" title="Cold Homicide Cases" data-navid="101" >Cold Homicide Cases</a></li><li class="megamenu_level2"><a class="megamenu_level2" href="/community/crime-stoppers/missing-persons" title="Missing Persons" data-navid="298" >Missing Persons</a><ul class="megamenu_level2"><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/morgan-aryn-bauer" title="Morgan Aryn Bauer" data-navid="274" >Morgan Aryn Bauer</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/marion-bobby-gresham-sr" title="Marion Bobby Gresham Sr." data-navid="275" >Marion Bobby Gresham Sr.</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/mac-nebels" title="Mac Nebels" data-navid="278" >Mac Nebels</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/lori-carroll" title="Lori Carroll" data-navid="279" >Lori Carroll</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/newanna-kelley" title="Newanna Kelley" data-navid="280" >Newanna Kelley</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/athena-joy-curry" title="Athena Joy Curry" data-navid="281" >Athena Joy Curry</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/brenda-ann-walters" title="Brenda Ann Walters" data-navid="282" >Brenda Ann Walters</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/dianna-hammonds" title="Dianna Hammonds" data-navid="283" >Dianna Hammonds</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/robert-mitchell" title="Robert Mitchell" data-navid="284" >Robert Mitchell</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/junaliza-chappell" title="Junaliza Chappell" data-navid="287" >Junaliza Chappell</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/daryl-nicholson" title="Daryl Nicholson" data-navid="288" >Daryl Nicholson</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/artdrunetta-hobbs" title="Artdrunetta Hobbs" data-navid="289" >Artdrunetta Hobbs</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/nikita-wingo" title="Nikita Wingo" data-navid="290" >Nikita Wingo</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/destiney-hicks" title="Destiney Hicks" data-navid="291" >Destiney Hicks</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/douglas-jarmon-ii" title="Douglas Jarmon II" data-navid="292" >Douglas Jarmon II</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/mary-white" title="Mary White" data-navid="293" >Mary White</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/michael-smith" title="Michael Smith" data-navid="294" >Michael Smith</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/lena-morris" title="Lena Morris" data-navid="295" >Lena Morris</a></li><li class="megamenu_level3"><a class="megamenu_level3" href="/community/crime-stoppers/missing-persons/michael-way" title="Michael Way" data-navid="296" >Michael Way</a></li></ul></li></ul></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/smart-911" title="Smart 911" data-navid="123" target="_blank">Smart 911</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/community/next-door" title="Next Door" data-navid="116" target="_self">Next Door</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem5"><a class="dropdownrootitem5" href="/business" title="Business" data-navid="5" >Business</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/alchohol-licenses" title="Alcohol Licenses" data-navid="83" >Alcohol Licenses</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to/renew-your-alchohol-license" title="Renew Your Alcohol License" data-navid="85" >Renew Your Alcohol License</a></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/adult-entertainment-permits" title="Adult Entertainment Permits" data-navid="127" >Adult Entertainment Permits</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/forms" title="Business Forms" data-navid="98" >Business Forms</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/license-revuew-board" title="License &amp; Review Board" data-navid="95" >License &amp; Review Board</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/business/smart-911" title="Smart 911" data-navid="125" target="_blank">Smart 911</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/special-events-alchohol-license" title="Special Events Alcohol License" data-navid="86" >Special Events Alcohol License</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/vending-permits-private-property" title="Vending Permits - Private Property" data-navid="87" >Vending Permits - Private Property</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/vending-permits-public-property" title="Vending Permits - Public Property" data-navid="88" target="_blank">Vending Permits - Public Property</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem6"><a class="dropdownrootitem6" href="/careers" title="Careers" data-navid="6" target="_self">Careers</a><div class="megamenu_container widthcontainer1col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/internship" title="Internship" data-navid="102" >Internship</a></li></ul></div></div></li><li class="megamenu_first" id="dropdownrootitem7"><a class="dropdownrootitem7" href="/i-want-to-" title="I Want To..." data-navid="7" >I Want To...</a><div class="megamenu_container widthcontainer4col"><div class="inner_container"><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/apply-for-internship" title="Apply for Internship" data-navid="126" target="_self">Apply for Internship</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/comment-on-an-officer" title="Comment On An Officer" data-navid="185" >Comment On An Officer</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/criminal-history-background-check" title="Criminal History / Background check / Records Restrictions" data-navid="179" target="_self">Criminal History / Records Restrictions</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/personal-accident-form" title="Personal Accident Form" data-navid="96" target="_blank">Download the Personal Accident Form</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/about-apd/advanced-components/faq-list" title="FAQ&#39;s" data-navid="33" >FAQ&#39;s</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/car-accidents" title="Accident Report" data-navid="82" target="_self">Get A Copy Of An Accident Report</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/impound-recovery" title="Impound Recovery" data-navid="103" target="_blank">Get A Vehicle Out Of Impound</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/get-fingerprinted" title="Get Fingerprinted" data-navid="180" target="_self">Get Fingerprinted</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/register-your-alarm" title="Register Your Alarm" data-navid="81" >Register Your Alarm</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/how-to-renew-your-alcohol-license" title="Renew Your Alcohol License" data-navid="84" >Renew Your Alcohol License</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/register-renew-a-vacant-property" title="Register/Renew a vacant property" data-navid="181" target="_self">Register/Renew a vacant property</a></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/report-a-crime" title="Report a Crime" data-navid="187" >Report a Crime</a></li></ul><ul class="megamenu_column"><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/open-records-request-93" title="Submit Open Records Request" data-navid="93" target="_self">Submit Open Records Request</a><ul class="megamenu_level1"><li class="megamenu_level2"><a class="megamenu_level2" href="/i-want-to-/submit-open-records-request/online-open-records-request-form" title="Online Open Records Request Form" data-navid="297" >Online Open Records Request Form</a></li></ul></li><li class="megamenu_level1"><a class="megamenu_level1" href="/i-want-to/submit-a-code-violation" title="Submit A Code Violation" data-navid="182" target="_self">Submit A Code Violation</a></li></ul></div></div></li></ul><script>
+$(function () {
+ var menuContainer = $('#menuContainer_35_0_0')
+ $(".dropdownmenu a[data-navid='1']", menuContainer).closest('li').addClass('active');
+});
+</script></nav></div>
+
+
+<script>
+    /**********************************************************
+    Dropdown Menu delay disappearance on mouse out
+    *********************************************************/
+    /*javascript to delay the disappearance of the menu when the user mouses out.  Uses jquery library.*/
+    $(function () {
+        
+
+        var timer = null;
+        var delay = 800; //change this number for shorter or longer delay
+
+        
+        //using megamenu
+        var dropdowncontainer = '>.megamenu_container';
+        var activePage = $(".mainnav .dropdownmenu > li.active");
+        $(".mainnav > .dropdownmenu > li").hoverIntent(
+
+            //what happens on hover over
+             function () {
+                 //end timer and stop hiding if they are mousing back in.
+                 if (timer != null) {
+                     clearTimeout(timer);
+                     timer = null;
+                 }
+                 // Find the hovered menu's sub-menu
+                 var $menu = $(this);
+                 var $submenu = $(this).find(dropdowncontainer);
+
+                 // hide any other submenus that are open
+                 $('.mainnav > .dropdownmenu>li' + dropdowncontainer).not($submenu).css('display', 'none');
+                 $('.mainnav > .dropdownmenu li.active').not($menu).not(activePage).removeClass('active');
+
+                 // show current menu
+                 $submenu.css('display', 'block');
+                 $menu.addClass('active');
+             },
+
+            //what happens on mouse out
+            function () {
+                var $submenu = $(this).find(dropdowncontainer);
+                var $menu = $(this);
+                // delay disappearance
+                var mouseDelay = $(this).data("mouseDelay") || delay;
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    $submenu.css('display', 'none'); $menu.not(activePage).removeClass('active');
+                    clearTimeout(timer); timer = null;
+                }, mouseDelay);
+            }
+        );
+        
+    });
+</script>
+
+<script>
+    //$(function () 
+    {
+        var menuContainerID = "menuContainer_35_0_0";
+        var menuContainer = $("#" + menuContainerID);
+        
+        function isIE(userAgent) {
+            userAgent = userAgent || navigator.userAgent;
+            return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1;
+        }
+
+        function isIE9(userAgent) {
+            userAgent = userAgent || navigator.userAgent;
+            return userAgent.indexOf("MSIE 9") > -1;
+        }
+
+        function isTouchScreenEvent(event) {
+            var _isTouchScreen = false;
+            if ("ontouchstart" in window) {
+                _isTouchScreen = true;
+            } else if ("onpointerdown" in window) {
+                _isTouchScreen = event.originalEvent.pointerType == "touch";
+            } else if (window.MSPointerEvent) {
+                _isTouchScreen = event.originalEvent.pointerType == event.originalEvent.MSPOINTER_TYPE_TOUCH; // 2 ; http://blogs.msdn.com/b/ie/archive/2011/09/20/touch-input-for-ie10-and-metro-style-apps.aspx
+            } else {
+            }
+            return _isTouchScreen;
+        }
+
+        var _isIE = isIE();
+        var _isIE9 = isIE9();
+        var isMegaMenu = $('.megamenu_first', menuContainer).length > 0;
+        var currentMenu = $('> ul.dropdownmenu > li.active', menuContainer);
+
+        $(function () {
+            if (currentMenu.length == 0)
+                currentMenu = $('> ul.dropdownmenu > li.active', menuContainer);
+        });
+
+        if (("ontouchstart" in window   // Chrome & Safari (IOS) && Firefox
+         || "onpointerdown" in window   // IE 11 
+         || window.MSPointerEvent       // IE 10
+         ) && ($(window).width() > 648)) {
+            var eventName = "ontouchstart" in window ? "touchstart"
+                          : "onpointerdown" in window ? "pointerdown"
+                          : window.MSPointerEvent ? "MSPointerDown"
+                          : "";
+            if (eventName.length > 0) {                
+                $('> ul.dropdownmenu  li>a[data-navid]', menuContainer).bind(eventName, function (event) {
+                    
+                    if (isTouchScreenEvent(event) == false) {
+                        return true;
+                    }
+    
+                    var currentLevelAnchor = $(this);
+                    var currentLeveLi = currentLevelAnchor.closest("li");
+                    var firstLevelLi = currentLevelAnchor.closest("li[id^='dropdownrootitem']");
+                    var firstLevelAnchor = firstLevelLi.find(">a[data-navid]");
+                    var inFirstLevel = currentLevelAnchor[0] == firstLevelAnchor[0];
+
+                    var hasSubMenu = currentLevelAnchor.next("ul,div").length > 0;
+                    if (hasSubMenu) {
+                        $(this).closest("li").data("mouseDelay", 1);
+
+                        // Menu is not selected
+                        if (!firstLevelLi.hasClass('touch-active')) {                
+                            if ($(this).attr("href")) {
+                                $(this).attr("data-href", $(this).attr("href"));
+                                $(this).attr("href", "javascript:void(0);");
+                            }
+                            $(menuContainer).find('.touch-active').removeClass('touch-active').not(currentMenu).removeClass('active');                           
+                            
+                            firstLevelLi.addClass('touch-active active');
+                            currentLevelAnchor.addClass('touch-active active');
+                            currentMenu.addClass("active");
+
+                            $(' li:not(.touch-active)', menuContainer).not(firstLevelLi).removeClass('_current');    
+                            $(' li:not(.touch-active) li', menuContainer).not(currentLeveLi).removeClass('_current');
+
+                            $('> ul.dropdownmenu > li:not(.touch-active) > a[data-navid]', menuContainer).next().css('display', 'none');
+                            $('> ul.dropdownmenu > li.touch-active > a[data-navid]', menuContainer).next().css('display', 'block');
+
+                            event.preventDefault();
+                        }
+                            // Menu is selected
+                        else {
+                            if (inFirstLevel) {
+                                // non clickable
+                                if (currentLevelAnchor.attr('href') == undefined) {
+                                    //has class touch-active and no link
+                                    removeClassAndHideMenu();
+                                    event.preventDefault();
+                                } else if ($(this).attr("data-href")) { //clickable, but href have been moved to data.
+                                    $(this).attr("href", $(this).attr("data-href"));
+                                }
+                            }
+                            else {
+                                if (isMegaMenu)
+                                    return true;
+
+                                if (!currentLeveLi.hasClass('touch-active')) {
+                                    if ($(this).attr("href")) {
+                                        $(this).attr("data-href", $(this).attr("href"));
+                                        $(this).attr("href", "javascript:void(0);");
+                                    }
+                                    $(firstLevelLi).find('.touch-active').removeClass('touch-active').not(currentMenu).removeClass('active');
+                                    currentLeveLi.parent().children("li._current").removeClass("_current");
+                                    currentLeveLi.addClass('touch-active active _current');
+
+                                    currentLevelAnchor.addClass('touch-active active');
+
+                                    //$(' li:not(.touch-active)', menuContainer).not(firstLevelLi).removeClass('_current');    
+                                    //$(' li:not(.touch-active) li', menuContainer).not(currentLeveLi).removeClass('_current');
+
+                                    $(' li:not(.touch-active) > a[data-navid]', currentLeveLi.parent()).next().css('display', 'none');
+                                    $('> li.touch-active > a[data-navid]', currentLeveLi.parent()).next().css('display', 'block');
+
+                                    event.preventDefault();
+                                } else {
+                                    if (currentLevelAnchor.attr('href') == undefined) {
+                                        //has class touch-active and no link
+                                        removeClassAndHideMenu();
+                                        event.preventDefault();
+                                    } else if ($(this).attr("data-href")) {
+                                        $(this).attr("href", $(this).attr("data-href"));
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                });
+            }
+        }
+
+        
+
+        function removeClassAndHideMenu() {
+            $(menuContainer).find('a.touch-active, li.touch-active').removeClass('touch-active active');
+            $('> ul.dropdownmenu > li > a[data-navid]', menuContainer).next().css('display', 'none');
+            // If we don't change the menu item, we should keep the old one.
+            if ($('> ul.dropdownmenu > li.active', menuContainer).length == 0) {
+                currentMenu.addClass("active");
+            }
+        }
+
+        $('body').bind(eventName, function (event) {
+            if (isTouchScreenEvent(event) == false) {
+                return true;
+            }
+            if (!$(event.target).closest('li.touch-active').length) {
+                removeClassAndHideMenu();
+            }
+        });
+    }
+    //);
+</script>
+                
+                <!--startindex-->
+                <!--!!WidgetEnd-->
+
+    <!--!!WidgetStart, vi-orderdata="0"  vi-hideonmobile="false" vi-widgetinstancedata="36"WidgetStart!!-->
+
+                <!--stopindex-->
+                
+
+<div class="broken_links_reporter">
+    <form ID="broken_links_reporter_form" action="/Home/BrokenLinksReporter" class="front_end_form" data-replace-self="True" formContainer=".broken_links_reporter" loadingContainer="body" method="post" need-ajax-submit="true" need-write-proxy="true" needLoading="true" postEles="input[type=&#39;text&#39;],textarea,input[type=&#39;hidden&#39;]" write-proxy=".error_recaptcha_field"><div class="validation-summary-valid" data-valmsg-summary="true"><span>Please correct the fields below:</span>
+<ul><li style="display:none"></li>
+</ul></div>
+
+    
+    
+    
+    <input id="ErrorIdentity" name="ErrorIdentity" type="hidden" value="WE2C4JEYEO" />
+
+    <h1 class="error_subject">
+        Page Not Found...
+    </h1>
+    <p class="error_message">
+        The page you are looking for,<br /> <b>http://www.atlantapd.org/Home/ShowDocument?id=1182</b>, <br />may have been removed, renamed, entered wrong, or is temporarily unavailable.
+    </p>
+    <p class="error_tip">
+        You can go to the <a href='/home'>home page</a> but why not send us information that may help resolve this issue?
+    </p>
+    <div class="error_comment_field">
+        <label class="hidden for_assistive_device" for="Comment">Comment</label>
+        <textarea cols="20" data-val="true" data-val-length="The Comment field must be no more than 2000 characters." data-val-length-max="2000" id="Comment" name="Comment" placeholder="Enter some details about what you were trying to do here - like what page you were trying to access - and Submit this page" rows="2">
+</textarea>
+    </div>
+    
+    <div class="error_recaptcha_field">
+        
+<script type="text/javascript">
+    var RecaptchaOptions = {"theme":"custom","custom_theme_widget":"recaptcha_widget"};
+</script>
+<div class="recaptcha">
+    <div id="recaptcha_widget" style="display:none;width:330px;">
+       <div id="recaptcha_image"></div>
+       <div class="recaptcha_icons">
+            <div class="recaptcha_reload"><a href="#" onclick="Recaptcha.reload('t');" title="Get another CAPTCHA"></a></div>
+            <div class="recaptcha_only_if_image"><a href="#"  onclick='Recaptcha.switch_type("audio");return false;' title="Get an audio CAPTCHA"></a></div>
+            <div class="recaptcha_only_if_audio"><a  href="#" onclick='Recaptcha.switch_type("image");return false;' title="Get an image CAPTCHA"></a></div>
+            <div class="recaptcha_only_if_help"><a  href="#" onclick="Recaptcha.showhelp()" title="Help"></a></div>
+        </div>
+       <div class="recaptcha_only_if_incorrect_sol" style="color:red">Incorrect please try again</div>
+       <div class="recaptcha_response_area">
+            <label for="recaptcha_response_field">
+                <span class="recaptcha_only_if_image">To prevent spam we utilize a verification code system. Please enter the code as it is shown in the box above:</span>
+            </label>
+            <label for="recaptcha_response_field">
+                <span class="recaptcha_only_if_audio">To prevent spam we utilize a verification code system. Please enter the numbers you hear:</span>
+            </label>
+            <span id="recaptcha_challenge_field_holder" style="display: none; ">
+                <input type="hidden" name="recaptcha_challenge_field" id="recaptcha_challenge_field" >
+            </span>
+            <input type="text" id="recaptcha_response_field" name="recaptcha_response_field"  autocomplete="off" class=""/>
+        </div>
+     </div>
+</div>
+<script>
+var RecaptchaState = {
+    challenge : '03AOPBWq_vlKW-b0UdnvSFHfUX5BlPJuYsxAwsF2IjvdIe5ENIFm5GtFxFS5aNZk2saccaWb5F9QOIc9r6wmfJeKRsw6fDuGFeHlSb016mcEN1w6yV9Tjx5birtzRfwkmxYzwa0WZPh45zzIX9N54isGcXlOXjAr7Wp26ULLjnNSlKgi0pbkaVTL1L061gN54oAX5iN6M4lO26',
+    timeout : 1800,
+    lang : 'en',
+    server : 'http://www.google.com/recaptcha/api/',
+    site : '6LfkWgoAAAAAABHDt5jpZlXr3kne1JtyhsCnYzZG',
+    error_message : '',
+    programming_error : '',
+    is_incorrect : false,
+    rtl : false,
+    t1 : 'Ly93d3cuZ29vZ2xlLmNvbS9qcy90aC9vVVJQM1ZjdkR0U1pST0x4Ny0wR1duZ21ESUVyd3d2MHdyXzVxWkZwUnI0Lmpz',
+    t2 : '',
+    t3 : 'bUtMb0NCYmVaZmxHYlJVMCtmSVA0cUlmejRIZmZTQ1BNdURHQlpFVHMvaUN4UnJyRjVuczBvNWxGTERnUDM1aW4yQmlTNGpFajY2emIwcFFheWQrbzFZaUM0RndWdTl0L21mNjd0USsvTm14aUVFak5sL2ZwNTIwejc5RTNpNkZaNlo3YVlEaHRQdHBvbFFMQWhWR01IVjZxaHVRZmFqVStkZW1ZS082SzNrRlZxM25nbVcvb3Z6VEVYaW1OZmRNanRhVzFudzJhZHYrc1h4QVEycWQxeHc3U1ExN2grSmpJRk8wZitnVGtVMHoyUHRRSlJIMFlUL1Q2NXNpSjlrOXdNdTMxemRCbjJBWVZZTlQwckJkdVlzVFlwVXFLOWMrWUQwRUgrWmE4YWVTSFp0WW1leng5Mk9OQ3JSWklqcHJhMElxSlJIcmozVWxkWHdjR3lnSzh1UGVMR2RyWjQ0T2hMdk1EbzU1S0VDV2xRQW5GWFU4VWU1QkwrZTBsSmlqVEpCVkt4endNc1c0WDEyMGJEVGdrSi9SK2Q3QXRKN01RY25SV2lYdmlMMkJvbFdVM2ZaSzk0dHhWS2dlVGtiSGxrQ2NUaTNDOEJEOGxxRW13eXlDTXZYOGZGTFBiTWxTVVRVV21wNGNoVFM5bTFUd2htcVlSYk5tL1A0TkRQQTduV0hUWmRLVlJ1YzdUdGJrbUVTR1dXVEZYcUdhS1ZrbXZHMFkyaVI1aS80RUZGZE5BeUlQcklvRmVMZUdPYm1SalQxcmVQNG8vTnR1eTJwNCtka1FkeGNyTVB1dWwySnBwTFdWNVVYZmtpb0NUYllyR1dwaWpnOVNTUGo3d0hmRFozVm5aY3pjSGJvOTM0YmpsUzJHVFZJNHRYSlZEK0tFN1FIV3ZPUFdHbGlDeDhqTGVubTdwempOYVQwbmNDVEo5cUw3OFZta2RWSnFlQnIrZkh4VHEwZkJRdDNwdUtta1BrWVRlNEE0eUpvZW5yZ0dKdWJHRDdldTE5NUJ5endUeDdRT2dDZk1PVStTZ0RJbFNZa3ZkRmVyeXZSWVJVRDdiWXlYOG1HNkZVMUVlUnU4dS9TWGhHNmNaSEo3REZiU3J1cVEvWnlwVHJZTkd4WG9aZG1kOXZ3ZUpMei9ibzl3dEtuVEdkR0kvcW91TndTdG42d210MUtOYVpwZzU2U3h6TS9BcmszeENsQTlack1URDlML2ROWkx0YnhKdDZWWWN0THo3ZXdzWllLV21hNWQxbkFzcGxFcUtDVXJHdVo1RFJ6cVl2cVliZkh5TVhZZko2b2E3K2o1bXdFTVAwTXM2Vyt2dkd3NWZ4eGxYNGcrKzErVm80QlpJTDFaNTR1QjVwYUpIbUZzd3doelJFeXYwTVVuVmxqWGtqVTRBY2pjRWpiVkxhYWI5Q0lBQWNGZUpNMVRWclJpc1hsMElHR3JGcTdBT3hnNVdZWFBqbEgvRFovbUpzdVhOa0VucVRwdHNXMGdqS3VIWk5pQzhFcXVyTHlSdUw2UTAydDNnQ1l5RnNFNEc1U0pCQ3EvMHhiMHN3WGRMMWxpOUNXeGMzRzJJVkovTzBVbTVjdlJKcjV3NUlZa2tiRy9IMWdHTFNaT1YxK1BMemlTSDIxK1FmVTFhZUFYdjdPQnpiR3I4ZmlzZFpySnZkblAyODh0RjV3RENidFgyT3lRUEUyWXBackZ6ekhqVHIxd2pTR1VSZjV5MkdWRHJuQTNyTitSczh5eURlcTBHNEJaLzVST01kTkhJVFA1TitVUU9zYU1WaS9XbEwra0k4TU91RitHejRmY0QrYWVsbjFqZ2JFM3Z6U0hEZXBWNktWc1kvUDNEUHlobkFvZ3pSLzJsdk1Mc080RGcyQkpVa2VrZFEvdUo5azNCUFJZeFZickQrazgvQzU4cDFZbHorZTlEa2IxMGJ4Q1JTRHJzZ1FaTFZVTG1mTDJ3WWI1NW90TWZSNEtaeHJtZUo5aDVsUmY2c0ZFT0VXRHpKWGNGR0hzRGFNMDR2d3RKVWlLblUwT1NoYXJuMysyZ1RSM1NoekYyVUFadnhweUU2QldZa0VpNGJueGc3UjJwT1Q5RnJrVEVVbTZDREFDZzBiTlcyUmd4bElaTDhYV21rWjFZdzBCak5HcGcyQVpNYTQ4c2NiaUVZZm9Xd0lnamtzMWZ2YkpKbCtkOWh6YmJHMTlmVjhZaXAySzhDa3hpQWYrT2F0MUdYSHgxUnFsekQxOXEvMWVTem9FTWdDU2NkTzcwNU1ySnlYdmIzT2IwajZuZk9QUWtDMHZzem4vaTJmNlFPam01TVNaR1FKbnpCNUNIazJ1TnhnU2VUelV5ei9Ma1d5aGptbzFXYVVmRTQrdjFOTitlS0N6UEUrbzNtZEtRem9hcWNzY0Z2RlJ0WThNRVp3VlNiYlBoakg4SThEWEExVTdyd0NsUEJ0aU5Jc29hVUQvSDIwbXR0ZTBKYTFoNDFjaWJHY1RSa1JQbnYvSWVvUmRKMWZOc2dvZGdKUnpOVU1URjhKdFdwWnptUDBDM2h5and3SXpmbTVhbUUxd3JDcis1Vm1CaXFGM05odnEzTmhESUhHeXVIZStsbHY0bE9HOUFNdk1rTE5mUzdHd2t3MjRhZ3M0d0d5ZUxuMHphNEFuYXJFV0hYWkdQOUF3aGV3N2drcWtFRWpvYk1TY01tbGtaZys4SU5uTDdmTEVSVnZBQjYzOVFSbHNWY3pBbklDU0c5N253ajZMNmFVWjJzNkhuaW9hWFlXenVCb0duNWZhNEo1TC9rNnBKbElTanFuMUx1b2hKN21YellkeGJWNE9mZXYreGM4aHRtTXNNb2g1OEQ0UG1nRnpnbHhCUE5OTWpnYXJ2dFBNU0loc2pieXU3dkdsZVlQUmdlTFI4TXQ4ZzNDc2VpRWpDNG5uRHNOQ085N1pqYTdWc0ZoRTJqNFlkTzllOVhzeStvbCt2eXBoeU1oRVlwTm5VaUZzT0h5SHhucXY1VVJEMkZtTURpdC9lUUl4NjE1aERUL3F6bXRHU1ZNdm4vaVY1dEVhb3BCN3pQM0VSVGhWak9BOWJRWVpEdmZJUUVHU05Fd0pwb2pMZUZmWjZ0Q1hqTHl3Z3hWUFZSRG1OVlY5MlJwdjhrNytjUzRrdnRPSFc4amlMTmpiQXhmdjZRUHZQRVhPZzJVVWVaUDEyc1hPcThxb3M1NURHRmg0ajI1K3I4ZTlQbzJ5WmMyN3ZjV0NNcFA3eXVtWG5aWXpZcXFkZnFwV2xtNlhOd3I0UHVpVGZsTUN0N3RXdnRtSjBVaVdIWFJnRHlEYnUxL0tWbFpmNVJWUlAvS2JtNTFFSTJ3S2F6bkE2QjZNOVJTWldSNUQxa3RtOUZwOWVTYXVUb3JHZTI0dDlmb01SeXpJVFJOK0luaC9KbXU5RkNhcU04NEEyM1RyZ0pMczJ2Z3U4SXFEUmhlc3AvU1I1Z2VsS1dFcHRuRGh1M1FibE4yci9pNXRjOHo0Wmxpam8zN2Y4QWVDbTlMeHM0QjlxWmI4RWdtWlFFRHVTQ3I0V0t1QzdRR2FPTzM0Tm9MVGRyRmNYTjg1UFA1c1N2cUtQOWlvOFVTZUwxTDFqYWl2cjZRbWJ0M3VLN2svTTFDT2pnTjVRb2I1MmR2cHhTa2p2RWxuR1dyeFRPWHBnL01WTUdqeHBpZHordzMzZW9LNlNXNDRDMGFaYU82RjBpRTVIVW5LazNvRVVRZVF3Y0ZYTHFuSmQrZEkzK0pqTU1idkhXNkJsRytaR082SThvV0VZbjFucWowUDZEY0dnaEFTdlVvUWNPNnZvWm40YUdRS0dCcUxoL1NabS8wUXUvVmpEbTF0Rk8zcnYyWDhzM1hGSEdRczNWL0R6ajR1ZHhJZitRQldiS3c0cm83T3V1UVJnVUpHZmxPS2JCbFpvellabUNVQ1hIVE9yTjNYTW42ODRWMmx5Y2JMaFdqZVFCc25ldFFycFVzQW5BS0ErUEw5Ump0L2NKTDNmSnRLektIS0U0QnQ3ZjMrWVZhNHpEd29veTJ3VEJFc3VERHRYYmJlL1ZxZ0hpWVcwemZoZG5vYkhaMUNMUmxRTGJVQkdyNzhoeHRUY2VlcG5MdW9xTjhHbVJDV3FBU2RWVTF5STNFaXM5T2V1WVVLNkM3TUkvWDh2clBDZE9oZUR5RzU4WU9NYXlaUHlQR0V2WTVSblFmdnhSbVdqWDlVamE5Smk2dlF0V3VSaC9oK2FxN3N0MWZIVDE0c21nY3ZyMmNzWkkxZWZpZ1N2ZFRxa2U5eUMxK2REOVVFZm5IWDlrVHp1SnYreTM2R2pYdUJnUDJ0aW1hbi9hNW9ycTMxR2piQWQxNUJjeWhkdnVnd1dOejA0M2xpcWJUcTJRNVc1VXg0T0hXNjB2NjYvdFM1SVhuRUlGM0hMZVVNYzJXVDl1QS92NFlDL3l2MWt2dUdiV3d1TlpFUEJQQ1FQZzdqam5XM1lKa2NDajNzQjE4N05qMTVwb0RUZUNsdXNyUnZJbCtWVWlORXhnUFBWMnFERE9QWktURkIyUGhNVHRUQm42Uy9nbHdCdTgxUy9EZy9MWTYyenFhVjJPWXdjbXlkQWdOSFV5eXhKUkQvOVB4VWVMTXhyeVRzVFNERjcxZVc2aDNFRFdudEVDUWdXc0lVdFdqNFcrMm9kSFEwaFdrMFJIZmpBNlN5NTQrQ2FxKzdtcFNBV0E2N25IUDBwcnoraktvR1NJN01YZWd3UTZ1UGtScCtkRk15anRKY0tYdlU0cHhocEZ3MVBRcnpzOFUwamtZWVo5U2FtMUptWUpXSys0dkxWZTNXdTBBaVB5VEVKOHlmNGdjWTc5SlVBR2R2ODRzNWpSVEVsam93bVZMRnlSVkFSVGpERk05WDQ4MkQ5b0JrUkNiNTJPRk9UcldpYUcxKzBDQ1RZSFUyQktxVFFpN2g1QXFKbWp0VDg1c2IzbkozeXkvcDFyT21mS2dHa0hydkh5VEZiVkZRVmkwK0ZDamhiVmFwZXd5V0JHK0xhV0ROeXUrN0RISzRyOHNFVzlGK0VjLzRSOGJaazFLb0dOWHRKNGk2clIySEIrSHZ0Y3FkTlI1UDNrYXEvOXcxV3ZZNjdTUllZQkc0RjN1RTZLL2duck1JdDdMQjFnQ2duNXRhVTlwajZlbVBMUWloYzhFV2d1UnNzOXU4T2tSNXNld3Y5SEk0SlI4dGJUaHpTUFlMc1VLdklpN3h2R01oTmdCazdtWGEreWF5T1lmUlhoakp1azFyZTdDT3MvUTBuckg2SjNER2t1WjZLOTJOcHZBQVZ2ZldyL1UydXhjTnNNd2hIcmcxTERRSWFId2tjdmVrZWpNbUdXL1BlT1U5cldEQ0JKTUQvU0xGNlFWQnJVcDFRaEtnM0ZRYTZsbXdrUDJodDJvY0NRNjBMSWF3dFVSaWlVSWczdkdnNEdmcXIvQ2xUVHdlOXo1NFhreTVYOGx2Z3dFbTJSeDFtWkEwU3hMNzR3SW1JK2ZhMWROSWJ3b0pHUkZrVnFEWjI2THFwdWhDbzNRU1gyM2cwb1dxZDdIazJTdnMwS3dqblFQcVJtb3dvSUJJTkIweEp1RWhOWE1vQUhBZk9PRXZBYkRMQUdwelpJWDh0d2FZZkJZQm9SL3J6Y1NGbkJRMU9mKzQ0am9nb1NPYjlpQTIvV1lFS0pWNnJNMDRoZ05rU2dYb2g2UHNldS9hMGQ1NFdaRFR1SXQyQm01WXViZldHQTF3UitjMm1abFQvenNrT0VJamprV21mZE5IOGZab3o1Sm8yWU9IREdnQjQvemg0OTRMVnpQWVJvTU9SSW5mVC85WGpqejRBZkRoRUlZcUphMEVmam9Bamd5MWZwV1NHQmg3WWV2SUtvRElNaXUrS3diZ1lIYlVSaG9yMmE2d0xjbDdnWEl6TU1BdGhKWjljbklIL2lXVUZmbU1zSkxsRGhqaklPczJObUNNTmMyYWxoRDhCcFVkVk9GS3NuYnpjM3BYMHJheWVYS2J2SFJ5Tm9xaWtGaVdWbnhWeHVHbWRDa08wUDNLN0k3QW5DZ2FZQVJSS3ROWkVDNC9YdVVTeVIzNFNkMjlkT2hMV0hISFNydVdBMDhMa1EvK3hoNGlwUkowdmVpWllNTS9rL1IvKzRMODJwdk5TdnUzTzJ0YmpkeExVL0M0aUxXR0FLQk5naHpMcElscG1BaUxQdnQxZGRtM2lrNGZZOEVRZlZTN3NEZ1pVVEpqY3BtUEhpYmw4TCtOUmNuK0VFSmhMRWEzNWNuVnVrS2tyS0tjZmxSNE9VeEcwaGJ0UldYOFJNVU54ZUFkTm1aQ1N1VW1DRmVZaDcwNVk2LzVFNGY2OTludlBtWU50TmowbHZ3Q0VlRXJjSDAxUzRkMDBSWlRaNFA5SFNNMm90b2ZuY1VIMUxsWnE0M1lBZmVuTURwQnE3R2Ntc2ZOekZ1TURyME1zWFkzZHBEeHR2dVBwTjNuZFJUT004SDFNL3M4bXlzZDRSSVMrVkQ1OEJpSmwwZTNIZFMzNlVtRnJIdkJRcGk3RG54Zkc2STRBVzJoK2FaVm4yVjNML2R0NFdXL3hHRkdZck9yUXZJSC81WEZHMkc5TnQ1dXV4elZKT3RoWTJxTlJlYUozdmh3QTR3c0xESUk4eHROT3lyMTc0R1FSNUdLUVJMOFVTbjdFQjNZZFNnNlNnaC8vUkF6Q0xqQ29PN2RZeFdLK04xTWRNeUVFNzJmalhWajdyaFVkTDFrSVhoUDB5ZW8vYWtncHEyUWo0Y2lqMXE2VklkRXpvT201VTJjQW9zWHRrYWxVZnVhVkFxK0JYRENsVm9jS2JNWTQwMDVyMTJIellLRVJBMTFIcU9ZUDNSWW1TMGp2TlV5UlMraU1TS0Zob1JiVnFHTkdiSm9TSy9DWlNOa1ZYZ2hacEV1cXNockpXMndKeFVRajdjUXdnaUEyL0M0cVZ3V3NmYUhtUVMxM0JibzA5V2F4bWVFaVFlZ0tSSEp3M3RYR1lLQS80M24vRnA4dGdNSTNkYWUrNUtFRGNhMjRtajExVnViaVVMc3EvSEtwVjVnaThITkNjNFRqTUt0STVORWVuT1lNTi9zNi8zQVBQWkIwV1dBT1dQK1MxL1dHWHRzK2tLRXN3bHExek03eXlwTnJkUnkzT1NLK0JkZXNvaFJXWktXeklsVWxJRWFVbG9vS0ZEWGJkSVRXaDNTbndRbUJJSE1MejFNZk1SWnpLcXh0MXhqV0xHMFcycmg4bllhODBqYllpMEwrTEFKWE1SMGZ6bWc5ak5hTzkwNHQ4bW9ZNVZZdGNZYzBZemRnMFY2MFBCV3J0Q3N1YXVHQ0xrTE1PalFGUFozb0lZTm5lbzcrMlc2enR2Q2c9PQ\x3d\x3d'
+};
+
+
+</script><script src='/Shared/GetRecaptChaScript'></script>
+<noscript>
+   <iframe src="http://www.google.com/recaptcha/api/noscript?k=6LfkWgoAAAAAABHDt5jpZlXr3kne1JtyhsCnYzZG" title="reCaptcha Security"
+        height="300" width="500" frameborder="0"></iframe><br>
+    <label for="recaptcha_challenge_field">
+   <textarea id="recaptcha_challenge_field" name="recaptcha_challenge_field" rows="3" cols="40">
+   </textarea></label>
+   <input type="hidden" name="recaptcha_response_field"
+        value="manual_challenge">
+</noscript>
+<script>
+    $(function(){
+        window.setTimeout(function(){
+                //Set a valid width for Mobile 7-24-15
+                if($(window).width() < 350)
+                {
+                    $("#recaptcha_image").width(230);
+                    $("#recaptcha_widget").width(280);
+                }
+
+            try{
+                Recaptcha.focus_response_field=function(){
+                    //prevent recaptcha_response_field from focusing.
+                };
+                $("#recaptcha_response_field").rules("remove");
+                $("#recaptcha_response_field").rules("add", {
+                    required: true,
+                    messages: {
+                        required: "The Validation Code field is required."
+                    }
+                });
+            }catch(err){
+                console.log(err.message);
+            }
+        }, 100);
+    });
+</script><input name="__captcha__type" type="hidden" value="Vision.Cms.Mvc.GoogleReCaptCha" />
+    </div>
+    
+    <div class="error_button_field">
+        <input class="command primary" type="submit" value="Submit" />
+    </div>
+    </form>
+    <script>
+        $(function () {
+            document.title = "Atlanta Police Department : Page Not Found...";
+        });
+
+    </script>
+    
+</div>
+
+
+                
+                <!--startindex-->
+                <!--!!WidgetEnd-->
+
+    
+</div>
+
+</div>
+
+
+        <footer id="page_footer" class="">
+            <!--stopindex-->
+            
+<div id="footercolumn" class="site_template_column  footer_column   "  >
+
+                <!--stopindex-->
+                
+<div class="social_icons">
+		<a href="https://www.facebook.com/AtlantaPoliceDpt" target="_self" title="">
+			<img src="/Home/ShowImage?id=272&t=636095345086430000" alt="facebook" />
+		</a>
+		<a href="https://twitter.com/atlanta_police " target="_self" title="">
+			<img src="/Home/ShowImage?id=278&t=636095345089070000" alt="twitter" />
+		</a>
+		<a href="https://www.youtube.com/user/AtlantaPoliceDpt" target="_self" title="">
+			<img src="/Home/ShowImage?id=280&t=636095345090170000" alt="youtube" />
+		</a>
+		<a href="https://www.periscope.tv/Atlanta_Police/1nAKEMNnzRAKL" target="_self" title="">
+			<img src="/Home/ShowImage?id=276&t=636095345088130000" alt="periscope" />
+		</a>
+		<a href="https://www.instagram.com/atlantapolice/" target="_self" title="">
+			<img src="/Home/ShowImage?id=274&t=636095345087200000" alt="instagram" />
+		</a>
+</div>
+                <!--startindex-->
+            
+    
+                <!--stopindex-->
+                
+<div class="footer_address">
+    <p>Public Safety Headquarters</p>
+<p>226 Peachtree St SW</p>
+<p><strong>Atlanta, GA 30303</strong></p>
+</div>
+                <!--startindex-->
+            
+    
+                <!--stopindex-->
+                <div class="footer_info">
+    <p>Police Information:</p>
+<p>(404) 614-6544</p>
+<p><strong>Emergency: 911</strong></p>
+</div>
+                <!--startindex-->
+            
+    
+                <!--stopindex-->
+                <div class="footer_email">
+    <a href="emailto:apdwebmaster@atlantaga.gov">apdwebmaster@<strong>atlantaga.gov</strong></a>
+</div>
+                <!--startindex-->
+            
+    
+                <!--stopindex-->
+                
+    <div class="footer_nav">
+        
+    		<a href="/#" target="_self">Home</a>		
+    		<a href="/about-apd" target="_self">About APD</a>		
+    		<a href="/services" target="_self">Services</a>		
+    		<a href="/community" target="_self">Community</a>		
+    		<a href="/careers" target="_self">Careers</a>		
+    		<a href="/about-apd/contact-us" target="_self">Contact Us</a>		
+    		<a href="/about-apd/site-map" target="_self">Site Map</a>		
+    </div>
+    
+    <p class="footer_copyright">Created By <a href="http://www.visioninternet.com/sitecredit/">Vision</a> - Where Communities & Government Meet </p>
+
+                <!--startindex-->
+            
+    
+</div>
+
+            <!--startindex-->
+        </footer>
+        <div id="view-options"><a href="javascript:void(0);" id="view-full" onclick="viewfullsite()" class="mobile_only">View Full Site</a></div>
+    </div>
+</div>
+
+<script src="/Project/Contents/Main/mobile_nav_scripts.js" type="text/javascript"></script>
+      
+
+    
+
+
+    
+
+    <script src="/Scripts/ScriptBundleVisionFrontend.jsbnd?v=-Ub_t_HCwV5TB85O2akRv5gCvXQLqocQzt-RX_mFmv41"></script>
+
+    
+    
+    
+</body>
+</html>
