@@ -1,7 +1,7 @@
 ---
 title: Census Data All Around Us
 author: Dov Chelst
-date: []
+date: '2017-06-25'
 slug: census-data-all-around-us
 categories: []
 tags:
@@ -11,15 +11,17 @@ description: ''
 topics: []
 ---
 
-- Importantce of census data  
+- Importance of census data  
   - New release
-  - Issues about level of detail
+  - Basic description of rates
+  - Issues about level of detail - when rates vary by gender, age, or race
   - Applicability to a wide range of applications
   - graphic and table?
   
 - Incidence rate examples:
   - Crime rates (7 part 1 crimes)
   - Fire rates (fatality & injury)
+  - Incarceration rate
   - Disease rates (Lyme disease)
   - Foster care incidence rates
   - Infant mortality
@@ -44,3 +46,4 @@ https://www.census.gov/content/dam/Census/library/publications/2016/demo/p20-578
 
 https://www.cdc.gov/lyme/stats/tables.html
 https://fivethirtyeight.com/datalab/how-your-citys-public-transit-stacks-up/
+http://www.sentencingproject.org/the-facts/#map
