@@ -1,7 +1,7 @@
 ---
 title: Census Data All Around Us
 author: Dov Chelst
-date: '2017-06-25'
+date: '2017-06-28'
 slug: census-data-all-around-us
 categories: []
 tags:
@@ -10,6 +10,51 @@ tags:
 description: ''
 topics: []
 ---
+
+At first glance, census data should be unrelated to public safety data? 
+At its heart, the [US Census Bureau](https://www.census.gov/) 
+gathers population data.[^1] 
+However, population data provides important context for understanding 
+other measured quantities. 
+Moreover, it allows comparisons between cities, counties, or states, 
+of varying size. 
+
+The Census Bureau recently released a new set of population estimates last week.
+For many uses, a location's total population is adequate. 
+Nevertheless, for specific research applications, it can be useful to separate
+the population by age, sex, and race. 
+Data can be obtained using 
+[American FactFinder](https://factfinder.census.gov)[^2] or its 
+[data directory](https://www2.census.gov/programs-surveys/)[^3]
+At present, here is what is available for 2016: 
+
+  - At the state level, population is divided by sex, race, hispanic origin, and 
+individual year of age.
+[download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/state/asrh/sc-est2016-alldata6.csv)  
+  - At the county level, population is divided by sex, race, and age group. 
+Age groups are usually in 5 year increments: 0-4, 5-9, etc.
+[download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/counties/asrh/cc-est2016-alldata.csv)  
+  - At the place level (city, town, etc), total population is available.
+[download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/cities/totals/sub-est2016_all.csv)
+
+Census data becomes the basis for converting counts to "rates." 
+These are just variations of percentages, often for situations that are 
+rather infrequent. 
+In other words, some number of people are counted and divided by the total 
+population and multiplied by the appropriate power of 10. The rarer the event,
+the higher the power of ten. 
+ 
+Rates derived using census data have many applications. Here are a few examples 
+with approximately least half focusing on public safety settings.
+
+- __UCR crime rates__. As discussed previously, 
+each law enforcement agency provides its annual crime reports to the FBI. 
+There is no valid basis for comparing total crime in 
+different cities of varying sizes, 
+or between a municipaltiy and a state or national average, 
+without first converting to a standardized rate (crimes per 100,000).  
+- __Fire death rates__.
+[Fire Death Rates](https://www.usfa.fema.gov/data/statistics/fire_death_rates.html)
 
 - Importance of census data  
   - New release
@@ -28,8 +73,7 @@ topics: []
   - Education rates
   - Public transit use rates
 
-https://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml
-https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/
+
 
 https://www.usfa.fema.gov/data/statistics/
 https://www.usfa.fema.gov/downloads/xls/statistics/death_injury_data_sets.xlsx
@@ -47,3 +91,8 @@ https://www.census.gov/content/dam/Census/library/publications/2016/demo/p20-578
 https://www.cdc.gov/lyme/stats/tables.html
 https://fivethirtyeight.com/datalab/how-your-citys-public-transit-stacks-up/
 http://www.sentencingproject.org/the-facts/#map
+
+[^1]: I know it supplies much more data. I'm just focusing on population data for this post.
+[^2]: I recommend using the _Advanced Search_ features.
+[^3]: Population estimates for 2010-2016 are 
+[here](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/)
