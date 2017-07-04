@@ -48,15 +48,15 @@ the higher the power of ten.
 Rates derived using census data have many applications. Here are a few examples 
 with approximately half focusing on public safety settings.
 
-- __UCR crime rates__. As discussed in previous posts, 
+- __Crime__. As discussed in previous posts, 
 each law enforcement agency provides its annual crime reports to the FBI. 
 There is no valid basis to directly comparing total crime in 
 different cities of varying sizes, 
 or between a municipaltiy and a state or national average, 
 without first converting to a standardized rate (crimes per 100,000).  
 
-- __Incarceration rates__. Nationally reported crimes and other offenses can 
-lead to arrest and eventual arrest. The 
+- __Incarceration__. Nationally reported crimes and other offenses can 
+lead to arrest and eventual imprisonment. The 
 [Bureau of Justice Statistics](https://www.bjs.gov/index.cfm?ty=kfdetail&iid=493) 
 measures the number persons in local jails, and in state and federal prisons. 
 This is converted to an _incarceration rate_ measured per 100,000 residents. 
@@ -69,14 +69,14 @@ shows rates analyzed by state and gender. Similar information can be obtained
 at [The Sentencing Project](http://www.sentencingproject.org/) which also
 focuses on racial disparities in incarceration rates. 
 
-- __Foster care incidence rates__. Through no fault of their own, children
+- __Foster care__. Through no fault of their own, children
 may be removed from their homes and placed into the foster care system. 
 The U.S. Department of Health and Human Services' 
 [Children's Bureau](https://www.acf.hhs.gov/cb) monitors the number of children
 in the foster care system on an annual basis as well as the number of children 
 _entering_ foster care each year. 
 Researchers use the census bureau's population estimates for children to 
-foster care counts to rates measured per 1,000 children. 
+convert foster care counts to rates measured per 1,000 children. 
 These rates vary by location, both between states and among counties within 
 the same state. 
 There are also obvious differences in the rates of children entering foster 
@@ -85,7 +85,7 @@ The [Kids Count Data Center](http://datacenter.kidscount.org)
 has a nice site that includes foster care data, including rates for
 each state.
  
-- __Fire death rates__. Switching from examples of crime and child placement to
+- __Fire fatality__. Switching from examples of crime and child placement to
 a different aspect of public safety, let's take a look at the fire service.
 Overall fire deaths are quite rare. 
 [The U.S. Fire Administration](https://www.usfa.fema.gov/) 
@@ -101,7 +101,24 @@ The USFA's comprehensive report on
 detail on fire death rates separated by gender and race.
 [Data download](https://www.usfa.fema.gov/downloads/xls/statistics/death_injury_data_sets.xlsx)  
  
+- __Infant mortality__ Continuing the last example's fixation on death, 
+infant mortality is a measure of child welfare that has been used internationally
+for at least half a century. This mortality rate measures infant deaths per
+1,000 live births. The national infant mortality rates is 5.9 per 1,000 births.
+The Centers for Disease Control and Prevention's (CDC)
+[National Center for Health Statistics](https://www.cdc.gov/nchs/index.htm)
+shows 
+[variation in infant mortality rates by state](https://www.cdc.gov/nchs/pressroom/sosmap/infant_mortality_rates/infant_mortality.htm). 
+Here's an alternate graphic at 
+[America's Health Rankings](http://www.americashealthrankings.org/explore/2016-annual-report/measure/IMR/state/ALL).
 
+- __Disease__ True to its name, the CDC maintains a system to monitor serious diseases.
+As many of these diseases are quite rare, they are converted to rates before 
+comparing different occurrences in different parts of the country.
+For example, [Lyme disease](https://www.cdc.gov/lyme/stats/tables.html) is 
+measured as confirmed cases per 100,000 persons. Nationally, Lyme disease occurs
+at a rate of 8.5 per 100,000 persons, but can rise to 8 times that rate for 
+some states in New England. 
 
 - Importance of census data  
   - New release
@@ -117,18 +134,10 @@ detail on fire death rates separated by gender and race.
   - Disease rates (Lyme disease)
   - Foster care incidence rates
   - Infant mortality
-  - Education rates
   - Public transit use rates
 
 
-https://www.childtrends.org/indicators/foster-care/
 
-
-https://www.cdc.gov/nchs/pressroom/sosmap/infant_mortality_rates/infant_mortality.htm
-http://www.americashealthrankings.org/explore/2015-annual-report/measure/IMR/state/ALL
-
-http://www.huffingtonpost.com/entry/americas-most-and-least-educated-states_us_57dc22f2e4b053b1ccf2990f
-https://www.census.gov/content/dam/Census/library/publications/2016/demo/p20-578.pdf
 
 https://www.cdc.gov/lyme/stats/tables.html
 https://fivethirtyeight.com/datalab/how-your-citys-public-transit-stacks-up/
