@@ -11,7 +11,7 @@ description: ''
 topics: []
 ---
 
-At first glance, census data should be unrelated to public safety data? 
+At first glance, census data should be unrelated to public safety data. 
 At its heart, the [US Census Bureau](https://www.census.gov/) 
 gathers population data.[^1] 
 However, population data provides important context for understanding 
@@ -19,7 +19,7 @@ other measured quantities.
 Moreover, it allows comparisons between cities, counties, or states, 
 of varying size. 
 
-The Census Bureau recently released a new set of population estimates last week.
+The Census Bureau recently released a new set of population estimates last month.
 For many uses, a location's total population is adequate. 
 Nevertheless, for specific research applications, it can be useful to separate
 the population by age, sex, and race. 
@@ -28,10 +28,11 @@ Data can be obtained using
 [data directory](https://www2.census.gov/programs-surveys/)[^3]
 At present, here is what is available for 2016: 
 
-  - At the state level, population is divided by sex, race, hispanic origin, and 
+  - At the state level, population estimates are divided by sex, race, hispanic origin, and 
 individual year of age.
 [download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/state/asrh/sc-est2016-alldata6.csv)  
-  - At the county level, population is divided by sex, race, and age group. 
+  - At the county level, population estimates are divided by sex, race, and 
+  age group. 
 Age groups are usually in 5 year increments: 0-4, 5-9, etc.
 [download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/counties/asrh/cc-est2016-alldata.csv)  
   - At the place level (city, town, etc), total population is available.
@@ -39,22 +40,68 @@ Age groups are usually in 5 year increments: 0-4, 5-9, etc.
 
 Census data becomes the basis for converting counts to "rates." 
 These are just variations of percentages, often for situations that are 
-rather infrequent. 
-In other words, some number of people are counted and divided by the total 
+rather infrequent.  
+In other words, some events are counts and divided by the total 
 population and multiplied by the appropriate power of 10. The rarer the event,
 the higher the power of ten. 
  
 Rates derived using census data have many applications. Here are a few examples 
-with approximately least half focusing on public safety settings.
+with approximately half focusing on public safety settings.
 
-- __UCR crime rates__. As discussed previously, 
+- __UCR crime rates__. As discussed in previous posts, 
 each law enforcement agency provides its annual crime reports to the FBI. 
-There is no valid basis for comparing total crime in 
+There is no valid basis to directly comparing total crime in 
 different cities of varying sizes, 
 or between a municipaltiy and a state or national average, 
 without first converting to a standardized rate (crimes per 100,000).  
-- __Fire death rates__.
-[Fire Death Rates](https://www.usfa.fema.gov/data/statistics/fire_death_rates.html)
+
+- __Incarceration rates__. Nationally reported crimes and other offenses can 
+lead to arrest and eventual arrest. The 
+[Bureau of Justice Statistics](https://www.bjs.gov/index.cfm?ty=kfdetail&iid=493) 
+measures the number persons in local jails, and in state and federal prisons. 
+This is converted to an _incarceration rate_ measured per 100,000 residents. 
+Adults and juveniles are measured separately. 
+In addition, probation and parole is also measured as a 
+_community supervision rate_. 
+The bureau's report titled 
+[Correctional Populations in the United States](https://www.bjs.gov/content/pub/pdf/cpus15.pdf) 
+shows rates analyzed by state and gender. Similar information can be obtained
+at [The Sentencing Project](http://www.sentencingproject.org/) which also
+focuses on racial disparities in incarceration rates. 
+
+- __Foster care incidence rates__. Through no fault of their own, children
+may be removed from their homes and placed into the foster care system. 
+The U.S. Department of Health and Human Services' 
+[Children's Bureau](https://www.acf.hhs.gov/cb) monitors the number of children
+in the foster care system on an annual basis as well as the number of children 
+_entering_ foster care each year. 
+Researchers use the census bureau's population estimates for children to 
+foster care counts to rates measured per 1,000 children. 
+These rates vary by location, both between states and among counties within 
+the same state. 
+There are also obvious differences in the rates of children entering foster 
+care by age.
+The [Kids Count Data Center](http://datacenter.kidscount.org)
+has a nice site that includes foster care data, including rates for
+each state.
+ 
+- __Fire death rates__. Switching from examples of crime and child placement to
+a different aspect of public safety, let's take a look at the fire service.
+Overall fire deaths are quite rare. 
+[The U.S. Fire Administration](https://www.usfa.fema.gov/) 
+reports on both firefighter and civilian fire fatalities. 
+(Civilian) 
+[Fire Death Rates](https://www.usfa.fema.gov/data/statistics/fire_death_rates.html) 
+are measured as deaths per million population. In 2014, there were 
+3,428 fire deaths, or a fire death rate of 10.7 deaths per million people.
+If you follow the link, you will notice a section separating fire rates by 
+age, clearly relying on groups used by standard census data.  
+The USFA's comprehensive report on 
+[Fire in the United States](https://www.usfa.fema.gov/) provides even greater
+detail on fire death rates separated by gender and race.
+[Data download](https://www.usfa.fema.gov/downloads/xls/statistics/death_injury_data_sets.xlsx)  
+ 
+
 
 - Importance of census data  
   - New release
@@ -74,11 +121,6 @@ without first converting to a standardized rate (crimes per 100,000).
   - Public transit use rates
 
 
-
-https://www.usfa.fema.gov/data/statistics/
-https://www.usfa.fema.gov/downloads/xls/statistics/death_injury_data_sets.xlsx
-https://www.usfa.fema.gov/downloads/pdf/publications/fius18th.pdf
-
 https://www.childtrends.org/indicators/foster-care/
 
 
@@ -90,7 +132,7 @@ https://www.census.gov/content/dam/Census/library/publications/2016/demo/p20-578
 
 https://www.cdc.gov/lyme/stats/tables.html
 https://fivethirtyeight.com/datalab/how-your-citys-public-transit-stacks-up/
-http://www.sentencingproject.org/the-facts/#map
+
 
 [^1]: I know it supplies much more data. I'm just focusing on population data for this post.
 [^2]: I recommend using the _Advanced Search_ features.
