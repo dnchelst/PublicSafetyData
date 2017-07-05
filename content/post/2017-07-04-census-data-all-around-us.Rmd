@@ -1,15 +1,17 @@
 ---
-title: Census Data All Around Us
-author: Dov Chelst
-date: '2017-06-28'
-slug: census-data-all-around-us
-categories: []
-tags:
-  - census
-  - incidence rates
+title: "Census Data All Around Us"
+author: "Dov Chelst"
+date: '2017-07-04'
 description: ''
+slug: census-data-all-around-us
+tags:
+- census
+- incidence rates
+categories: []
 topics: []
 ---
+
+## Introduction
 
 At first glance, census data should be unrelated to public safety data. 
 At its heart, the [US Census Bureau](https://www.census.gov/) 
@@ -28,22 +30,24 @@ Data can be obtained using
 [data directory](https://www2.census.gov/programs-surveys/)[^3]
 At present, here is what is available for 2016: 
 
-  - At the state level, population estimates are divided by sex, race, hispanic origin, and 
+  - At the state level, population estimates are divided by sex, race, Hispanic origin, and 
 individual year of age.
 [download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/state/asrh/sc-est2016-alldata6.csv)  
   - At the county level, population estimates are divided by sex, race, and 
   age group. 
-Age groups are usually in 5 year increments: 0-4, 5-9, etc.
+Ages are usually grouped into 5-year increments: 0-4, 5-9, etc.
 [download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/counties/asrh/cc-est2016-alldata.csv)  
   - At the place level (city, town, etc), total population is available.
 [download](https://www2.census.gov/programs-surveys/popest/datasets/2010-2016/cities/totals/sub-est2016_all.csv)
 
 Census data becomes the basis for converting counts to "rates." 
 These are just variations of percentages, often for situations that are 
-rather infrequent.  
-In other words, some events are counts and divided by the total 
-population and multiplied by the appropriate power of 10. The rarer the event,
-the higher the power of ten. 
+rather infrequent.
+In other words, some events are counted, divided by the total population, 
+and then multiplied by the appropriate power of 10. 
+The rarer the event, the higher the power of ten. 
+
+## Examples
  
 Rates derived using census data have many applications. Here are a few examples 
 with approximately half focusing on public safety settings.
@@ -58,7 +62,7 @@ without first converting to a standardized rate (crimes per 100,000).
 - __Incarceration__. Nationally reported crimes and other offenses can 
 lead to arrest and eventual imprisonment. The 
 [Bureau of Justice Statistics](https://www.bjs.gov/index.cfm?ty=kfdetail&iid=493) 
-measures the number persons in local jails, and in state and federal prisons. 
+measures the number of persons in local jails, and in state and federal prisons. 
 This is converted to an _incarceration rate_ measured per 100,000 residents. 
 Adults and juveniles are measured separately. 
 In addition, probation and parole is also measured as a 
@@ -82,11 +86,12 @@ the same state.
 There are also obvious differences in the rates of children entering foster 
 care by age.
 The [Kids Count Data Center](http://datacenter.kidscount.org)
-has a nice site that includes foster care data, including rates for
+has a well-designed site that includes foster care data, including rates for
 each state.
  
-- __Fire fatality__. Switching from examples of crime and child placement to
-a different aspect of public safety, let's take a look at the fire service.
+- __Fire fatality__. 
+Switching from examples of crime and child placement to a different aspect of 
+public safety, let's take a look at the fire service.
 Overall fire deaths are quite rare. 
 [The U.S. Fire Administration](https://www.usfa.fema.gov/) 
 reports on both firefighter and civilian fire fatalities. 
@@ -101,7 +106,7 @@ The USFA's comprehensive report on
 detail on fire death rates separated by gender and race.
 [Data download](https://www.usfa.fema.gov/downloads/xls/statistics/death_injury_data_sets.xlsx)  
  
-- __Infant mortality__ Continuing the last example's fixation on death, 
+- __Infant mortality__. Continuing the last example's fixation on death, 
 infant mortality is a measure of child welfare that has been used internationally
 for at least half a century. This mortality rate measures infant deaths per
 1,000 live births. The national infant mortality rates is 5.9 per 1,000 births.
@@ -112,36 +117,93 @@ shows
 Here's an alternate graphic at 
 [America's Health Rankings](http://www.americashealthrankings.org/explore/2016-annual-report/measure/IMR/state/ALL).
 
-- __Disease__ True to its name, the CDC maintains a system to monitor serious diseases.
+- __Lyme disease__. 
+True to its name, the CDC maintains a system to monitor serious diseases.
 As many of these diseases are quite rare, they are converted to rates before 
-comparing different occurrences in different parts of the country.
+comparing the number of cases in different parts of the country.
 For example, [Lyme disease](https://www.cdc.gov/lyme/stats/tables.html) is 
 measured as confirmed cases per 100,000 persons. Nationally, Lyme disease occurs
-at a rate of 8.5 per 100,000 persons, but can rise to 8 times that rate for 
-some states in New England. 
+at a rate of 8.5 per 100,000 persons, but can rise to more than 5 times that 
+rate for many states in New England. 
 
-- Importance of census data  
-  - New release
-  - Basic description of rates
-  - Issues about level of detail - when rates vary by gender, age, or race
-  - Applicability to a wide range of applications
-  - graphic and table?
-  
-- Incidence rate examples:
-  - Crime rates (7 part 1 crimes)
-  - Fire rates (fatality & injury)
-  - Incarceration rate
-  - Disease rates (Lyme disease)
-  - Foster care incidence rates
-  - Infant mortality
-  - Public transit use rates
+- __Public transportation__ Finally, on a more positive note, 
+the U.S. Department of Department of Transportation's 
+[Federal Transit Administration](https://www.transit.dot.gov) reports on monthly 
+ridership for public transportation systems throughout the country. 
+For comparison, total annual trips can be measured per person within a given 
+metropolitan area.
+Unlike prior examples where lower rates are preferred, here the opposite is the
+case. Reuben Fischer-Baum wrote an
+[article](https://fivethirtyeight.com/datalab/how-your-citys-public-transit-stacks-up/)
+for [Five Thirty Eight](https://fivethirtyeight.com)
+on public transit rates in 2014 which provides plenty of detail. 
+Unfortunately, some of the links no longer work. Here is an 
+[alternate link](https://www.transit.dot.gov/ntd/ntd-data)
+to access monthly ridership data from the National Transit Database. The raw data in in this 
+[report](http://www.apta.com/resources/statistics/Documents/Ridership/2016-q4-ridership-APTA.pdf)
+by the 
+[American Public Transportation Association](https://www.apta.com/Pages/default.aspx) 
+may be easier to follow.
 
+## Rates & Significant Figures
 
+In most cases, rates are only shown to two or three significant figures. 
+Simple error estimates associated with these rates render remaining 
+digits meaningless. 
+For example, the New Orleans' property crime rate of 3,874 crimes per 100,000 
+people is equivalent to 3,900 crimes per 100,000.
 
+Here is a "back of the envelope" statistical calculation. 
+Assume that the annual number of crimes occurring within a population
+approximates a Poisson distribution. 
+Then, an error estimate $E$ for a specific crime rate would use a number $Z$ 
+of standard deviations within the following formula:
 
-https://www.cdc.gov/lyme/stats/tables.html
-https://fivethirtyeight.com/datalab/how-your-citys-public-transit-stacks-up/
+$$E = Z \times \sqrt{crime} \times \frac{10^5}{population} = 
+rate \times \frac{Z}{\sqrt{crime}}$$.
 
+A recent post showed crime rates for seven cities in 2015. Let's show the
+total reported property crimes, the associated crime rates, and error estimates.
+We'll use a value of 2 for $Z$. 
+Within this estimate, New Orleans' property crime rate is only accurate to 
+within 63 crimes per 100,000 people.
+Note how errors decrease as city populations increase. 
+
+```{r load_libraries_data, echo=FALSE, message=FALSE}
+library(tidyverse)
+library(stringr)
+library(magrittr)
+library(DT)
+
+data.dir <- "data"
+data.file <- "UCR2015-BlogPost.RData"
+if(!dir.exists(data.dir)){
+  data.dir <- paste0("../../", data.dir)
+}
+load(data.file)
+
+ucr.small %<>%
+  select(city=agency.name, state=numeric.state.code, 
+         burglary, larceny, vehicle.theft,
+         matches("population")) %>%
+  mutate_at(vars(-matches("city|state")), as.numeric) %>%
+  mutate(state=gsub(".*?\\s+(.*)", "\\1", state), 
+         population = population.1 + population.2 + population.3,
+         property.crimes = burglary +  larceny + vehicle.theft) %>%
+  select(city, state, population, property.crimes) %>%  
+  mutate(property.rate = property.crimes / population * 10^5,
+         error.estimate = 2 * sqrt(property.crimes) / population * 10^5) %>%
+  mutate_at(vars(city, state), str_to_title) 
+
+names(ucr.small) <- names(ucr.small) %>% 
+  gsub("[.]", " ", .) %>% 
+  str_to_title
+
+ucr.small %>%
+  datatable(rownames=FALSE, options=list(paging=FALSE)) %>%
+  formatCurrency(-c(1:2), '', digits=0)
+
+```
 
 [^1]: I know it supplies much more data. I'm just focusing on population data for this post.
 [^2]: I recommend using the _Advanced Search_ features.
