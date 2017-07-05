@@ -14,7 +14,7 @@ topics: []
 ## Introduction
 
 At first glance, census data should be unrelated to public safety data. 
-At its heart, the [US Census Bureau](https://www.census.gov/) 
+At its heart, the [U.S. Census Bureau](https://www.census.gov/) 
 gathers population data.[^1] 
 However, population data provides important context for understanding 
 other measured quantities. 
