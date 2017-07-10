@@ -15,3 +15,5 @@ SELECT * FROM dfs.`/home/dchelst/Documents/CPSM/NFIRS/2015/civiliancasualty.csvh
 SELECT STATE, COUNT(*) as `COUNT`
 FROM dfs.`/home/dchelst/Documents/CPSM/NFIRS/2015/civiliancasualty.csvh`
 GROUP BY STATE
+
+https://rud.is/b/2016/12/20/sergeant-a-r-boot-camp-for-apache-drill/
