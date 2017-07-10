@@ -1,0 +1,17 @@
+changing the csv query
+
+    "csvh": {
+      "type": "text",
+      "extensions": [
+        "csvh"
+      ],
+      "extractHeader": true,
+      "delimiter": "^"
+    }
+
+
+SELECT * FROM dfs.`/home/dchelst/Documents/CPSM/NFIRS/2015/civiliancasualty.csvh`
+
+SELECT STATE, COUNT(*) as `COUNT`
+FROM dfs.`/home/dchelst/Documents/CPSM/NFIRS/2015/civiliancasualty.csvh`
+GROUP BY STATE
