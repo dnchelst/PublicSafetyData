@@ -30,4 +30,4 @@ ff.casualty.cols <- cols(STATE=col_character(), FDID=col_character(),
   .default=col_skip())
 ff.casualty1 <- read_delim(ff.casualty.file, delim="^", 
                            col_types=ff.casualty.cols)
-saveRDS(basic1, file="NFIRS-2015-ffcasualty1.rds")
+saveRDS(ff.casualty1, file="NFIRS-2015-ffcasualty1.rds")
