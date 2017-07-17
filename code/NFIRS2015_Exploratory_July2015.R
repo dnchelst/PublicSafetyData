@@ -1,5 +1,7 @@
 library(tidyverse)
-nfirs.dir <- "C:/Users/Dov/Documents/CPSM/NFIRS/NFIRS-2015"
+root.dir <- c("C:/Users/Dov/Documents", "/home/dchelst/Documents")
+nfirs.dir <- list.dirs(root.dir[2]) %>% 
+  grep("NFIRS.*2015", ., value=TRUE)
 setwd(nfirs.dir)
 
 basic.file <- "basicincident.txt"
