@@ -12,7 +12,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introduction
 
 - NFIRS 2015 Available
-- It's new and improved
+- It's new and improved. 
+[Prior reference]({{"2016-03-18-nfirs-2014-available.md"}}
 - How to access
 
 ## Additional difficulties
@@ -43,3 +44,9 @@ knitr::opts_chunk$set(echo = TRUE)
 - fatalities vs. injuries
 - information about injuries
 
+## Conclusion
+
+## Food for thought
+
+- data-related questions
+- directed request for comments (on linkedin)
