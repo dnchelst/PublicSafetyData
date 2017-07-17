@@ -9,8 +9,29 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Introduction
 
+- NFIRS 2015 Available
+- It's new and improved
+- How to access
+
+## Additional difficulties
+
+- Large data presents greater difficulties
+- Multiple approaches:  
+    - Standard or specialized database: MySQL/MariaDB or Vertica
+    - Leveraging cloud computing: 
+    [Amazon Athena](https://aws.amazon.com/athena/) 
+    - Additional open source projects: 
+    [Apache Drill](https://drill.apache.org/) and 
+    [Apache Parquet](https://parquet.apache.org/)
+    - Limiting the imported data into R with: 
+    features of the readr or the sqldf package.
+
+## Basic information
+
+- Summary description: total calls/agencies in basic incident table
+- 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
