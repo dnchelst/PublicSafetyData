@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - NFIRS 2015 Available
 - It's new and improved. 
-[Prior reference]({{"2016-03-18-nfirs-2014-available.md"}}
+[Prior reference]({{"2016-03-18-nfirs-2014-available.md"}})
 - How to access
 
 ## Additional difficulties
@@ -50,3 +50,4 @@ knitr::opts_chunk$set(echo = TRUE)
 
 - data-related questions
 - directed request for comments (on linkedin)
+- code references to github repository
