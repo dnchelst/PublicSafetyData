@@ -1,6 +1,6 @@
 library(tidyverse)
-root.dir <- c("C:/Users/Dov/Documents", "/home/dchelst/Documents")
-nfirs.dir <- list.dirs(root.dir[2]) %>% 
+root.dir <- c("C:/Users/Dov/Documents/CPSM", "/home/dchelst/Documents")
+nfirs.dir <- list.dirs(root.dir[1]) %>% 
   grep("NFIRS.*2015", ., value=TRUE)
 setwd(nfirs.dir)
 
