@@ -26,8 +26,8 @@ materials, wildfires, etc.)
 In the past, the USFA's public data release (PDR) would only contain fire 
 incidents, which amounts to a small but significant fraction of all incidents 
 involving fire departments. Usually, this equals between 10 and 20 percent of 
-total incidents. Now, you can request information about __ALL__ incidents; 
-however, unit-level information still remains unavailable at the national level.
+total incidents. Now, you can request information about __all__ incidents; 
+however, unit-level information still remains unavailable.
 In May, I received a full data set for 2015 and a matching set of data for 2014
 as well. You can request your own data set here.
 
@@ -54,20 +54,52 @@ injuries as well as fire deaths. At the end, I will include some foods for
 thought, links to my own analysis for the technically savvy, and hints at 
 further analysis to come.
 
-
-
-- NFIRS 2015 Available - It's new and improved. [Prior 
-reference]({{"2016-03-18-nfirs-2014-available.md"}}) - How to access
+[Prior reference]({{"2016-03-18-nfirs-2014-available.md"}}) - How to access
 
 ## Additional difficulties
 
+I usually conduct the majority of my data analysis using the R programming 
+language on a single workstation. This works fine for smaller data sets that can
+be loaded comfortably into a computer's RAM. However, the NFIRS 2015 data
+release includes more than 10 files and contains more than 7 Gigabytes of
+information. Even looking at files individually, the primary data file alone
+exceeds 4 Gigabytes in size. I'd like to discuss some reasonable approaches to
+this specific problem that I plan to explore going forward along with others
+that I've already discarded.
 
-- Large data presents greater difficulties - Multiple approaches: - Standard or 
-specialized database: MySQL/MariaDB or Vertica - Leveraging cloud computing: 
-[Amazon Athena](https://aws.amazon.com/athena/) - Additional open source 
-projects: [Apache Drill](https://drill.apache.org/) and [Apache 
-Parquet](https://parquet.apache.org/) - Limiting the imported data into R with: 
-features of the readr or the sqldf package.
+- __Ignoring the problem__: I'm certainly not loading all the data into memory
+and storing the information as one RData file. It's just too big for my system.
+- __Standard Relational Database__: It seems clear that USFA is using a standard
+database to manage it's own NFIRS data. Here's why I won't be reproducing that
+method.
+    - I've explored using MySQL and/or MariaDB for this purpose. While useful
+    for me in general, the data loading process for files of this size is still
+    a bit involved.
+    - For a database of this size, with large individual tables, running queries
+    on my home computer is still quite slow.
+    - Cloud hosting is possible but adds an extra layer of effort with limited
+    benefit as I'm not sharing the data with many users.
+- __Limiting Data__: To accomplish the analysis incorporated in later sections, 
+I've chosen to simply read in a _very limited_ portion of the data set. Careful 
+decisions about what is absolutely necessary for an analysis can alleviate 
+problems with data size. At this point, I'm just using *read_csv* from the 
+**readr** package. It allows me to selectively load 11 out of 40 columns from 
+the NFIRS 2015 basic incident table. The resulting RDS file, which is a standard
+internal R format for a single data set (or "data frame") is less than 90 
+Megabytes when compared to 4 Gigabytes. Nevertheless, the file still took over 4
+minutes to load. Another alternative is using *read.csv.sql* from the **sqldf** 
+package. 
+- __Drill__: For the next NFIRS-related post, I will likely use [Apache
+Drill](https://drill.apache.org/) for basic queries. It can also convert the
+current text-delimited data files into a more efficient columnar 
+[Parquet](https://parquet.apache.org/) format. I've been experimenting with
+Drill recently and it's worked quite well for me.  
+- __Athena__: I'm a current Amazon Web Services user and 
+[Athena](https://aws.amazon.com/athena/) would allow me a cost-effective way to 
+leverage cloud computing and my [Simple Storage Service
+(S3)](https://aws.amazon.com/s3/) to perform a complicated analysis in a
+reasonable amount of time. I haven't explored this option adequately to offer an
+informed opinion on it.
 
 ## Basic information
 

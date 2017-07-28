@@ -1,4 +1,5 @@
 library(tidyverse)
+library(magrittr)
 root.dir <- c("C:/Users/Dov/Documents/CPSM", "/home/dchelst/Documents")
 nfirs.dir <- list.dirs(root.dir[1]) %>% 
   grep("NFIRS.*2015", ., value=TRUE)
@@ -33,3 +34,39 @@ ff.casualty.cols <- cols(STATE=col_character(), FDID=col_character(),
 ff.casualty1 <- read_delim(ff.casualty.file, delim="^", 
                            col_types=ff.casualty.cols)
 saveRDS(ff.casualty1, file="NFIRS-2015-ffcasualty1.rds")
+
+# analysis of calls by agency
+basic.2015 <- readRDS("NFIRS-2015-basicincident1.rds")
+
+incident.type.by.agency <- basic.2015 %>%
+  filter(EXP_NO==0) %>%
+  count(STATE, FDID, INC_TYPE) %>%
+  ungroup
+
+call.by.agency <- incident.type.by.agency %>%
+  count(STATE, FDID, wt=n) %>%
+  ungroup
+
+incident.by.type <- incident.type.by.agency %>%
+  count(INC_TYPE, wt=n) %>%
+  ungroup %>%
+  mutate(percent = nn / sum(nn))
+
+# departments based upon total calls
+call.by.agency %$% quantile(nn, probs=seq(0, 1, .1))
+
+# medical call percentage for "larger" departments
+call.min <- 100
+large.agencies <- call.by.agency %>%
+  filter(nn >= call.min) %>%
+  select(STATE, FDID) 
+incident.by.type.larger <- incident.type.by.agency %>%
+  inner_join(large.agencies) %>%
+  count(INC_TYPE, wt=n) %>%
+  ungroup %>%
+  mutate(percent = nn / sum(nn))
+
+
+
+save(incident.type.by.agency, call.by.agency, incident.by.type, 
+     file="NFIRS-2015-BasicAnalysis.RData")  
