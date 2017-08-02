@@ -1,7 +1,8 @@
 library(tidyverse)
 library(magrittr)
+library(stringr)
 root.dir <- c("C:/Users/Dov/Documents/CPSM", "/home/dchelst/Documents")
-nfirs.dir <- list.dirs(root.dir[1]) %>% 
+nfirs.dir <- list.dirs(root.dir[2]) %>% 
   grep("NFIRS.*2015", ., value=TRUE)
 setwd(nfirs.dir)
 
@@ -35,20 +36,36 @@ ff.casualty1 <- read_delim(ff.casualty.file, delim="^",
                            col_types=ff.casualty.cols)
 saveRDS(ff.casualty1, file="NFIRS-2015-ffcasualty1.rds")
 
+codes <- read_delim("codelookup.txt", delim="^") 
+saveRDS(codes, file="NFIRS-2015-codes.rds")
+
+fd.list <- read_delim("fdheader.txt", delim="^") %>%
+  mutate(FD_NAME=str_to_upper(FD_NAME),
+         FD_NAME=str_trim(FD_NAME)) %>%
+  select(STATE, FDID, FD_NAME)
+saveRDS(fd.list, file="NFIRS-2015-fdlist.rds")
 # analysis of calls by agency
 basic.2015 <- readRDS("NFIRS-2015-basicincident1.rds")
+incident.types <- codes %>%
+  filter(fieldid=="INC_TYPE", 
+         !is.na(code_value)) %>%  
+  select(INC_TYPE=code_value, INC_DESCRIPTION=code_descr) 
 
 incident.type.by.agency <- basic.2015 %>%
   filter(EXP_NO==0) %>%
   count(STATE, FDID, INC_TYPE) %>%
-  ungroup
+  ungroup %>%
+  mutate_at(vars(INC_TYPE), as.character) %>%
+  left_join(incident.types, by="INC_TYPE") %>%
+  left_join(select(fd.list, STATE, FDID, FD_NAME), by=c("STATE", "FDID"))
+  
 
 call.by.agency <- incident.type.by.agency %>%
-  count(STATE, FDID, wt=n) %>%
-  ungroup
+  count(STATE, FDID, FD_NAME, wt=n) %>%
+  ungroup 
 
 incident.by.type <- incident.type.by.agency %>%
-  count(INC_TYPE, wt=n) %>%
+  count(INC_TYPE, INC_DESCRIPTION, wt=n) %>%
   ungroup %>%
   mutate(percent = nn / sum(nn))
 
@@ -65,8 +82,6 @@ incident.by.type.larger <- incident.type.by.agency %>%
   count(INC_TYPE, wt=n) %>%
   ungroup %>%
   mutate(percent = nn / sum(nn))
-
-
 
 save(incident.type.by.agency, call.by.agency, incident.by.type, 
      file="NFIRS-2015-BasicAnalysis.RData")  
