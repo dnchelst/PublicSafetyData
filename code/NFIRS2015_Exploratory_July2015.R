@@ -46,6 +46,9 @@ fd.list <- read_delim("fdheader.txt", delim="^") %>%
 saveRDS(fd.list, file="NFIRS-2015-fdlist.rds")
 # analysis of calls by agency
 basic.2015 <- readRDS("NFIRS-2015-basicincident1.rds")
+codes <- readRDS("NFIRS-2015-codes.rds")
+fd.list <- readRDS("NFIRS-2015-fdlist.rds")
+
 incident.types <- codes %>%
   filter(fieldid=="INC_TYPE", 
          !is.na(code_value)) %>%  
@@ -58,7 +61,6 @@ incident.type.by.agency <- basic.2015 %>%
   mutate_at(vars(INC_TYPE), as.character) %>%
   left_join(incident.types, by="INC_TYPE") %>%
   left_join(select(fd.list, STATE, FDID, FD_NAME), by=c("STATE", "FDID"))
-  
 
 call.by.agency <- incident.type.by.agency %>%
   count(STATE, FDID, FD_NAME, wt=n) %>%
@@ -85,3 +87,14 @@ incident.by.type.larger <- incident.type.by.agency %>%
 
 save(incident.type.by.agency, call.by.agency, incident.by.type, 
      file="NFIRS-2015-BasicAnalysis.RData")  
+load("NFIRS-2015-BasicAnalysis.RData")
+
+# lack of reporting (months missing)
+fd.missing.months <- basic.2015 %>%
+  select(STATE, FDID, INC_DATE) %>%
+  mutate(month=month(INC_DATE)) %>%
+  distinct(STATE, FDID, month) %>%
+  count(STATE, FDID) %>%
+  ungroup %>%
+  filter(n < 12) %>%
+  left_join(select(fd.list, STATE, FDID, FD_NAME), by=c("STATE", "FDID"))
