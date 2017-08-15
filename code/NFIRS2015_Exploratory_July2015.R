@@ -2,7 +2,7 @@ library(tidyverse)
 library(magrittr)
 library(stringr)
 root.dir <- c("C:/Users/Dov/Documents/CPSM", "/home/dchelst/Documents")
-nfirs.dir <- list.dirs(root.dir[2]) %>% 
+nfirs.dir <- list.dirs(root.dir[1]) %>% 
   grep("NFIRS.*2015", ., value=TRUE)
 setwd(nfirs.dir)
 
