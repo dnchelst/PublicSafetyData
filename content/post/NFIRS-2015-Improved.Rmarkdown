@@ -117,10 +117,13 @@ Here are three ways that information can be missing:
 Alternatively, they may submit their information too late for inclusion in the 
 annual data set. For example, the 2015 data set does not include information for
 the New Brunswick (NJ) Fire Department.
-2. **Missing Records**: Many fire departments respond to medical calls as
-emergency first responders. NFIRS can capture this information, but that is not
-the system's focus. Some agencies may not report medical calls to NFIRS and
-focus only on incidents associated with its primary mission. For example,
+2. **Missing Months**: Many fire departments report incidents at regular intervals throughout the year, such as monthly. In these situations, one or more months may be omitted. We'll explore this example further in a moment.
+3. **Partial/Selective Reporting**: A fire department may report some but not all of its
+calls to NFIRS. I've observed departments that focus their reporting on fire
+incidents but not their medical incidents. As a basic example, the national
+NFIRS data set includes 27 incidents for the Southfield (MI) Fire Department,
+yet state-level documents report 1798 incidents in  
+[2016 (page 195)](http://www.michigan.gov/documents/lara/2016_Michigan_Monthly_Incident_Counts_1_541385_7.pdf). It is reasonable to assume that 2016 is accurate and information was underreported in 2015.
 
 ## Basic information
 

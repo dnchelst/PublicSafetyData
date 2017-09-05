@@ -2,8 +2,10 @@ library(tidyverse)
 library(magrittr)
 library(stringr)
 root.dir <- c("C:/Users/Dov/Documents/CPSM", "/home/dchelst/Documents")
-nfirs.dir <- list.dirs(root.dir[1]) %>% 
-  grep("NFIRS.*2015", ., value=TRUE)
+nfirs.dir <- root.dir %>%
+  lapply(list.dirs) %>%
+  lapply(grep, pattern="NFIRS.*2015", value=TRUE) %>%
+  unlist
 setwd(nfirs.dir)
 
 basic.file <- "basicincident.txt"
