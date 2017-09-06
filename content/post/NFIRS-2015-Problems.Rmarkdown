@@ -1,7 +1,7 @@
 --- 
-title: 'NFIRS 2015 Is Vastly Improved: Just Ask FEMA' 
+title: 'NFIRS 2015: Some Caveats' 
 author: "Dov Chelst" 
-date: "2017-07-30" 
+date: "2017-**-**" 
 output: html_document 
 ---
 
@@ -13,6 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Introduction
+
+...
 
 Data from the National Fire Incident Reporting System (NFIRS) is now available 
 from the U.S. Fire Administration (USFA)for 2015. The agency collects data 
@@ -102,22 +104,23 @@ leverage cloud computing and my [Simple Storage Service
 reasonable amount of time. I haven't explored this option adequately to offer an
 informed opinion on it.
 
-## Basic information
+## Partial Submissions and Additional Considerations
 
-- Summary description: total calls/agencies in basic incident table 
-- Types of calls by agency: fire vs. medical/mva
-- Top 10 agencies? total calls, total fires, total medical
-- total fatalities
+NFIRS data starts with a specific incident, recorded by an individual
+department, and reported to a state agency and/or directly to the federal
+government. While quality assurance measures are built into the system, issues
+will arise either automatically or inadvertently.
+- 
+To a degree, NFIRS data submission is voluntary. One who studies this data set 
+should understand that it represents information about _most_ but not _all_ 
+incidents to which a fire department responded within the U.S. 
+Here are three ways that information can be missing:  
+1. **Missing Agencies**: An agency's data may not submit its data to NFIRS. 
+Alternatively, they may submit their information too late for inclusion in the 
+annual data set. For example, the 2015 data set does not include information for
+the New Brunswick (NJ) Fire Department.
+2. **Missing Records**: Many fire departments respond to medical calls as
+emergency first responders. NFIRS can capture this information, but that is not
+the system's focus. Some agencies may not report medical calls to NFIRS and
+focus only on incidents associated with its primary mission. For example,
 
-## Casualty information: Fatality and Injury
-
-- summary table for ALL agencies? - display a limited number (sort w/ search)
-
-- fatalities vs. injuries - information about injuries
-
-## Conclusion
-
-## Food for thought
-
-- data-related questions - directed request for comments (on linkedin) - code 
-references to github repository
