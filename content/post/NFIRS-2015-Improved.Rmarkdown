@@ -102,32 +102,6 @@ leverage cloud computing and my [Simple Storage Service
 reasonable amount of time. I haven't explored this option adequately to offer an
 informed opinion on it.
 
-<<<<<<< HEAD
-=======
-## Partial Submissions and Additional Considerations
-
-NFIRS data starts with a specific incident, recorded by an individual
-department, and reported to a state agency and/or directly to the federal
-government. While quality assurance measures are built into the system, issues
-will arise either automatically or inadvertently.
-- 
-To a degree, NFIRS data submission is voluntary. One who studies this data set 
-should understand that it represents information about _most_ but not _all_ 
-incidents to which a fire department responded within the U.S. 
-Here are three ways that information can be missing:  
-1. **Missing Agencies**: An agency's data may not submit its data to NFIRS. 
-Alternatively, they may submit their information too late for inclusion in the 
-annual data set. For example, the 2015 data set does not include information for
-the New Brunswick (NJ) Fire Department.
-2. **Missing Months**: Many fire departments report incidents at regular intervals throughout the year, such as monthly. In these situations, one or more months may be omitted. We'll explore this example further in a moment.
-3. **Partial/Selective Reporting**: A fire department may report some but not all of its
-calls to NFIRS. I've observed departments that focus their reporting on fire
-incidents but not their medical incidents. As a basic example, the national
-NFIRS data set includes 27 incidents for the Southfield (MI) Fire Department,
-yet state-level documents report 1798 incidents in  
-[2016 (page 195)](http://www.michigan.gov/documents/lara/2016_Michigan_Monthly_Incident_Counts_1_541385_7.pdf). It is reasonable to assume that 2016 is accurate and information was underreported in 2015.
-
->>>>>>> 6e90cb8aa568876da064a9521c6c33aaeb8f5cb6
 ## Basic information
 
 - Summary description: total calls/agencies in basic incident table 
