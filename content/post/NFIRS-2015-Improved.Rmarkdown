@@ -110,10 +110,11 @@ The 2015 NFIRS data set includes approximately
 `r incident.by.type$nn %>% sum %>% round(-2) %>% formatC(big.mark=",", format="d")`
 incidents. 
 
-In the past, the public data set was limited to fire incident types as shown in this table
+In the past, the public data set was limited to the `r nrow(fire.types)` fire
+incident types as shown in this table
 ```{r fire_types, echo=FALSE, message=FALSE}
 fire.types %>%
-  datatable(rownames=FALSE) 
+  datatable(rownames=FALSE, colnames=c("Incident Type", "Description")) 
 ```
 
 - Summary description: total calls/agencies in basic incident table 
