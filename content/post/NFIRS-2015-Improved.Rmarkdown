@@ -7,8 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE} 
 knitr::opts_chunk$set(echo = TRUE) 
-
-
+load("NFIRS-2015-BasicAnalysis.RData")
+library(DT)
+library(tidyverse)
+library(magrittr)
 
 ```
 
@@ -20,16 +22,15 @@ reported from the majority of fire departments across the country. In my current
 role, while working with fire departments, I've observed that most reporting 
 agencies provide detailed information about every incident and every responding 
 unit. Additional details accompany serious fires, mutual aid responses, 
-casualties (injuries and deaths), and assorted special circumstances (hazardous 
-materials, wildfires, etc.)
+casualties (injuries and deaths), and assorted special circumstances (such as
+hazardous materials and wildfires).
 
 In the past, the USFA's public data release (PDR) would only contain fire 
-incidents, which amounts to a small but significant fraction of all incidents 
-involving fire departments. Usually, this equals between 10 and 20 percent of 
-total incidents. Now, you can request information about __all__ incidents; 
-however, unit-level information still remains unavailable.
-In May, I received a full data set for 2015 and a matching set of data for 2014
-as well. You can request your own data set here.
+incidents, which amounts to a small but significant fraction (8.7% for 2015) of
+all incidents involving fire departments. Now, you can request information about
+__all__ incidents; however, unit-level information still remains unavailable. In
+May, I received a full data set for 2015 and a matching set of data for 2014 as
+well. You can request your own data set here.
 
 I'm excited about the update as this new expanded data set places NFIRS on par 
 with other similar national data sets such as the National Highway and Traffic 
@@ -41,8 +42,7 @@ activities of the fire service as a whole. 2015's data includes approximately
 24.8 million records, while the 2014's original "fires only" data release 
 contained approximately 2.1 million records. Focusing on the country's largest 
 fire department, the New York Fire Department (NYFD), NFIRS 2015 data includes 
-approximately 560,000 incidents while 2014's prior release includes 76,000 
-incidents.
+approximately 557,000 incidents, but only 80,000 fire-specific incidents.
 
 I'd like to take a few moments to discuss the new data set. NFIRS 2015 data 
 presents challenges that arise whenever one deals with larger data sets. 
@@ -80,6 +80,7 @@ method.
     on my home computer is still quite slow.
     - Cloud hosting is possible but adds an extra layer of effort with limited
     benefit as I'm not sharing the data with many users.
+    
 - __Limiting Data__: To accomplish the analysis incorporated in later sections, 
 I've chosen to simply read in a _very limited_ portion of the data set. Careful 
 decisions about what is absolutely necessary for an analysis can alleviate 
@@ -117,15 +118,29 @@ Here are three ways that information can be missing:
 Alternatively, they may submit their information too late for inclusion in the 
 annual data set. For example, the 2015 data set does not include information for
 the New Brunswick (NJ) Fire Department.
-2. **Missing Months**: Many fire departments report incidents at regular intervals throughout the year, such as monthly. In these situations, one or more months may be omitted. We'll explore this example further in a moment.
-3. **Partial/Selective Reporting**: A fire department may report some but not all of its
-calls to NFIRS. I've observed departments that focus their reporting on fire
-incidents but not their medical incidents. As a basic example, the national
-NFIRS data set includes 27 incidents for the Southfield (MI) Fire Department,
-yet state-level documents report 1798 incidents in  
-[2016 (page 195)](http://www.michigan.gov/documents/lara/2016_Michigan_Monthly_Incident_Counts_1_541385_7.pdf). It is reasonable to assume that 2016 is accurate and information was underreported in 2015.
+2. **Missing Months**: Many fire departments report incidents at regular
+intervals throughout the year, such as monthly. In these situations, one or more
+months may be omitted. We'll explore this example further in a moment.
+3. **Partial/Selective Reporting**: A fire department may report some but not
+all of its calls to NFIRS. I've observed departments that focus their reporting
+on fire incidents but not their medical incidents. As a basic example, the
+national NFIRS data set includes 27 incidents for the Southfield (MI) Fire
+Department, yet state-level documents report 1798 incidents in [2016 (page
+195)](http://www.michigan.gov/documents/lara/2016_Michigan_Monthly_Incident_Counts_1_541385_7.pdf).
+It is reasonable to assume that 2016 is accurate and information was
+underreported in 2015.
 
 ## Basic information
+
+The 2015 NFIRS data set includes approximately 
+`r incident.by.type$nn %>% sum %>% round(-2) %>% formatC(big.mark=",", format="d")`
+incidents. 
+
+In the past, the public data set was limited to fire incident types as shown in this table
+```{r fire_types, echo=FALSE, message=FALSE}
+fire.types %>%
+  datatable(rownames=FALSE) 
+```
 
 - Summary description: total calls/agencies in basic incident table 
 - Types of calls by agency: fire vs. medical/mva

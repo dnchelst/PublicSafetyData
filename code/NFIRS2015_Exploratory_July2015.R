@@ -28,6 +28,9 @@ basic.cols <- cols(STATE=col_character(), FDID=col_character(),
 basic1 <- read_delim(basic.file, delim="^", col_types=basic.cols)
 saveRDS(basic1, file="NFIRS-2015-basicincident1.rds")
 
+basic.2014 <- file.path("../2014", basic.file) %>% 
+  read_delim(delim="^", col_type=basic.cols)
+
 ff.casualty.cols <- cols(STATE=col_character(), FDID=col_character(),
   INC_DATE=col_date(format=d.format), INC_NO=col_character(),
   EXP_NO=col_integer(), 
@@ -73,6 +76,8 @@ incident.by.type <- incident.type.by.agency %>%
   ungroup %>%
   mutate(percent = nn / sum(nn))
 
+
+
 # departments based upon total calls
 call.by.agency %$% quantile(nn, probs=seq(0, 1, .1))
 
@@ -87,9 +92,11 @@ incident.by.type.larger <- incident.type.by.agency %>%
   ungroup %>%
   mutate(percent = nn / sum(nn))
 
-save(incident.type.by.agency, call.by.agency, incident.by.type, 
+save(incident.type.by.agency, call.by.agency, incident.by.type, fire.types,
      file="NFIRS-2015-BasicAnalysis.RData")  
 load("NFIRS-2015-BasicAnalysis.RData")
+
+medical.types <- c(300, 311, 320, 321, 661)
 
 # lack of reporting (months missing)
 fd.missing.months <- basic.2015 %>%
