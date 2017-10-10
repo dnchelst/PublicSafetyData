@@ -7,8 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE} 
 knitr::opts_chunk$set(echo = TRUE) 
-
-
+load("NFIRS-2015-BasicAnalysis.RData")
+library(DT)
+library(tidyverse)
+library(magrittr)
 
 ```
 
@@ -20,16 +22,15 @@ reported from the majority of fire departments across the country. In my current
 role, while working with fire departments, I've observed that most reporting 
 agencies provide detailed information about every incident and every responding 
 unit. Additional details accompany serious fires, mutual aid responses, 
-casualties (injuries and deaths), and assorted special circumstances (hazardous 
-materials, wildfires, etc.)
+casualties (injuries and deaths), and assorted special circumstances (such as
+hazardous materials and wildfires).
 
 In the past, the USFA's public data release (PDR) would only contain fire 
-incidents, which amounts to a small but significant fraction of all incidents 
-involving fire departments. Usually, this equals between 10 and 20 percent of 
-total incidents. Now, you can request information about __all__ incidents; 
-however, unit-level information still remains unavailable.
-In May, I received a full data set for 2015 and a matching set of data for 2014
-as well. You can request your own data set here.
+incidents, which amounts to a small but significant fraction (8.7% for 2015) of
+all incidents involving fire departments. Now, you can request information about
+__all__ incidents; however, unit-level information still remains unavailable. In
+May, I received a full data set for 2015 and a matching set of data for 2014 as
+well. You can request your own data set here.
 
 I'm excited about the update as this new expanded data set places NFIRS on par 
 with other similar national data sets such as the National Highway and Traffic 
@@ -41,8 +42,7 @@ activities of the fire service as a whole. 2015's data includes approximately
 24.8 million records, while the 2014's original "fires only" data release 
 contained approximately 2.1 million records. Focusing on the country's largest 
 fire department, the New York Fire Department (NYFD), NFIRS 2015 data includes 
-approximately 560,000 incidents while 2014's prior release includes 76,000 
-incidents.
+approximately 557,000 incidents, but only 80,000 fire-specific incidents.
 
 I'd like to take a few moments to discuss the new data set. NFIRS 2015 data 
 presents challenges that arise whenever one deals with larger data sets. 
@@ -80,6 +80,7 @@ method.
     on my home computer is still quite slow.
     - Cloud hosting is possible but adds an extra layer of effort with limited
     benefit as I'm not sharing the data with many users.
+    
 - __Limiting Data__: To accomplish the analysis incorporated in later sections, 
 I've chosen to simply read in a _very limited_ portion of the data set. Careful 
 decisions about what is absolutely necessary for an analysis can alleviate 
@@ -102,7 +103,18 @@ leverage cloud computing and my [Simple Storage Service
 reasonable amount of time. I haven't explored this option adequately to offer an
 informed opinion on it.
 
+
 ## Basic information
+
+The 2015 NFIRS data set includes approximately 
+`r incident.by.type$nn %>% sum %>% round(-2) %>% formatC(big.mark=",", format="d")`
+incidents. 
+
+In the past, the public data set was limited to fire incident types as shown in this table
+```{r fire_types, echo=FALSE, message=FALSE}
+fire.types %>%
+  datatable(rownames=FALSE) 
+```
 
 - Summary description: total calls/agencies in basic incident table 
 - Types of calls by agency: fire vs. medical/mva
