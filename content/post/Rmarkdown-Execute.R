@@ -1,6 +1,11 @@
 library(rmarkdown)
-setwd("C:/Users/Dov/Documents/CPSM-Scripts/PublicSafetyData")
-setwd("content/post")
+library(tidyverse)
+git.directories <- c("C:/Users/Dov/Documents/CPSM-Scripts",
+                 "/home/dchelst/git")
+post.directory <- ifelse(file.exists(git.directories[1]), git.directories[1],
+                         git.directories[2]) %>%
+  file.path("PublicSafetyData/content/post")
+setwd(post.directory)
 render("NFIRS-2015-Improved.Rmarkdown")
 
 setdiff(
