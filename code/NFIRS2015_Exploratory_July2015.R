@@ -76,8 +76,6 @@ incident.by.type <- incident.type.by.agency %>%
   ungroup %>%
   mutate(percent = nn / sum(nn))
 
-
-
 # departments based upon total calls
 call.by.agency %$% quantile(nn, probs=seq(0, 1, .1))
 
@@ -92,13 +90,29 @@ incident.by.type.larger <- incident.type.by.agency %>%
   ungroup %>%
   mutate(percent = nn / sum(nn))
 
-save(incident.type.by.agency, call.by.agency, incident.by.type, fire.types,
+# fire vs. medical comparison
+CreateTypes <- function(numeric.vector){
+  type.df <- tibble(INC_TYPE=numeric.vector) %>%
+    mutate_all(as.character) %>%
+    left_join(select(incident.by.type, INC_TYPE, INC_DESCRIPTION))
+}
+
+medical.types <- c(300, 311, 320, 321, 661) %>% CreateTypes
+fire.types <- c(100, 111:118, 120:123, 130:138, 140:143, 150:155, 160:164, 
+                170:173, 400, 410:413, 420:424, 430:431, 440:445, 451, 
+                460:463, 471, 480:482, 561, 631:632) %>%
+  CreateTypes
+accident.types <- c(322:324) %>% CreateTypes
+
+save(incident.type.by.agency, call.by.agency, incident.by.type, 
+     fire.types, medical.types, accident.types,
      file="NFIRS-2015-BasicAnalysis.RData")  
+
+
 load("NFIRS-2015-BasicAnalysis.RData")
 
-medical.types <- 
-  tibble(INC_TYPE=as.character(c(300, 311, 320, 321, 661))) %>%
-  left_join(select(incident.by.type, INC_TYPE, INC_DESCRIPTION))
+
+
 
 # lack of reporting (months missing)
 fd.missing.months <- basic.2015 %>%
