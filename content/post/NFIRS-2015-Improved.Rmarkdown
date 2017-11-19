@@ -16,33 +16,35 @@ library(magrittr)
 
 ## Introduction
 
-Data from the National Fire Incident Reporting System (NFIRS) is now available 
-from the U.S. Fire Administration (USFA)for 2015. The agency collects data 
-reported from the majority of fire departments across the country. In my current
-role, while working with fire departments, I've observed that most reporting 
-agencies provide detailed information about every incident and every responding 
-unit. Additional details accompany serious fires, mutual aid responses, 
-casualties (injuries and deaths), and assorted special circumstances (such as
-hazardous materials and wildfires).
+Data from the National Fire Incident Reporting System (NFIRS) is now available
+from the U.S. Fire Administration (USFA) for 2015. The agency collects data
+reported from the majority of fire departments across the country. While working
+with fire departments, in my current role, I've observed that most reporting
+agencies provide detailed information about every incident along with times
+associated with each of the incident's responding units. Additional details
+accompany serious fires, mutual aid responses, casualties (injuries and deaths),
+and assorted special circumstances (such as hazardous materials and wildfires).
 
-In the past, the USFA's public data release (PDR) would only contain fire 
+In the past, the USFA's public data release (PDR) would only contain fire
 incidents, which amounts to a small but significant fraction (8.7% for 2015) of
 all incidents involving fire departments. Now, you can request information about
 __all__ incidents; however, unit-level information still remains unavailable. In
 May, I received a full data set for 2015 and a matching set of data for 2014 as
-well. You can request your own data set here.
+well. You can request your own data set
+[here](https://www.usfa.fema.gov/data/statistics/order_download_data.html).
 
-I'm excited about the update as this new expanded data set places NFIRS on par 
-with other similar national data sets such as the National Highway and Traffic 
-Safety Administartion's (NHTSA) National Emergency Medical Services Information 
-System (NEMSIS) that records emergency medical incidents involving public or 
-private ambulance services throughout the country. Moreover, it allows a 
-researcher to get a fuller picture of any single agency as well as the 
-activities of the fire service as a whole. 2015's data includes approximately 
-24.8 million records, while the 2014's original "fires only" data release 
-contained approximately 2.1 million records. Focusing on the country's largest 
-fire department, the New York Fire Department (NYFD), NFIRS 2015 data includes 
-approximately 557,000 incidents, but only 80,000 fire-specific incidents.
+I'm excited about the update as this new expanded data set places NFIRS on par
+with other similar national data sets such as the National Highway and Traffic
+Safety Administration's ([NHTSA](https://www.nhtsa.gov/)) National Emergency
+Medical Services Information System ([NEMSIS](https://nemsis.org/)) that records
+emergency medical incidents involving public or private ambulance services
+throughout the country. Moreover, it allows a researcher to get a fuller picture
+of any single agency as well as the activities of the fire service as a whole.
+2015's data includes approximately 24.8 million records, while 2014's original
+"fires only" data release contained approximately 2.1 million records. Focusing
+on the country's largest fire department, the New York Fire Department (NYFD),
+NFIRS 2015 data includes approximately 557,000 incidents, but only 80,000
+fire-specific incidents.
 
 I'd like to take a few moments to discuss the new data set. NFIRS 2015 data 
 presents challenges that arise whenever one deals with larger data sets. 
@@ -81,16 +83,18 @@ method.
     - Cloud hosting is possible but adds an extra layer of effort with limited
     benefit as I'm not sharing the data with many users.
     
-- __Limiting Data__: To accomplish the analysis incorporated in later sections, 
-I've chosen to simply read in a _very limited_ portion of the data set. Careful 
-decisions about what is absolutely necessary for an analysis can alleviate 
-problems with data size. At this point, I'm just using *read_csv* from the 
-**readr** package. It allows me to selectively load 11 out of 40 columns from 
-the NFIRS 2015 basic incident table. The resulting RDS file, which is a standard
-internal R format for a single data set (or "data frame") is less than 90 
-Megabytes when compared to 4 Gigabytes. Nevertheless, the file still took over 4
-minutes to load. Another alternative is using *read.csv.sql* from the **sqldf** 
-package. 
+- __Limiting Data__: To accomplish the analysis incorporated in later sections,
+I've chosen to simply read in a _very limited_ portion of the data set. Careful
+decisions about what is absolutely necessary for an analysis can alleviate
+problems with data size. At this point, I'm just using *read_csv* from the
+[readr](http://readr.tidyverse.org/) package. It allows me to selectively load
+11 out of 40 columns from the NFIRS 2015 basic incident table. The resulting RDS
+file, which is a standard internal R format for a single data set (or "data
+frame") is less than 90 Megabytes when compared to 4 Gigabytes. Nevertheless,
+the file still took over 4 minutes to load. Another alternative is using
+*read.csv.sql* from the
+[sqldf](https://github.com/ggrothendieck/sqldf/blob/master/README.md#Overview)
+package.
 - __Drill__: For the next NFIRS-related post, I will likely use [Apache
 Drill](https://drill.apache.org/) for basic queries. It can also convert the
 current text-delimited data files into a more efficient columnar 
@@ -107,7 +111,7 @@ informed opinion on it.
 ## Basic information
 
 The 2015 NFIRS data set includes approximately 
-`r incident.by.type$nn %>% sum %>% round(-2) %>% formatC(big.mark=",", format="d")`
+`r incident.by.type$nn %>% sum %>% round(-3) %>% formatC(big.mark=",", format="d")`
 incidents. 
 
 In the past, the public data set was limited to the `r nrow(fire.types)` fire
@@ -116,6 +120,8 @@ incident types as shown in this table
 fire.types %>%
   datatable(rownames=FALSE, colnames=c("Incident Type", "Description")) 
 ```
+
+
 
 - Summary description: total calls/agencies in basic incident table 
 - Types of calls by agency: fire vs. medical/mva
