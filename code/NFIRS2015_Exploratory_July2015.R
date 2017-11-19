@@ -108,11 +108,7 @@ save(incident.type.by.agency, call.by.agency, incident.by.type,
      fire.types, medical.types, accident.types,
      file="NFIRS-2015-BasicAnalysis.RData")  
 
-
 load("NFIRS-2015-BasicAnalysis.RData")
-
-
-
 
 # lack of reporting (months missing)
 fd.missing.months <- basic.2015 %>%
