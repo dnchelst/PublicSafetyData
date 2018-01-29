@@ -28,9 +28,9 @@ and assorted special circumstances (such as hazardous materials and wildfires).
 In the past, the USFA's public data release (PDR) would only contain fire
 incidents, which amounts to a small but significant fraction (8.7% for 2015) of
 all incidents involving fire departments. Now, you can request information about
-__all__ incidents; however, unit-level information still remains unavailable. In
-May, I received a full data set for 2015 and a matching set of data for 2014 as
-well. You can request your own data set
+__all__ incidents; however, unit-level information still remains unavailable.
+Last May, I received a full data set for 2015 and a matching set of data for
+2014 as well. You can request your own data set
 [here](https://www.usfa.fema.gov/data/statistics/order_download_data.html).
 
 I'm excited about the update as this new expanded data set places NFIRS on par
@@ -61,14 +61,14 @@ further analysis to come.
 
 ## Difficulties Associated With Data Size
 
-I usually conduct the majority of my data analysis using the R programming 
-language on a single workstation. This works fine for smaller data sets that can
-be loaded comfortably into a computer's RAM. However, the NFIRS 2015 data
-release includes more than 10 files and contains more than 7 Gigabytes of
-information. Even looking at files individually, the primary data file alone
-exceeds 4 Gigabytes in size. I'd like to discuss some reasonable approaches to
-this specific problem that I plan to explore going forward along with others
-that I've already discarded.
+I usually conduct the majority of my data analysis using the [R statistical
+programming language](https://www.r-project.org/) on a single workstation. This
+works fine for smaller data sets that can be loaded comfortably into a
+computer's RAM. However, the NFIRS 2015 data release includes more than 10 files
+and contains more than 7 Gigabytes of information. Even looking at files
+individually, the primary data file alone exceeds 4 Gigabytes in size. I'd like
+to discuss some reasonable approaches to this specific problem that I plan to
+explore going forward along with others that I've already discarded.
 
 - __Ignoring the problem__: I'm certainly not loading all the data into memory
 and storing the information as one RData file. It's just too big for my system.
@@ -107,7 +107,6 @@ leverage cloud computing and my [Simple Storage Service
 reasonable amount of time. I haven't explored this option adequately to offer an
 informed opinion on it.
 
-
 ## Basic information
 
 The 2015 NFIRS data set includes approximately 
@@ -124,10 +123,16 @@ fire.types %>%
 
 
 - Summary description: total calls/agencies in basic incident table 
+
+- Top 10 agencies - by call? by fire? by medical?
+
+## Medical percentage
+
 - Types of calls by agency: fire vs. medical/mva
 - Top 10 agencies? total calls, total fires, total medical
 - total fatalities
 
+<!-- leave casualty information for next week: hint at it -->
 ## Casualty information: Fatality and Injury
 
 - summary table for ALL agencies? - display a limited number (sort w/ search)
