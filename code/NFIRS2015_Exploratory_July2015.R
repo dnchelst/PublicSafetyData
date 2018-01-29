@@ -1,6 +1,8 @@
 library(tidyverse)
 library(magrittr)
 library(stringr)
+library(lubridate)
+
 root.dir <- c("C:/Users/Dov/Documents/CPSM", "/home/dchelst/Documents")
 nfirs.dir <- root.dir %>%
   lapply(list.dirs) %>%
@@ -57,13 +59,14 @@ fd.list <- readRDS("NFIRS-2015-fdlist.rds")
 incident.types <- codes %>%
   filter(fieldid=="INC_TYPE", 
          !is.na(code_value)) %>%  
-  select(INC_TYPE=code_value, INC_DESCRIPTION=code_descr) 
+  select(INC_TYPE=code_value, INC_DESCRIPTION=code_descr) %>%
+  mutate(INC_TYPE=as.numeric(INC_TYPE))  %>%
+  filter(!is.na(INC_TYPE))
 
 incident.type.by.agency <- basic.2015 %>%
   filter(EXP_NO==0) %>%
   count(STATE, FDID, INC_TYPE) %>%
   ungroup %>%
-  mutate_at(vars(INC_TYPE), as.character) %>%
   left_join(incident.types, by="INC_TYPE") %>%
   left_join(select(fd.list, STATE, FDID, FD_NAME), by=c("STATE", "FDID"))
 
@@ -91,35 +94,28 @@ incident.by.type.larger <- incident.type.by.agency %>%
   mutate(percent = nn / sum(nn))
 
 # fire vs. medical comparison
-CreateTypes <- function(numeric.vector){
-  type.df <- tibble(INC_TYPE=numeric.vector) %>%
-    mutate_all(as.character) %>%
-    left_join(select(incident.by.type, INC_TYPE, INC_DESCRIPTION))
-}
-
-medical.types <- c(300, 311, 320, 321, 661) %>% CreateTypes
-fire.types <- c(100, 111:118, 120:123, 130:138, 140:143, 150:155, 160:164, 
+medical.types <- incident.types %>%
+  filter(INC_TYPE %in% c(300, 311, 320, 321, 661))
+fire.types <- incident.types %>% 
+  filter(INC_TYPE %in% 
+           c(100, 111:118, 120:123, 130:138, 140:143, 150:155, 160:164, 
                 170:173, 400, 410:413, 420:424, 430:431, 440:445, 451, 
-                460:463, 471, 480:482, 561, 631:632) %>%
-  CreateTypes
-accident.types <- c(322:324) %>% CreateTypes
+                460:463, 471, 480:482, 561, 631:632))
+accident.types <- incident.types %>% 
+  filter(INC_TYPE %in% c(322:324)) 
 
 save(incident.type.by.agency, call.by.agency, incident.by.type, 
      fire.types, medical.types, accident.types,
      file="NFIRS-2015-BasicAnalysis.RData")  
 
-
 load("NFIRS-2015-BasicAnalysis.RData")
 
-
-
-
 # lack of reporting (months missing)
-fd.missing.months <- basic.2015 %>%
-  select(STATE, FDID, INC_DATE) %>%
+fd.total.months <- basic.2015 %>%
   mutate(month=month(INC_DATE)) %>%
   distinct(STATE, FDID, month) %>%
   count(STATE, FDID) %>%
-  ungroup %>%
+  ungroup 
+fd.missing.months <- fd.total.months %>%
   filter(n < 12) %>%
   left_join(select(fd.list, STATE, FDID, FD_NAME), by=c("STATE", "FDID"))
