@@ -12,6 +12,20 @@ library(DT)
 library(tidyverse)
 library(magrittr)
 
+total.calls <- incident.by.type %$% sum(nn)
+SubType <- function(type1){
+  sum1 <- incident.by.type %>% 
+    filter(INC_TYPE %in% type1$INC_TYPE) %$% 
+    sum(nn)
+  return(sum1)}
+RoundThousand <- function(number1){
+  rounded.number <- number1 %>% 
+    round(-3) %>% 
+    formatC(big.mark=",", format="d")
+  return(rounded.number)
+}
+fire.calls <- SubType(fire.types)
+medical.calls <- SubType(medical.types)
 ```
 
 ## Introduction
@@ -109,17 +123,35 @@ informed opinion on it.
 
 ## Basic information
 
-The 2015 NFIRS data set includes approximately 
-`r incident.by.type$nn %>% sum %>% round(-3) %>% formatC(big.mark=",", format="d")`
+The 2015 NFIRS data set includes approximately `r RoundThousand(total.calls)`
 incidents. 
 
-In the past, the public data set was limited to the `r nrow(fire.types)` fire
-incident types as shown in this table
+In the past, the public data set was limited to only `r nrow(fire.types)` fire
+incident types which included. In 2015, these fire incident types represented
+approximately `r RoundThousand(fire.calls). The following table shows these 
+types sorted from most to least frequent.
 ```{r fire_types, echo=FALSE, message=FALSE}
-fire.types %>%
-  datatable(rownames=FALSE, colnames=c("Incident Type", "Description")) 
+incident.by.type %>%
+  select(-percent) %>%
+  filter(INC_TYPE %in% fire.types$INC_TYPE) %>%
+  arrange(desc(nn)) %>%
+  datatable(rownames=FALSE, 
+            colnames=c("Incident Type", "Description", "Frequency")) %>%
+  formatRound('nn', 0)
 ```
 
+It's reasonable to expect that the department's with the largest number of calls
+are also the areas with the largest populations. Below is a list of 100 agencies
+with the most reported calls. If you live in a highly populated area where the 
+
+```{r calls_by_agency, echo=FALSE, message=FALSE}
+call.by.agency %>%
+  arrange(desc(nn)) %>%
+  head(100) %>%
+  datatable(rownames=FALSE, 
+            colnames=c("State", "Fire Department ID", "Name", "Total Calls")) %>%
+  formatRound('nn', 0)
+```
 
 
 - Summary description: total calls/agencies in basic incident table 
@@ -128,6 +160,8 @@ fire.types %>%
 
 ## Medical percentage
 
+
+`r RoundThousand(medical.calls)`
 - Types of calls by agency: fire vs. medical/mva
 - Top 10 agencies? total calls, total fires, total medical
 - total fatalities
