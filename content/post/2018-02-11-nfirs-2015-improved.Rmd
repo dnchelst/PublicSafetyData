@@ -1,8 +1,14 @@
 --- 
-title: 'NFIRS 2015 Is Vastly Improved: Just Ask FEMA' 
+title: 'NFIRS 2015 is Vastly Improved: Just Ask FEMA' 
 author: "Dov Chelst" 
-date: "2017-07-30" 
-output: html_document 
+date: '2018-02-08'
+description: ''
+slug: nfirs-2015-improved
+tags:
+- nfirs
+- fire
+categories: []
+topics: []
 ---
 
 ```{r setup, include=FALSE} 
@@ -70,8 +76,6 @@ the USFA's statistical analysis; but I'll expand the scope to include fire
 injuries as well as fire deaths. At the end, I will include some foods for 
 thought, links to my own analysis for the technically savvy, and hints at 
 further analysis to come.
-
-[Prior reference]({{"2016-03-18-nfirs-2014-available.md"}}) - How to access
 
 ## Difficulties Associated With Data Size
 

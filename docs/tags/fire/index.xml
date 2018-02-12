@@ -6,10 +6,19 @@
     <description>Recent content in Fire on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Mar 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/fire/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NFIRS 2015 is Vastly Improved: Just Ask FEMA</title>
+      <link>/2018/02/08/nfirs-2015-improved/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/08/nfirs-2015-improved/</guid>
+      <description>Introduction Data from the National Fire Incident Reporting System (NFIRS) is now available from the U.S. Fire Administration (USFA) for 2015. The agency collects data reported from the majority of fire departments across the country. While working with fire departments, in my current role, I’ve observed that most reporting agencies provide detailed information about every incident along with times associated with each of the incident’s responding units.</description>
+    </item>
     
     <item>
       <title>NFIRS 2014 Available</title>
