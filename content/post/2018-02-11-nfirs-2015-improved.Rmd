@@ -1,7 +1,7 @@
 --- 
 title: 'NFIRS 2015 is Vastly Improved: Just Ask FEMA' 
 author: "Dov Chelst" 
-date: '2018-02-08'
+date: '2018-02-11'
 description: ''
 slug: nfirs-2015-improved
 tags:
@@ -125,15 +125,15 @@ leverage cloud computing and my [Simple Storage Service
 reasonable amount of time. I haven't explored this option adequately to offer an
 informed opinion on it.
 
-## Basic information
+## Basic Information
 
 The 2015 NFIRS data set includes approximately `r RoundThousand(total.calls)`
 incidents. 
 
 In the past, the public data set was limited to only `r nrow(fire.types)` fire
-incident types which included. In 2015, these fire incident types represented
-approximately `r RoundThousand(fire.calls). The following table shows these 
-types sorted from most to least frequent.
+incident types. In 2015, these fire incident types represented approximately 
+`r RoundThousand(fire.calls)` calls. The following table shows these types 
+sorted from most to least frequent.
 ```{r fire_types, echo=FALSE, message=FALSE}
 incident.by.type %>%
   select(-percent) %>%
@@ -144,9 +144,13 @@ incident.by.type %>%
   formatRound('nn', 0)
 ```
 
-It's reasonable to expect that the department's with the largest number of calls
-are also the areas with the largest populations. Below is a list of 100 agencies
-with the most reported calls. If you live in a highly populated area where the 
+It's reasonable to expect that the departments with the largest number of calls
+also manage areas with the largest populations. While there are 
+`r nrow(call.by.agency) %>% formatC(big.mark=",", format="d")` agencies reporting
+at least some of their calls to the national system, below is a list of the 100
+agencies with the most reported calls. While there are 50 states in the U.S.,
+these 100 agencies are concentrated in 31 states. For example, no agencies are
+included from Michigan or New Jersey.
 
 ```{r calls_by_agency, echo=FALSE, message=FALSE}
 call.by.agency %>%
@@ -157,29 +161,59 @@ call.by.agency %>%
   formatRound('nn', 0)
 ```
 
+## Medical Percentage
 
-- Summary description: total calls/agencies in basic incident table 
+Without examining populations in detail, it should be clear that the number of
+calls is not always proportional to an area's population. For example,
+Fayetteville Fire and EMS reported a similar number of calls as the San
+Francisco Fire Department. However, San Francisco's population is approximately
+865,000 people while Fayetteville (NC)'s population is approximately 204,000
+people. The main difference is that Fayetteville's fire department reported more
+medical calls to NFIRS than San Francisco's Fire Department.[^1] A way to compare
+reporting by each agency is to convert separate calls into fire calls, medical
+calls, and the rest. Then, we calculate the percentage of reported calls that
+were fire calls (as per prior year's releases) or medical calls.
 
-- Top 10 agencies - by call? by fire? by medical?
+Overall, there were `r RoundThousand(medical.calls)` medical calls which was
+`r round(100 * medical.calls / total.calls, 1)`% of total calls. The next table
+shows calls and associated percentages for all agencies that reported at least 
+1,000 calls in 2015.[^2]
 
-## Medical percentage
+```{r medical_proportion, echo=FALSE, message=FALSE}
+incident.type.by.agency %>%
+  mutate(incident.type2 = case_when(
+    INC_TYPE %in% medical.types$INC_TYPE ~ "medical",
+    INC_TYPE %in% fire.types$INC_TYPE ~ "fire", 
+    TRUE ~ "other")) %>%
+  count(STATE, FDID, FD_NAME, incident.type2, wt=n) %>%
+  spread(incident.type2, nn) %>%
+  mutate(total=medical + fire + other, 
+         fire.pct = fire / total, 
+         medical.pct = medical / total) %>% 
+  arrange(desc(total)) %>%
+  filter(total >= 1000) %>%
+  select(-other) %>%
+  datatable(rownames=FALSE, 
+            colnames=c("State", "FDID", "Name", 
+                       "Fire", "Medical",   #"Other Calls", 
+                       "Total",
+                       "Fire %", "Medical %"),
+            filter="top") %>%
+  formatRound(c('fire', 'medical', # 'other',
+                'total'), 0) %>%
+  formatPercentage(c("fire.pct", "medical.pct"))
+```
 
+### Food for Thought
 
-`r RoundThousand(medical.calls)`
-- Types of calls by agency: fire vs. medical/mva
-- Top 10 agencies? total calls, total fires, total medical
-- total fatalities
+In upcoming posts, we'll examine:  
 
-<!-- leave casualty information for next week: hint at it -->
-## Casualty information: Fatality and Injury
+- Problems associated with the NFIRS 2015 data set  
+- Components of NFIRS associated with casualties (death and injury)  
+- Merging NFIRS data with census information to determine associated rates  
 
-- summary table for ALL agencies? - display a limited number (sort w/ search)
-
-- fatalities vs. injuries - information about injuries
-
-## Conclusion
-
-## Food for thought
-
-- data-related questions - directed request for comments (on linkedin) - code 
-references to github repository
+[^1]: Keep in mind that counts of "reported calls" may differ from actual calls. 
+This will be explored in a future post.
+[^2]: The table's fire department names relies on a table supplied by NFIRS. The
+list is just to correct the spelling of each entry manually before publishing
+this post.
