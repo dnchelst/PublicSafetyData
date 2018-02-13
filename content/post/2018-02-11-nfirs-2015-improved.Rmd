@@ -161,7 +161,7 @@ call.by.agency %>%
   formatRound('nn', 0)
 ```
 
-## Medical Percentage
+## Medical Calls and Percentage
 
 Without examining populations in detail, it should be clear that the number of
 calls is not always proportional to an area's population. For example,
@@ -173,6 +173,19 @@ medical calls to NFIRS than San Francisco's Fire Department.[^1] A way to compar
 reporting by each agency is to convert separate calls into fire calls, medical
 calls, and the rest. Then, we calculate the percentage of reported calls that
 were fire calls (as per prior year's releases) or medical calls.
+
+Here are the NFIRS incident types that I considered to be medical in nature
+ordered from most frequent to least frequent.
+
+```{r medical_types, echo=FALSE, message=FALSE}
+incident.by.type %>%
+  select(-percent) %>%
+  filter(INC_TYPE %in% medical.types$INC_TYPE) %>%
+  arrange(desc(nn)) %>%
+  datatable(rownames=FALSE, 
+            colnames=c("Incident Type", "Description", "Frequency")) %>%
+  formatRound('nn', 0)
+```
 
 Overall, there were `r RoundThousand(medical.calls)` medical calls which was
 `r round(100 * medical.calls / total.calls, 1)`% of total calls. The next table
