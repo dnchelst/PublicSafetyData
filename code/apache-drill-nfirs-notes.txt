@@ -17,3 +17,4 @@ FROM dfs.`/home/dchelst/Documents/CPSM/NFIRS/2015/civiliancasualty.csvh`
 GROUP BY STATE
 
 https://rud.is/b/2016/12/20/sergeant-a-r-boot-camp-for-apache-drill/
+https://mapr.com/blog/how-convert-csv-file-apache-parquet-using-apache-drill/
