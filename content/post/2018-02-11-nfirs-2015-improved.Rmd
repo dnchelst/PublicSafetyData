@@ -157,7 +157,8 @@ call.by.agency %>%
   arrange(desc(nn)) %>%
   head(100) %>%
   datatable(rownames=FALSE, 
-            colnames=c("State", "Fire Department ID", "Name", "Total Calls")) %>%
+            colnames=c("State", "Fire Department ID", "Name", "Total Calls"), 
+            filter="top") %>%
   formatRound('nn', 0)
 ```
 
