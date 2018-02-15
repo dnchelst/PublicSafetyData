@@ -187,10 +187,10 @@ incident.by.type %>%
   formatRound('nn', 0)
 ```
 
-Overall, there were `r RoundThousand(medical.calls)` medical calls which was
-`r round(100 * medical.calls / total.calls, 1)`% of total calls. The next table
-shows calls and associated percentages for all agencies that reported at least 
-1,000 calls in 2015.[^2]
+Overall, there were approximately `r RoundThousand(medical.calls)` medical calls
+which was `r round(100 * medical.calls / total.calls, 1)`% of total calls. The
+next table shows calls and associated percentages for all agencies that reported
+at least 1,000 calls in 2015.[^2]
 
 ```{r medical_proportion, echo=FALSE, message=FALSE}
 incident.type.by.agency %>%
@@ -219,14 +219,16 @@ incident.type.by.agency %>%
 
 ### Food for Thought
 
-In upcoming posts, we'll examine:  
+In upcoming posts, I'll examine:  
 
-- Problems associated with the NFIRS 2015 data set  
-- Components of NFIRS associated with casualties (death and injury)  
+- Problems associated with the NFIRS 2015 data set,  
+- Components of NFIRS associated with casualties (death and injury), and  
 - Merging NFIRS data with census information to determine associated rates  
 
 [^1]: Keep in mind that counts of "reported calls" may differ from actual calls. 
-This will be explored in a future post.
-[^2]: The table's fire department names relies on a table supplied by NFIRS. The
-list is just to correct the spelling of each entry manually before publishing
-this post.
+This will be explored in a future post. This actually shows how San Francisco
+distinguishes calls for service from their (non-medical) incidents. You can see
+both data sets at 
+[San Francisco's Open Data Portal](https://data.sfgov.org/browse?q=fire).
+[^2]: The table's fire department names rely on information supplied by NFIRS
+which may contain an occasional typo. 
