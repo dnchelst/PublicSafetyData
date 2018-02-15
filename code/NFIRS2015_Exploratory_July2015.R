@@ -20,25 +20,21 @@ civilian.casualty <- read_delim(civilian.casualty.file, delim="^", n_max=10)
 d.format <- "%m%d%Y"
 dt.format <- "%m%d%Y%H%M"
 # the columns that I need for basic incident table
-basic.cols <- cols(STATE=col_character(), FDID=col_character(), 
-  INC_DATE=col_date(format=d.format), INC_NO=col_character(), 
-  EXP_NO=col_integer(), INC_TYPE=col_integer(), AID=col_character(),
-  #ALARM=col_datetime(format=dt.format),  ARRIVAL=col_datetime(dt.format),
-  FF_DEATH=col_integer(), OTH_DEATH=col_integer(), 
-  FF_INJ=col_integer(), OTH_INJ=col_integer(),
-  .default=col_skip())
+basic.cols <- cols_only(STATE="c", FDID="c", 
+  INC_DATE=col_date(format=d.format), 
+  INC_NO="c", EXP_NO="i", INC_TYPE="i", AID="c",
+  ALARM=col_datetime(format=dt.format),  ARRIVAL=col_datetime(dt.format),
+  FF_DEATH="i", OTH_DEATH="i", FF_INJ="i", OTH_INJ="i")
 basic1 <- read_delim(basic.file, delim="^", col_types=basic.cols)
 saveRDS(basic1, file="NFIRS-2015-basicincident1.rds")
 
 basic.2014 <- file.path("../2014", basic.file) %>% 
   read_delim(delim="^", col_type=basic.cols)
 
-ff.casualty.cols <- cols(STATE=col_character(), FDID=col_character(),
-  INC_DATE=col_date(format=d.format), INC_NO=col_character(),
-  EXP_NO=col_integer(), 
-  GENDER=col_integer(), CAREER=col_integer(), AGE=col_integer(),
-  INJ_DATE = col_datetime(format=dt.format),
-  .default=col_skip())
+ff.casualty.cols <- cols_only(STATE="c", FDID="c", 
+  INC_DATE=col_date(format=d.format), 
+  INC_NO="c", EXP_NO="i", GENDER="i", CAREER="i", AGE="i", 
+  INJ_DATE = col_datetime(format=dt.format))
 ff.casualty1 <- read_delim(ff.casualty.file, delim="^", 
                            col_types=ff.casualty.cols)
 saveRDS(ff.casualty1, file="NFIRS-2015-ffcasualty1.rds")
