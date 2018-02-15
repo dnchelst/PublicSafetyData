@@ -30,6 +30,9 @@ RoundThousand <- function(number1){
     formatC(big.mark=",", format="d")
   return(rounded.number)
 }
+RefCode <- function(post.name){
+  htmltools::HTML(paste0('{{< ref \"', post.name, '\" >}}'))
+}
 fire.calls <- SubType(fire.types)
 medical.calls <- SubType(medical.types)
 ```
@@ -45,12 +48,14 @@ associated with each of the incident's responding units. Additional details
 accompany serious fires, mutual aid responses, casualties (injuries and deaths),
 and assorted special circumstances (such as hazardous materials and wildfires).
 
-In the past, the USFA's public data release (PDR) would only contain fire
-incidents, which amounts to a small but significant fraction (8.7% for 2015) of
-all incidents involving fire departments. Now, you can request information about
-__all__ incidents; however, unit-level information still remains unavailable.
-Last May, I received a full data set for 2015 and a matching set of data for
-2014 as well. You can request your own data set
+In the past
+(see my [prior post](`r RefCode("2016-03-18-nfirs-2014-available.md")`)), 
+the USFA's public data release (PDR) would only contain fire incidents, which
+amounts to a small but significant fraction (8.7% for 2015) of all incidents
+involving fire departments. Now, you can request information about __all__
+incidents; however, unit-level information still remains unavailable. Last May,
+I received a full data set for 2015 and a matching set of data for 2014 as well.
+You can request your own data set
 [here](https://www.usfa.fema.gov/data/statistics/order_download_data.html).
 
 I'm excited about the update as this new expanded data set places NFIRS on par
