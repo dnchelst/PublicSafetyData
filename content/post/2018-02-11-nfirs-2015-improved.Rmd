@@ -208,19 +208,10 @@ total calls. So, the information is more illustrative when medical calls are
 reported than in situations when they are absent.
 
 ```{r medical_proportion, echo=FALSE, message=FALSE}
-incident.type.by.agency %>%
-  mutate(incident.type2 = case_when(
-    INC_TYPE %in% medical.types$INC_TYPE ~ "medical",
-    INC_TYPE %in% fire.types$INC_TYPE ~ "fire", 
-    TRUE ~ "other")) %>%
-  count(STATE, FDID, FD_NAME, incident.type2, wt=n) %>%
-  spread(incident.type2, nn) %>%
-  mutate(total=medical + fire + other, 
-         fire.pct = fire / total, 
-         medical.pct = medical / total) %>% 
-  arrange(desc(total)) %>%
+type.pct.by.agency %>%
   filter(total >= 1000) %>%
   select(-other) %>%
+  arrange(desc(total, STATE, FDID)) %>%
   datatable(rownames=FALSE, 
             colnames=c("State", "FDID", "Name", 
                        "Fire", "Medical",   #"Other Calls", 
