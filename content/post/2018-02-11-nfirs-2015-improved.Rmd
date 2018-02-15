@@ -193,6 +193,15 @@ which was `r round(100 * medical.calls / total.calls, 1)`% of total calls. The
 next table shows calls and associated percentages for all agencies that reported
 at least 1,000 calls in 2015.[^2]
 
+I will just say two things about medical calls and NFIRS:  
+- *Some agencies may not report their medical calls despite responding to them*.
+These agencies may feel that NEMSIS is the proper way to report medical calls
+and that it is redundant to report the information to FEMA as part of NFIRS as
+well.
+- When reported to NFIRS, medical calls are usually a *large* proportion of
+total calls. So, the information is more illustrative when medical calls are
+reported than in situations when they are absent.
+
 ```{r medical_proportion, echo=FALSE, message=FALSE}
 incident.type.by.agency %>%
   mutate(incident.type2 = case_when(
