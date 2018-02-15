@@ -150,7 +150,7 @@ also manage areas with the largest populations. While there are
 at least some of their calls to the national system, below is a list of the 100
 agencies with the most reported calls. While there are 50 states in the U.S.,
 these 100 agencies are concentrated in 31 states. For example, no agencies are
-included from Michigan or New Jersey.
+included from either Michigan or New Jersey.
 
 ```{r calls_by_agency, echo=FALSE, message=FALSE}
 call.by.agency %>%
