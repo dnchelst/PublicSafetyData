@@ -151,10 +151,10 @@ clearance.plot <- ggplot(ucr.clearances.rates,
                          aes(x=crime, y = 100 * percentage, fill=crime)) +
   geom_bar(stat="identity") +
   ggtitle("") +
-  labs(x="Crime", y="Percent") + 
+  labs(x="Clearance Rates", y="Percent") + 
   theme(axis.text.x = element_blank()) + 
-  facet_wrap(~ city, ncol = 4, nrow=2) +
-  labs(fill = "Crime")
+  facet_wrap(~ city, ncol = NULL, nrow=NULL) +
+  labs(fill = "Clearance Rates")
 
-clearance.plot   %>% ggplotly # fix when you can control the labels
+clearance.plot   #%>% ggplotly # fix when you can control the labels
 ```

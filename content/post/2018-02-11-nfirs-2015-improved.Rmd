@@ -1,5 +1,5 @@
---- 
-title: 'NFIRS 2015 is Vastly Improved: Just Ask FEMA' 
+---
+title: "NFIRS 2015 is Vastly Improved: Just Ask FEMA"
 author: "Dov Chelst" 
 date: '2018-02-11'
 description: ''
@@ -11,13 +11,11 @@ categories: []
 topics: []
 ---
 
-```{r setup, include=FALSE} 
-knitr::opts_chunk$set(echo = TRUE) 
+```{r load_libraries_data, echo=FALSE, message=FALSE} 
 load("NFIRS-2015-BasicAnalysis.RData")
 library(DT)
 library(tidyverse)
 library(magrittr)
-library(blogdown)
 
 total.calls <- incident.by.type %$% sum(nn)
 SubType <- function(type1){
@@ -48,8 +46,6 @@ agencies provide detailed information about every incident along with times
 associated with each of the incident's responding units. Additional details
 accompany serious fires, mutual aid responses, casualties (injuries and deaths),
 and assorted special circumstances (such as hazardous materials and wildfires).
-
-[test](`r shortcode_html("ref", "2016-03-18-nfirs-2014-available.md")`)
 
 In the past
 (see my [prior post](`r  RefCode("2016-03-18-nfirs-2014-available.md")`)), 

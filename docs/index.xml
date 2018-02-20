@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>NFIRS 2015 is Vastly Improved: Just Ask FEMA</title>
+      <link>/2018/02/11/nfirs-2015-improved/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/11/nfirs-2015-improved/</guid>
+      <description>IntroductionData from the National Fire Incident Reporting System (NFIRS) is now available from the U.S. Fire Administration (USFA) for 2015. The agency collects data reported from the majority of fire departments across the country. While working with fire departments, in my current role, I’ve observed that most reporting agencies provide detailed information about every incident along with times associated with each of the incident’s responding units.</description>
+    </item>
+    
+    <item>
       <title>Census Data All Around Us</title>
       <link>/2017/07/04/census-data-all-around-us/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
@@ -82,15 +91,6 @@ For some, public safety doesn&amp;rsquo;t include ambulance services, but these 
       <description>Hi everyone.
 As a data analyst specializing in public safety for CPSM, I come across National Fire Incident Reporting System (NFIRS) data pretty regularly. Usually, I examine a single fire department at a time, but it&amp;rsquo;s also collected nationally by the Federal Emergency Management Agency.
 After it&amp;rsquo;s collected, a portion of the information is provided to interested researchers for review. You request the data and it arrives via US Mail on a CD.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/1/01/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/1/01/01/</guid>
-      <description>--- title: &#39;NFIRS 2015 is Vastly Improved: Just Ask FEMA&#39; author: &#34;Dov Chelst&#34; date: &#39;2018-02-11&#39;description: &#39;&#39;slug: nfirs-2015-improvedtags:- nfirs- firecategories: []topics: []---IntroductionData from the National Fire Incident Reporting System (NFIRS) is now available from the U.S. Fire Administration (USFA) for 2015. The agency collects data reported from the majority of fire departments across the country.</description>
     </item>
     
   </channel>
