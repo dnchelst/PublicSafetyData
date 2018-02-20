@@ -17,6 +17,7 @@ load("NFIRS-2015-BasicAnalysis.RData")
 library(DT)
 library(tidyverse)
 library(magrittr)
+library(blogdown)
 
 total.calls <- incident.by.type %$% sum(nn)
 SubType <- function(type1){
@@ -48,8 +49,10 @@ associated with each of the incident's responding units. Additional details
 accompany serious fires, mutual aid responses, casualties (injuries and deaths),
 and assorted special circumstances (such as hazardous materials and wildfires).
 
+[test](`r shortcode_html("ref", "2016-03-18-nfirs-2014-available.md")`)
+
 In the past
-(see my [prior post](`r RefCode("2016-03-18-nfirs-2014-available.md")`)), 
+(see my [prior post](`r  RefCode("2016-03-18-nfirs-2014-available.md")`)), 
 the USFA's public data release (PDR) would only contain fire incidents, which
 amounts to a small but significant fraction (8.7% for 2015) of all incidents
 involving fire departments. Now, you can request information about __all__
