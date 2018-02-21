@@ -139,7 +139,6 @@ ucr.crimes %>%
 ```
 
 
-
 ```{r clearance_rate_graphic, echo=FALSE, message=FALSE, warning=FALSE}
 ucr.clearances.rates <- ucr.crimes %>%
   select(city, state, crime, percentage) %>%
