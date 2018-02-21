@@ -154,8 +154,8 @@ clearance.plot <- ggplot(ucr.clearances.rates,
   labs(x="Clearance Rates", y="Percent") + 
   theme(axis.text.x = element_blank()) + 
   facet_wrap(~ city, ncol = NULL, nrow=NULL) +
-  scale_fill_brewer(palette="Set1")
-  labs(fill = "Clearance Rates")
+  scale_fill_brewer(palette="Set1") +
+  labs(fill = "Crime Types")
 
 clearance.plot   #%>% ggplotly # fix when you can control the labels
 ```
