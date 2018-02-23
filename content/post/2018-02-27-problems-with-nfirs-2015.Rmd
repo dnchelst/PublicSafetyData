@@ -14,8 +14,9 @@ tags: []
 While 
 - NFIRS is self-reported. Supervised and supported at the state level. Automated with software
 - Problems when self-reported:
-  - Non reporting
-  - Incomplete reporting: missing months, mising days - math calculations
-  - Basic reporting - timestamps
+  - Non reporting: percent, removing aid calls, total incidents?
+  - Incomplete reporting: missing months (157 calls, top 10,500 departments), missing days (5264, top 800 departments); math calculations
+  - Basic reporting - timestamps: calls on the hour, or half-hour, or quarter hour.
+  - Distribution by time day - figure 
   
 [Fire in the United States 2006-2015](https://www.usfa.fema.gov/downloads/pdf/publications/fius19th.pdf)
