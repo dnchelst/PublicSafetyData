@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37" />
 
-  <title>NFIRS 2014 Available &middot; Public Safety Data</title>
+  <title>Problems with NFIRS 2015 &middot; Public Safety Data</title>
 
   
   
@@ -194,7 +194,7 @@
 
 
 <div class="header">
-  <h1>NFIRS 2014 Available</h1>
+  <h1>Problems with NFIRS 2015</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -203,7 +203,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>Friday, March 18, 2016</time>
+    <time>Monday, March 5, 2018</time>
   </div>
 
   
@@ -212,58 +212,55 @@
 
   
   
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="../../../../tags/nfirs">NFIRS</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="../../../../tags/fire">fire</a>
-    
-  </div>
   
   
 
 </div>
 
-  <p>Hi everyone.</p>
-
-<p>As a data analyst specializing in public safety for CPSM, I come across
-<a href="https://www.nfirs.fema.gov/">National Fire Incident Reporting System</a> (NFIRS)
-data pretty regularly.
-Usually, I examine a single fire department at a time,
-but it&rsquo;s also collected nationally by the
-<a href="https://www.fema.gov/">Federal Emergency Management Agency</a>.</p>
-
-<p>After it&rsquo;s collected, a portion of the information is provided to interested
-researchers for review. You
-<a href="https://www.usfa.fema.gov/data/statistics/order_download_data.html">request the data</a>
-and it arrives via US Mail on a CD.</p>
-
-<p>I received my copy last week and started looking it over.
-There are no results to share,
-but I started a <a href="https://github.com/dnchelst/NFIRS">GitHub repository</a> and
-placed a copy of the data in an AWS S3 bucket.
-Details at GitHub in the README file.</p>
-
-<p>If NFIRS data interests you, let&rsquo;s start a dialogue!
-If you want to collaborate on GitHub, we can make that happen.
-(I have 2013 and 2011 as well.)</p>
-
-<p>Regards</p>
-
-<p>Dov</p>
-
-<p>P.S. I&rsquo;m testing the publicly available S3 bucket.
-If it gets too much traffic, I&rsquo;ll need to switch to a BitTorrent protocol.</p>
+  <div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>While there are certainly incentives for fire departments to participate in the National Fire Incident Reporting System (NFIRS), it is both <em>optional</em> and <em>self-reported</em>. As it is optional, not all fire departments participate. As the system relies on self-reporting, information can be inaccurate or omitted either through lack of quality control or via electronic reporting errors. I’d like to take a few moments to explore these problems. We’ll discuss how they are detected and address how they affect the ways that NFIRS data should be interpreted. This conversation uses a bit more mathematics than other posts. It’s slightly more complicated than the. math required to understand the earlier post about the <a href="">census data</a>.</p>
+<p>We’ll examine only three easily diagnosed problems with NFIRS data:</p>
+<ul>
+<li>Missing agencies (non reporting)<br />
+</li>
+<li>Missing incidents from a reporting agency (partial reporting)<br />
+</li>
+<li>Incomplete timestamp reporting</li>
+</ul>
+</div>
+<div id="nonreporting" class="section level2">
+<h2>Nonreporting</h2>
+<p>The U.S. Fire Administration (USFA) documents the number of reporting fire departments by state in Table 3 on pages 13-14 of <a href="https://www.usfa.fema.gov/downloads/pdf/publications/fius19th.pdf">Fire in the United States 2006-2015</a>. Of course, this just counts the number of departments and I thought I would work to recreate the same results. The USFA also provides a list of all fire departments in the U.S. and one can use NFIRS data to determine which agencies have not reported a single incident in 2015.</p>
+<p>Before moving forward, there are two caveats:</p>
+<ol style="list-style-type: decimal">
+<li>The USFA calculated that 65 percent of agencies provided data to NFIRS in</li>
+<li>It also concluded that “66 percent of all U.S. fires to which fire departments responded in 2015 were captured in the NFIRS.” However, what if larger departments were more likely to report data to NFIRS than smaller departments? Then, quite possibly, 65 percent of agencies could include more than 66 percent of total fires in the U.S.</li>
+<li>Two agencies that respond to the same fire may both report the incident to NFIRS and so the information is duplicated. The USFA avoids duplication by removing all incidents marked as “aid given.” But, what if the “aid given” incident referred to a fire where the primary agency neglected to report its incidents to NFIRS in 2015? In addition, what if an agency <strong>only</strong> reacted to “aid given” calls and reported no incidents in its primary area? Should it be considered a “nonreporting” fire department? This was pointed out to me by <a href="https://www.linkedin.com/in/sarawood/detail/recent-activity/posts/">Sara Wood</a>, NFIRS Program Manager at the <a href="http://firemarshal.ks.gov/agency-resources/KFIRS">Kansas Office of the State Fire Marshal</a>.</li>
+</ol>
+</div>
+<div id="partial-reporting" class="section level2">
+<h2>Partial Reporting</h2>
+</div>
+<div id="inaccurate-timestamps" class="section level2">
+<h2>Inaccurate timestamps</h2>
+<p>While - NFIRS is self-reported. Supervised and supported at the state level. Automated with software - Problems when self-reported: - Non reporting: percent, removing aid calls, total incidents? - Incomplete reporting: missing months (157 calls, top 10,500 departments), missing days (5264, top 800 departments); math calculations - Basic reporting - timestamps: calls on the hour, or half-hour, or quarter hour. - Distribution by time day - figure</p>
+<p><a href="https://www.usfa.fema.gov/downloads/pdf/publications/fius19th.pdf">Fire in the United States 2006-2015</a></p>
+</div>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
+    <a href="../../../../2018/02/11/nfirs-2015-improved/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
   <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="../../../../2018/02/11/nfirs-2015-improved/">NFIRS 2015 is Vastly Improved: Just Ask FEMA</a>
+    </nav>
     
   </div>
   <div class="pure-u-2-24">
@@ -271,14 +268,8 @@ If it gets too much traffic, I&rsquo;ll need to switch to a BitTorrent protocol.
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="../../../../2016/04/03/ucr-2014-available-aka-data-set-36391/">UCR 2014 Available (aka data set 36391)</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="../../../../2016/04/03/ucr-2014-available-aka-data-set-36391/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

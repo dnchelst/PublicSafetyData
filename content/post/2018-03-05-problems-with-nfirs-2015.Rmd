@@ -7,9 +7,70 @@ categories: []
 tags: []
 ---
 
-# Outline  
+```{r load_libraries_data, echo=FALSE, message=FALSE} 
+load("NFIRS-2015-BasicAnalysis.RData")
+library(DT)
+library(tidyverse)
+library(magrittr)
+RefCode <- function(post.name){
+  htmltools::HTML(paste0('{{< ref \"', post.name, '\" >}}'))
+}
+
+```
 
 ## Introduction
+
+While there are certainly incentives for fire departments to participate in the
+National Fire Incident Reporting System (NFIRS), it is both *optional* and
+*self-reported*. As it is optional, not all fire departments participate. As the
+system relies on self-reporting, information can be inaccurate or omitted either
+through lack of quality control or via electronic reporting errors. I'd like to
+take a few moments to explore these problems. We'll discuss how they are
+detected and address how they affect the ways that NFIRS data should be
+interpreted. This conversation uses a bit more mathematics than other posts.
+It's slightly more complicated than the. math required to understand the earlier
+post about the [census data](`r  RefCode("2017-07-04-census-data-all-around-us.Rmd")`).
+
+We'll examine only three easily diagnosed problems with NFIRS data:  
+
+- Missing agencies (non reporting)  
+- Missing incidents from a reporting agency (partial reporting)  
+- Incomplete timestamp reporting 
+
+## Nonreporting 
+
+The U.S. Fire Administration (USFA) documents the number of reporting fire departments
+by state in Table 3 on pages 13-14 of
+[Fire in the United States 2006-2015](https://www.usfa.fema.gov/downloads/pdf/publications/fius19th.pdf).
+Of course, this just counts the number of departments and I thought I would work
+to recreate the same results. The USFA also provides a list of all fire
+departments in the U.S. and one can use NFIRS data to determine which agencies
+have not reported a single incident in 2015. 
+
+Before moving forward, there are two caveats:
+
+  1. The USFA calculated that 65 percent of agencies provided data to NFIRS in
+  2015. It also concluded that "66 percent of all U.S. fires to which fire
+  departments responded in 2015 were captured in the NFIRS." However, what if
+  larger departments were more likely to report data to NFIRS than smaller
+  departments? Then, quite possibly, 65 percent of agencies could include more
+  than 66 percent of total fires in the U.S.
+  2. Two agencies that respond to the same fire may both report the incident to
+  NFIRS and so the information is duplicated. The USFA avoids duplication by
+  removing all incidents marked as "aid given." But, what if the "aid given"
+  incident referred to a fire where the primary agency neglected to report its
+  incidents to NFIRS in 2015? In addition, what if an agency **only** reacted to
+  "aid given" calls and reported no incidents in its primary area? Should it be
+  considered a "nonreporting" fire department? This was pointed out to me by
+[Sara Wood](https://www.linkedin.com/in/sarawood/detail/recent-activity/posts/), 
+NFIRS Program Manager at the 
+[Kansas Office of the State Fire Marshal](http://firemarshal.ks.gov/agency-resources/KFIRS). 
+  
+
+
+## Partial Reporting
+
+## Inaccurate timestamps
 
 While 
 - NFIRS is self-reported. Supervised and supported at the state level. Automated with software

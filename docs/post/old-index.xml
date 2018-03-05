@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Public Safety Data</title>
-    <link>/</link>
-    <description>Recent content on Public Safety Data</description>
+    <title>Posts on Public Safety Data</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Problems with NFIRS 2015</title>
-      <link>/2018/03/05/problems-with-nfirs-2015/</link>
-      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/03/05/problems-with-nfirs-2015/</guid>
-      <description>Introduction While there are certainly incentives for fire departments to participate in the National Fire Incident Reporting System (NFIRS), it is both optional and self-reported. As it is optional, not all fire departments participate. As the system relies on self-reporting, information can be inaccurate or omitted either through lack of quality control or via electronic reporting errors. I’d like to take a few moments to explore these problems. We’ll discuss how they are detected and address how they affect the ways that NFIRS data should be interpreted.</description>
-    </item>
     
     <item>
       <title>NFIRS 2015 is Vastly Improved: Just Ask FEMA</title>
@@ -57,20 +48,6 @@ As I mentioned in a previous post, the main advantage of this data set is that i
       <guid>/2017/06/04/public-safety-open-data-portal/</guid>
       <description>Introduction &amp;amp; Critique Atlanta Boston Part II: 911 Calls New Orleans LA &amp;amp; Los Angeles CA (later this month)   Introduction &amp;amp; Critique The Police Data Initiative website contains data supplied by 135 participating agencies as of today’s date. There is likely an agency near you that you might recognize.
 In late 2015, the Tucson Police Department’s Lieutenant Myron “Ron” Holubiak brought the Public Safety Open Data Portal to my attention.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>This is a blog about public safety data. The purpose is to highlight some useful online resources that shed light on public safety services.
-I&amp;rsquo;ve studied numerous public safety departments since 2008. To me, public safety includes:
-- law enforcement agencies (police, sheriff, etc.)
-- fire departments,
-- and emergency services (aka ambulances).
-For some, public safety doesn&amp;rsquo;t include ambulance services, but these are often combined within a fire department.</description>
     </item>
     
     <item>

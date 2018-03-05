@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Problems with NFIRS 2015</title>
+      <link>/2018/03/05/problems-with-nfirs-2015/</link>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/03/05/problems-with-nfirs-2015/</guid>
+      <description>Introduction While there are certainly incentives for fire departments to participate in the National Fire Incident Reporting System (NFIRS), it is both optional and self-reported. As it is optional, not all fire departments participate. As the system relies on self-reporting, information can be inaccurate or omitted either through lack of quality control or via electronic reporting errors. I’d like to take a few moments to explore these problems. We’ll discuss how they are detected and address how they affect the ways that NFIRS data should be interpreted.</description>
+    </item>
     
     <item>
       <title>NFIRS 2015 is Vastly Improved: Just Ask FEMA</title>
