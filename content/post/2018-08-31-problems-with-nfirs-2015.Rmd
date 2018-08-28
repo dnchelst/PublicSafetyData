@@ -1,7 +1,7 @@
 ---
 title: Problems with NFIRS 2015
 author: Dov Chelst
-date: '2018-03-05'
+date: '2018-08-31'
 slug: problems-with-nfirs-2015
 categories: []
 tags: []
@@ -28,8 +28,8 @@ through lack of quality control or via electronic reporting errors. I'd like to
 take a few moments to explore these problems. We'll discuss how they are
 detected and address how they affect the ways that NFIRS data should be
 interpreted. This conversation uses a bit more mathematics than other posts.
-It's slightly more complicated than the. math required to understand the earlier
-post about the [census data](`r  RefCode("2017-07-04-census-data-all-around-us.Rmd")`).
+It's slightly more complicated than the math required to understand the earlier
+post about the census data.
 
 We'll examine only three easily diagnosed problems with NFIRS data:  
 
@@ -49,12 +49,13 @@ have not reported a single incident in 2015.
 
 Before moving forward, there are two caveats:
 
-  1. The USFA calculated that 65 percent of agencies provided data to NFIRS in
-  2015. It also concluded that "66 percent of all U.S. fires to which fire
+  1. The USFA calculated that 65 percent of agencies provided data to NFIRS in 2015. 
+  It also concluded that "66 percent of all U.S. fires to which fire
   departments responded in 2015 were captured in the NFIRS." However, what if
   larger departments were more likely to report data to NFIRS than smaller
   departments? Then, quite possibly, 65 percent of agencies could include more
   than 66 percent of total fires in the U.S.
+
   2. Two agencies that respond to the same fire may both report the incident to
   NFIRS and so the information is duplicated. The USFA avoids duplication by
   removing all incidents marked as "aid given." But, what if the "aid given"
@@ -65,7 +66,6 @@ Before moving forward, there are two caveats:
 [Sara Wood](https://www.linkedin.com/in/sarawood/detail/recent-activity/posts/), 
 NFIRS Program Manager at the 
 [Kansas Office of the State Fire Marshal](http://firemarshal.ks.gov/agency-resources/KFIRS). 
-  
 
 
 ## Partial Reporting
