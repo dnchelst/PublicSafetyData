@@ -1,8 +1,8 @@
 ---
-title: Problems with NFIRS 2015
+title: Problems with NFIRS 2018
 author: Dov Chelst
-date: '2018-08-31'
-slug: problems-with-nfirs-2015
+date: '2020-07-12'
+slug: problems-with-nfirs-2018
 categories: []
 tags: []
 ---
@@ -41,7 +41,7 @@ We'll examine only three easily diagnosed problems with NFIRS data:
 
 The U.S. Fire Administration (USFA) documents the number of reporting fire departments
 by state in Table 3 on pages 13-14 of
-[Fire in the United States 2006-2015](https://www.usfa.fema.gov/downloads/pdf/publications/fius19th.pdf).
+[Fire in the United States 2008-2017](https://www.usfa.fema.gov/downloads/pdf/publications/fius20th.pdf).
 Of course, this just counts the number of departments and I thought I would work
 to recreate the same results. The USFA also provides a list of all fire
 departments in the U.S. and one can use NFIRS data to determine which agencies
