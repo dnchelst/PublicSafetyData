@@ -20,12 +20,12 @@ math=true
     weight = 0
     identifier = "home"
     url = "/"
-  [[menu.main]]
-    name = "Posts"
-    pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 1
-    identifier = "post"
-    url = "/post/"
+# [[menu.main]]
+#    name = "Posts"
+#    pre = "<i class='fa fa-list fa-fw'></i>"
+#    weight = 1
+#    identifier = "post"
+#    url = "/post/"
   [[menu.main]] 
     name = "About"
     url = "/about/"
