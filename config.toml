@@ -6,7 +6,7 @@ theme = "blackburn"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
-publishDir="docs"
+publishDir="public"
 math=true
 
 [permalinks]
