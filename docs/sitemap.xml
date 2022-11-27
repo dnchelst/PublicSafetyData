@@ -1,123 +1,67 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>/2018/02/11/nfirs-2015-improved/</loc>
-    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/07/04/census-data-all-around-us/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/06/16/ucr-2015-available-aka-data-set-36789/</loc>
-    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/06/04/public-safety-open-data-portal/</loc>
-    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-    <lastmod>2016-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/04/03/ucr-2014-available-aka-data-set-36391/</loc>
-    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/03/18/nfirs-2014-available/</loc>
-    <lastmod>2016-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/census/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/crime/</loc>
-    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/fire/</loc>
-    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/incidence-rates/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/nfirs/</loc>
-    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/police/</loc>
-    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/police-foundation/</loc>
-    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2020/07/12/problems-with-nfirs-2018/</loc>
+    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/</loc>
+    <lastmod>2020-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/fire/</loc>
     <lastmod>2018-02-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/tags/nfirs/</loc>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2018/02/11/nfirs-2015-improved/</loc>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/</loc>
-    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <lastmod>2018-02-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/census/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2017/07/04/census-data-all-around-us/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/incidence-rates/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/crime/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/police/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/ucr/</loc>
     <lastmod>2017-06-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>/2017/06/16/ucr-2015-available-aka-data-set-36789/</loc>
+    <lastmod>2017-06-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/police-foundation/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2017/06/04/public-safety-open-data-portal/</loc>
+    <lastmod>2017-06-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/white-house/</loc>
     <lastmod>2017-06-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+  </url><url>
+    <loc>/about/</loc>
+    <lastmod>2016-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2016/04/03/ucr-2014-available-aka-data-set-36391/</loc>
+    <lastmod>2016-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/2016/03/18/nfirs-2014-available/</loc>
+    <lastmod>2016-03-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
   </url>
-  
 </urlset>

@@ -1,24 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Police on Public Safety Data</title>
+    <title>police on Public Safety Data</title>
     <link>/tags/police/</link>
-    <description>Recent content in Police on Public Safety Data</description>
+    <description>Recent content in police on Public Safety Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Jun 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/police/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 16 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/police/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UCR 2015 Available (aka data set 36789)</title>
       <link>/2017/06/16/ucr-2015-available-aka-data-set-36789/</link>
       <pubDate>Fri, 16 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/06/16/ucr-2015-available-aka-data-set-36789/</guid>
-      <description>Basic InformationThe FBI released theirannual reporton Crime in the U.S. for 2015last September.It took a little longer than last year for an improveddata set (36789)to appear on theNACJD website.
-As I mentioned in a previous post, the main advantage of this data set is thatit includes counts of offenses cleared for each reporting agency along withoffenses reported.</description>
+      <description>Basic Information The FBI released their annual report on Crime in the U.S. for 2015 last September. It took a little longer than last year for an improved data set (36789) to appear on the NACJD website.
+As I mentioned in a previous post, the main advantage of this data set is that it includes counts of offenses cleared for each reporting agency along with offenses reported. If you would like to have a conversation, there are reasons why this information may be inaccurate for most agencies in Washington state.</description>
     </item>
     
     <item>
@@ -27,8 +23,8 @@ As I mentioned in a previous post, the main advantage of this data set is thati
       <pubDate>Sun, 04 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>/2017/06/04/public-safety-open-data-portal/</guid>
-      <description>Introduction &amp;amp; CritiqueAtlantaBostonPart II: 911 Calls New Orleans LA &amp;amp; Los Angeles CA (later this month)Introduction &amp;amp; CritiqueThe Police Data Initiativewebsite contains data supplied by 135participating agenciesas of today’s date. There is likely an agency near you that you might recognize.
-In late 2015, the Tucson Police Department’s Lieutenant Myron “Ron” Holubiakbrought the Public Safety Open Data Portal to my attention.</description>
+      <description>Introduction &amp;amp; Critique Atlanta Boston Part II: 911 Calls New Orleans LA &amp;amp; Los Angeles CA (later this month) Introduction &amp;amp; Critique The Police Data Initiative website contains data supplied by 135 participating agencies as of today’s date. There is likely an agency near you that you might recognize.
+In late 2015, the Tucson Police Department’s Lieutenant Myron “Ron” Holubiak brought the Public Safety Open Data Portal to my attention.</description>
     </item>
     
     <item>
