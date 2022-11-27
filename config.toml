@@ -17,15 +17,15 @@ math=true
   [[menu.main]]
     name = "Home"
     pre = "<i class='fa fa-home fa-fw'></i>"
-    weight = 0
+    weight = 1
     identifier = "home"
     url = "/"
-# [[menu.main]]
-#    name = "Posts"
-#    pre = "<i class='fa fa-list fa-fw'></i>"
-#    weight = 1
-#    identifier = "post"
-#    url = "/post/"
+  [[menu.main]]
+    name = "Posts"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 3
+    identifier = "post"
+    url = "/post/"
   [[menu.main]] 
     name = "About"
     url = "/about/"
@@ -33,7 +33,7 @@ math=true
   [[menu.main]]
     name = "GitHub"
     url = "https://github.com/dnchelst"
-    weight = 3
+    weight = 4
 [params]
     description = "A website built through Hugo and blogdown."
     googleAnalytics = "UA-99039986-1"
@@ -55,4 +55,5 @@ math=true
 [social]
   github = "dnchelst"
   linkedin = "dnchelst"
-  kaggle = "dnchelst"
+  #kaggle = "dnchelst"
+  twitter = "dnchelst"
